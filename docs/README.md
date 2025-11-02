@@ -85,7 +85,6 @@ docs/
 ## 📞 Contact
 
 **Formateur:** Alexandre Giss
-**Email:** formation@iatogo.com
 **Dates:** 10-14 novembre 2025
 **Lieu:** Lomé, Togo
 

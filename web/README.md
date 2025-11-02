@@ -196,7 +196,6 @@ npx qrcode-terminal "https://votre-url.com"
 ## 📞 Support & Contact
 
 **Formateur:** Alexandre Giss
-**Email:** formation@iatogo.com (exemple)
 **GitHub:** [Lien repo]
 
 ## 📄 Licence
