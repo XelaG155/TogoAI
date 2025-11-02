@@ -1,0 +1,16 @@
+# GitHub Pages Configuration
+# Formation IA Togo
+
+title: Formation IA Togo
+description: Séminaire Intelligence Artificielle pour Entrepreneurs Togolais - Programme interactif 5 jours
+lang: fr
+theme: jekyll-theme-minimal
+
+# SEO
+url: https://xelag155.github.io
+baseurl: /TogoAI
+
+# Exclude from processing
+exclude:
+  - README.md
+  - .gitignore
