@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Restauration - Maquis | Formation IA Togo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .exercise-detail {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .exercise-header {
+            background: linear-gradient(135deg, #F59E0B, #DC2626);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        .exercise-header h1 {
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+        }
+        .exercise-header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        .fictif-warning {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            color: #92400E;
+        }
+        .section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .profile-item {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+        }
+        .profile-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .prompt-box {
+            background: #1E293B;
+            color: #E2E8F0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #F59E0B;
+        }
+        .prompt-box .label {
+            color: #F59E0B;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .code-block {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        .response-box {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        .response-box .label {
+            color: #92400E;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #F59E0B;
+        }
+        .timeline-item {
+            position: relative;
+            padding: 1rem 0 1rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #F59E0B;
+            border: 3px solid var(--bg-primary);
+        }
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .result-table th,
+        .result-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .result-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .success-metric {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .warning-metric {
+            color: var(--warning);
+            font-weight: 700;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .tool-card {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            border: 2px solid var(--border);
+        }
+        .tool-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .tool-card h4 {
+            margin: 0.5rem 0;
+            color: var(--primary);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border-left: 4px solid #F59E0B;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        .lessons-list {
+            list-style: none;
+            padding: 0;
+        }
+        .lessons-list li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+        }
+        .lessons-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #F59E0B;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .menu-example {
+            background: white;
+            border: 2px solid #F59E0B;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .menu-example h4 {
+            color: #DC2626;
+            margin: 0 0 1rem 0;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-detail">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Retour aux exercices
+        </a>
+
+        <div class="fictif-warning">
+            <i class="fas fa-info-circle"></i> <strong>Exemple Fictif:</strong> Ce cas est réaliste mais les personnages et résultats sont fictifs à but pédagogique. Les montants sont donnés en pourcentages, pas en euros réels.
+        </div>
+
+        <div class="exercise-header">
+            <h1><i class="fas fa-utensils"></i> Exercice Restauration</h1>
+            <p class="subtitle">Comment Maman Akossiwa a augmenté ses réservations de 35% avec ChatGPT (0€ investi)</p>
+        </div>
+
+        <!-- PROFIL ENTREPRISE -->
+        <div class="section">
+            <h2><i class="fas fa-building"></i> Profil de l'Entreprise</h2>
+
+            <div class="profile-grid">
+                <div class="profile-item">
+                    <strong>Nom Commercial</strong>
+                    "Maquis Chez Akossiwa" (fictif)
+                </div>
+                <div class="profile-item">
+                    <strong>Propriétaire</strong>
+                    Maman Akossiwa (fictif)
+                </div>
+                <div class="profile-item">
+                    <strong>Localisation</strong>
+                    Quartier Nyékonakpoè, Lomé
+                </div>
+                <div class="profile-item">
+                    <strong>Type d'Activité</strong>
+                    Maquis (restaurant local)
+                </div>
+                <div class="profile-item">
+                    <strong>CA Annuel Initial</strong>
+                    Niveau de référence: 100%
+                </div>
+                <div class="profile-item">
+                    <strong>Spécialités</strong>
+                    Akoumé, Fufu, Grillades, Poisson braisé
+                </div>
+                <div class="profile-item">
+                    <strong>Places Assises</strong>
+                    15 tables (60 couverts)
+                </div>
+                <div class="profile-item">
+                    <strong>Employés</strong>
+                    4 (cuisinière, 2 serveuses, aide-cuisine)
+                </div>
+                <div class="profile-item">
+                    <strong>Présence Digitale</strong>
+                    Page Facebook (200 likes), numéro WhatsApp
+                </div>
+                <div class="profile-item">
+                    <strong>Niveau Tech</strong>
+                    Basique (smartphone, pas de site web)
+                </div>
+            </div>
+        </div>
+
+        <!-- PROBLÈME INITIAL -->
+        <div class="section">
+            <h2><i class="fas fa-exclamation-triangle"></i> Le Problème Identifié</h2>
+
+            <div class="highlight-box">
+                <h3>Situation Avant IA:</h3>
+                <ul>
+                    <li><strong>Menu:</strong> Manuscrit mal lisible, photo floue sur Facebook</li>
+                    <li><strong>Marketing:</strong> Bouche-à-oreille uniquement (pas de pub)</li>
+                    <li><strong>Réservations:</strong> Téléphone uniquement (souvent occupée en cuisine)</li>
+                    <li><strong>Communication:</strong> Pas d'annonce nouveaux plats / promotions</li>
+                    <li><strong>Taux remplissage:</strong> 50-60% en semaine, 90% weekend</li>
+                    <li><strong>Clients perdus:</strong> 30-40% appels manqués (cuisine bruyante)</li>
+                    <li><strong>Descriptions plats:</strong> "C'est bon" / "Viens goûter"</li>
+                </ul>
+            </div>
+
+            <table class="result-table">
+                <tr>
+                    <th>Indicateur</th>
+                    <th>Avant IA</th>
+                    <th>Impact</th>
+                </tr>
+                <tr>
+                    <td>Tables occupées (semaine)</td>
+                    <td>50-60%</td>
+                    <td><span class="warning-metric">Beaucoup de vide</span></td>
+                </tr>
+                <tr>
+                    <td>Réservations</td>
+                    <td>2-3/jour</td>
+                    <td><span class="warning-metric">Trop peu</span></td>
+                </tr>
+                <tr>
+                    <td>Nouveaux clients/mois</td>
+                    <td>5-10</td>
+                    <td><span class="warning-metric">Croissance lente</span></td>
+                </tr>
+                <tr>
+                    <td>Présence en ligne</td>
+                    <td>Quasi inexistante</td>
+                    <td><span class="warning-metric">Invisibilité digitale</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- LA SOLUTION IA -->
+        <div class="section">
+            <h2><i class="fas fa-lightbulb"></i> La Solution IA Mise en Place</h2>
+
+            <h3>Outils Utilisés (100% GRATUITS):</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="icon">💬</div>
+                    <h4>ChatGPT Free</h4>
+                    <p>Descriptions plats & posts</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📸</div>
+                    <h4>Canva</h4>
+                    <p>Menu digital pro</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📱</div>
+                    <h4>Google Forms</h4>
+                    <p>Réservations en ligne</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🗓️</div>
+                    <h4>Google Calendar</h4>
+                    <p>Gestion planning</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Étape 1: Créer Menu Digital Attractif</h3>
+
+            <div class="prompt-box">
+                <span class="label">📝 PROMPT UTILISÉ (ChatGPT):</span>
+                <div class="code-block">Tu es expert en restauration africaine et copywriting gastronomique.
+
+CONTEXTE:
+- Restaurant: Maquis à Lomé (Togo)
+- Spécialités: Cuisine togolaise traditionnelle
+- Client cible: Togolais + expatriés à Lomé
+
+MENU ACTUEL (simple liste):
+- Akoumé + sauce d'arachide (2,000 FCFA)
+- Fufu + sauce gombo (2,500 FCFA)
+- Poisson braisé entier (3,500 FCFA)
+- Poulet DG (4,500 FCFA)
+- Grillades mixtes (5,000 FCFA)
+
+TÂCHE:
+Réécris chaque plat avec:
+1. Nom appétissant (garder nom traditionnel + description)
+2. Description courte qui donne faim (max 50 mots)
+3. Mise en avant ingrédients locaux/frais
+4. Ton chaleureux "comme à la maison"
+
+Format: Nom | Description | Prix</div>
+            </div>
+
+            <div class="response-box">
+                <span class="label">🤖 RÉPONSE ChatGPT:</span>
+                <div class="menu-example">
+                    <h4>🍽️ Notre Carte - Saveurs du Togo</h4>
+
+                    <p><strong>🌾 Akoumé Traditionnel & Sauce d'Arachide Maison</strong><br>
+                    Le plat réconfort des Togolais! Notre akoumé (pâte de maïs) fraîchement préparée, accompagnée d'une onctueuse sauce d'arachide aux épices locales. Servi avec viande de bœuf fondante.<br>
+                    <em>2,000 FCFA</em></p>
+
+                    <p><strong>🥘 Fufu Pilé Main & Sauce Gombo du Jour</strong><br>
+                    Fufu de manioc pilé à l'ancienne (comme Maman le fait!), nappé de notre sauce gombo visqueuse et parfumée. Choix: poisson fumé ou viande de chèvre.<br>
+                    <em>2,500 FCFA</em></p>
+
+                    <p><strong>🐟 Poisson Entier Braisé au Feu de Bois</strong><br>
+                    Capitaine frais du matin, braisé lentement sur charbon de bois, mariné aux piments et citron vert. Peau croustillante, chair juteuse. Avec attiéké ou riz.<br>
+                    <em>3,500 FCFA</em></p>
+
+                    <p><strong>🍗 Poulet DG "Directeur Général"</strong><br>
+                    Le plat des grands jours! Poulet rôti, plantains dorés, légumes sautés dans une sauce tomate-piment crémeuse. Généreux et festif!<br>
+                    <em>4,500 FCFA</em></p>
+
+                    <p><strong>🍖 Grillades Royales Mixtes</strong><br>
+                    Assortiment bœuf, mouton, poulet marinés 24h aux épices secrètes d'Akossiwa. Grillé au charbon, servi sur planche en bois avec piment frais.<br>
+                    <em>5,000 FCFA</em></p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Étape 2: Créer Posts Facebook Réguliers</h3>
+
+            <div class="prompt-box">
+                <span class="label">📝 PROMPT (Contenu Marketing):</span>
+                <div class="code-block">Crée 5 posts Facebook pour promouvoir mon maquis cette semaine.
+
+OBJECTIF: Attirer nouveaux clients + fidéliser habitués
+
+THÈMES (1 post par jour):
+1. Lundi: Plat du jour spécial
+2. Mardi: Histoire/origine d'un plat
+3. Mercredi: Promotion mid-week
+4. Jeudi: Témoignage client (fictif mais réaliste)
+5. Vendredi: Annonce weekend / réservations
+
+FORMAT pour chaque post:
+- Accroche emoji + titre percutant
+- 3-4 lignes max (lecture rapide)
+- Call-to-action WhatsApp/réservation
+- 3-5 hashtags locaux
+
+Ton: Chaleureux, familial, authentique (comme Maman Akossiwa parle!)</div>
+            </div>
+
+            <div class="response-box">
+                <span class="label">🤖 RÉPONSE (extraits):</span>
+
+                <p><strong>📅 LUNDI - Plat du Jour:</strong></p>
+                <div style="background: #f9f9f9; padding: 1rem; border-radius: 0.5rem; margin: 0.5rem 0;">
+                    🔥 LUNDI = JOUR DE L'AKOUMÉ! 🔥<br><br>
+                    Qui a dit que le lundi c'est difficile? Pas chez nous! 😄<br><br>
+                    Venez déguster notre akoumé sauce d'arachide (le vrai, comme ta grand-mère le prépare). Aujourd'hui seulement: 1,800 FCFA au lieu de 2,000!<br><br>
+                    📍 Nyékonakpoè, derrière Station Shell<br>
+                    📱 Réservez: 90 XX XX XX<br><br>
+                    #MaquisLomé #AkouméTogo #CuisineTraditionelle #ChezAkossiwa
+                </div>
+
+                <p><strong>📅 MERCREDI - Promo Mid-Week:</strong></p>
+                <div style="background: #f9f9f9; padding: 1rem; border-radius: 0.5rem; margin: 0.5rem 0;">
+                    🎉 MERCREDI = MILIEU DE SEMAINE = FAUT CÉLÉBRER! 🎉<br><br>
+                    Offre spéciale: Viens à 2, paie pour 1.5! 💰<br>
+                    (Le moins cher à -50%)<br><br>
+                    Valable uniquement ce mercredi 12h-20h.<br>
+                    Viens avec ton ami, ton collègue, ton voisin!<br><br>
+                    📱 Réservation obligatoire: 90 XX XX XX<br><br>
+                    #PromotionLomé #MaquisTogo #MercrediGourmand
+                </div>
+
+                <p><strong>📅 VENDREDI - Weekend Rush:</strong></p>
+                <div style="background: #f9f9f9; padding: 1rem; border-radius: 0.5rem; margin: 0.5rem 0;">
+                    🎊 WEEKEND ARRIVES! VOTRE TABLE EST PRÊTE? 🎊<br><br>
+                    Vendredi soir + Samedi = COMPLET d'habitude! 🔥<br><br>
+                    Ne ratez pas: Réservez DÈS MAINTENANT votre table.<br>
+                    Spécial weekend: Grillades Royales + 1 boisson offerte! 🍖🥤<br><br>
+                    📱 WhatsApp: 90 XX XX XX<br>
+                    ⏰ Cuisine ouverte jusqu'à 22h!<br><br>
+                    #WeekendLomé #GrilladesTogo #MaquisChezAkossiwa
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Étape 3: Système Réservation Simple</h3>
+
+            <div class="prompt-box">
+                <span class="label">📝 PROMPT (Organisation):</span>
+                <div class="code-block">Aide-moi à créer système de réservations SIMPLE pour mon restaurant.
+
+PROBLÈME ACTUEL:
+- J'oublie qui a réservé quand
+- Clients appellent quand je cuisine (j'entends rien)
+- Pas de trace écrite = confusion
+
+CONTRAINTES:
+- Gratuit (pas budget pour logiciel)
+- Simple (je suis pas expert tech)
+- Marche sur smartphone
+- Pas besoin connexion permanente
+
+Propose solution concrète + guide utilisation pas-à-pas!</div>
+            </div>
+
+            <div class="response-box">
+                <span class="label">🤖 RÉPONSE (système complet):</span>
+
+                <h4>📋 Système Réservation (Google Forms + Calendar)</h4>
+
+                <p><strong>SOLUTION (100% gratuite):</strong></p>
+                <ol>
+                    <li><strong>Google Forms</strong> = Formulaire réservation en ligne</li>
+                    <li><strong>Google Calendar</strong> = Planning visuel automatique</li>
+                    <li><strong>Notifications SMS</strong> = Alertes auto chaque réservation</li>
+                </ol>
+
+                <p><strong>SETUP (30 minutes):</strong></p>
+                <ul style="margin-left: 1.5rem;">
+                    <li>Créer formulaire avec: Nom, Téléphone, Date, Heure, Nombre personnes</li>
+                    <li>Connecter au Google Calendar (1 réservation = 1 événement auto)</li>
+                    <li>Partager lien formulaire sur Facebook/WhatsApp</li>
+                    <li>Configurer notifications smartphone</li>
+                </ul>
+
+                <p><strong>AVANTAGES:</strong></p>
+                <ul style="margin-left: 1.5rem;">
+                    <li>✓ Client réserve 24/7 (même quand tu cuisines!)</li>
+                    <li>✓ Tout noté automatiquement</li>
+                    <li>✓ Voir planning d'un coup d'œil</li>
+                    <li>✓ Rappel 1h avant chaque réservation</li>
+                    <li>✓ Possibilité d'envoyer SMS confirmation auto</li>
+                </ul>
+
+                <p><em>[La réponse complète inclurait captures d'écran et guide pas-à-pas détaillé]</em></p>
+            </div>
+        </div>
+
+        <!-- MISE EN ŒUVRE -->
+        <div class="section">
+            <h2><i class="fas fa-tasks"></i> Calendrier de Mise en Œuvre</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Semaine 1 (6-8h):</strong> Formation + Setup digital
+                    <ul>
+                        <li>Suivre formation IA (5 jours)</li>
+                        <li>Créer compte ChatGPT</li>
+                        <li>Photographier tous les plats (qualité correcte)</li>
+                        <li>Générer descriptions menu avec ChatGPT</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Semaine 2 (4-5h):</strong> Menu digital + Outils
+                    <ul>
+                        <li>Créer menu visuel sur Canva (templates gratuits)</li>
+                        <li>Setup Google Forms réservations</li>
+                        <li>Connecter Google Calendar</li>
+                        <li>Tester système avec 3 réservations test</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Semaine 3 (2h):</strong> Lancement communication
+                    <ul>
+                        <li>Publier nouveau menu sur Facebook</li>
+                        <li>Annoncer système réservation en ligne</li>
+                        <li>Partager lien réservation dans groupes WhatsApp</li>
+                        <li>Afficher QR code réservation dans restaurant</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Semaine 4+ (1-2h/semaine):</strong> Contenu régulier
+                    <ul>
+                        <li>Générer 5 posts/semaine avec ChatGPT (30min)</li>
+                        <li>Publier + répondre commentaires (30min)</li>
+                        <li>Gérer réservations (30min - maintenant facile!)</li>
+                        <li>Analyser plats les plus demandés</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Mois 2-3:</strong> Optimisation & Croissance
+                    <ul>
+                        <li>Identifier posts qui génèrent le plus réservations</li>
+                        <li>Créer promotions ciblées jours creux</li>
+                        <li>Lancer programme fidélité simple (carte papier 10 repas = 1 gratuit)</li>
+                        <li>Tester stories Facebook (plats en préparation = appétissant!)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- RÉSULTATS -->
+        <div class="section">
+            <h2><i class="fas fa-chart-line"></i> Résultats Mesurés (Après 3 Mois)</h2>
+
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Indicateur</th>
+                        <th>Avant IA</th>
+                        <th>Après IA</th>
+                        <th>Amélioration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Réservations/semaine</td>
+                        <td>15-20</td>
+                        <td>40-50</td>
+                        <td><span class="success-metric">+150%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Taux remplissage semaine</td>
+                        <td>50-60%</td>
+                        <td>75-85%</td>
+                        <td><span class="success-metric">+25 points</span></td>
+                    </tr>
+                    <tr>
+                        <td>Nouveaux clients/mois</td>
+                        <td>5-10</td>
+                        <td>30-40</td>
+                        <td><span class="success-metric">+300%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Portée Facebook</td>
+                        <td>Quasi nulle</td>
+                        <td>2,000-3,000/semaine</td>
+                        <td><span class="success-metric">Nouveau canal!</span></td>
+                    </tr>
+                    <tr>
+                        <td>Appels manqués</td>
+                        <td>30-40%</td>
+                        <td>5% (réserv. en ligne!)</td>
+                        <td><span class="success-metric">-85%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Temps organisation/jour</td>
+                        <td>1-2h (chaos)</td>
+                        <td>20min (automatisé)</td>
+                        <td><span class="success-metric">-75% temps</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>CA Global</strong></td>
+                        <td><strong>100%</strong></td>
+                        <td><strong>135%</strong></td>
+                        <td><span class="success-metric">+35%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <h3>💰 Impact Financier</h3>
+                <table class="result-table">
+                    <tr>
+                        <td><strong>Investissement IA</strong></td>
+                        <td>0€ (outils gratuits)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temps formation</strong></td>
+                        <td>5 jours (investissement temps)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temps setup initial</strong></td>
+                        <td>15-20h (semaines 1-3)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temps maintenance</strong></td>
+                        <td>1-2h/semaine (vs chaos constant)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tables vides évitées</strong></td>
+                        <td><span class="success-metric">+25% occupation semaine</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Augmentation CA</strong></td>
+                        <td><span class="success-metric">+35% en 3 mois</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ROI</strong></td>
+                        <td><span class="success-metric">INFINI (0€ investi!)</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- LEÇONS APPRISES -->
+        <div class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Leçons Apprises & Conseils</h2>
+
+            <h3>✅ Ce Qui a Marché:</h3>
+            <ul class="lessons-list">
+                <li><strong>Descriptions qui donnent faim:</strong> "Sauce d'arachide onctueuse" > "Sauce d'arachide" (+60% engagement)</li>
+                <li><strong>Photos plats réels:</strong> Pas besoin photo pro, juste bien éclairée et appétissante</li>
+                <li><strong>Promotions jours creux:</strong> Mercredi "2 pour 1.5" a rempli le milieu de semaine!</li>
+                <li><strong>Réservations en ligne:</strong> Éliminé 95% appels manqués = zéro client perdu</li>
+                <li><strong>Posts réguliers:</strong> 5x/semaine = présence constante = top of mind</li>
+                <li><strong>Témoignages clients:</strong> Partager avis positifs (avec permission) = preuve sociale forte</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">❌ Erreurs à Éviter:</h3>
+            <ul class="lessons-list">
+                <li><strong>Ne PAS:</strong> Copier descriptions "restaurant chic européen" (parler comme clients togolais parlent!)</li>
+                <li><strong>Ne PAS:</strong> Prendre photos de nuit/mal éclairées (un plat sombre = pas appétissant)</li>
+                <li><strong>Ne PAS:</strong> Oublier prix dans posts (clients veulent savoir avant de venir)</li>
+                <li><strong>Ne PAS:</strong> Ignorer commentaires Facebook (répondre en <24h crucial)</li>
+                <li><strong>Ne PAS:</strong> Sur-promettre ("Meilleur maquis du Togo!" = crée attentes trop hautes)</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">🎯 Facteurs Clés de Succès:</h3>
+            <div class="highlight-box">
+                <ol style="margin: 0; padding-left: 1.5rem;">
+                    <li><strong>Authenticité:</strong> Rester soi-même, parler comme "Maman" (pas robot marketing)</li>
+                    <li><strong>Régularité posts:</strong> 5x/semaine minimum (présence constante)</li>
+                    <li><strong>Call-to-action clair:</strong> Toujours indiquer comment réserver (lien + numéro)</li>
+                    <li><strong>Promotions stratégiques:</strong> Cibler jours/heures creuses</li>
+                    <li><strong>Réactivité:</strong> Système réservation = réponse immédiate 24/7</li>
+                    <li><strong>Qualité constante:</strong> Marketing attire, qualité nourriture fidélise!</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- RÉPLICABILITÉ -->
+        <div class="section">
+            <h2><i class="fas fa-copy"></i> Comment Répliquer dans Votre Restaurant</h2>
+
+            <h3>Ce Modèle Fonctionne Pour:</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="icon">🍽️</div>
+                    <h4>Maquis</h4>
+                    <p>Tous types de maquis</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🍕</div>
+                    <h4>Restaurant Rapide</h4>
+                    <p>Snacks, cafés, fast-food</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🎂</div>
+                    <h4>Pâtisserie</h4>
+                    <p>Gâteaux, viennoiseries</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🍹</div>
+                    <h4>Bar/Lounge</h4>
+                    <p>Bars, lounges, buvettes</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🥗</div>
+                    <h4>Traiteur</h4>
+                    <p>Service traiteur événements</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🍛</div>
+                    <h4>Toute Restauration!</h4>
+                    <p>Adaptable à tout concept</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">📋 Checklist de Démarrage:</h3>
+            <div class="highlight-box">
+                <ul style="list-style: none; padding: 0;">
+                    <li>☐ <strong>Jour 1:</strong> Créer compte ChatGPT + Canva</li>
+                    <li>☐ <strong>Jour 2:</strong> Photographier tous vos plats (lumière naturelle!)</li>
+                    <li>☐ <strong>Jour 3:</strong> Générer descriptions menu avec ChatGPT</li>
+                    <li>☐ <strong>Jour 4:</strong> Créer menu visuel sur Canva</li>
+                    <li>☐ <strong>Jour 5:</strong> Setup formulaire réservation Google Forms</li>
+                    <li>☐ <strong>Jour 6:</strong> Connecter Google Calendar + tester</li>
+                    <li>☐ <strong>Jour 7:</strong> Publier nouveau menu + système réservation</li>
+                    <li>☐ <strong>Semaine 2:</strong> Générer 5 posts avec ChatGPT, publier quotidiennement</li>
+                    <li>☐ <strong>Semaine 3:</strong> Mesurer résultats (réservations, nouveaux clients)</li>
+                    <li>☐ <strong>Semaine 4:</strong> Ajuster stratégie selon ce qui marche</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 2rem;">💡 Prompt Bonus: Idées Promotions</h3>
+            <div class="prompt-box">
+                <div class="code-block">Donne-moi 10 idées promotions créatives pour attirer clients les jours creux (lundi-mercredi).
+
+CONTRAINTES:
+- Budget limité (marges faibles)
+- Maquis traditionnel togolais
+- Cible: employés de bureau + familles quartier
+- Promotions simples à gérer (je suis seule!)
+
+Format: Nom promotion | Mécanique | Jour recommandé | Impact attendu</div>
+            </div>
+        </div>
+
+        <!-- CTA FINAL -->
+        <div class="section" style="background: linear-gradient(135deg, #F59E0B, #DC2626); color: white; text-align: center;">
+            <h2 style="color: white;"><i class="fas fa-hand-point-right"></i> À Vous de Jouer!</h2>
+            <p style="font-size: 1.2rem; margin: 1rem 0;">Ce qu'a fait Maman Akossiwa, VOUS pouvez le faire!</p>
+            <p style="font-size: 1rem; opacity: 0.95;">Temps nécessaire: 15-20h setup + 1-2h/semaine maintenance</p>
+            <p style="font-size: 1rem; opacity: 0.95;">Investissement: 0€ (outils gratuits)</p>
+            <p style="font-size: 1rem; opacity: 0.95;">Impact potentiel: +25-40% CA en 3-6 mois</p>
+            <a href="index.html" style="display: inline-block; margin-top: 1.5rem; padding: 1rem 2rem; background: white; color: #F59E0B; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">
+                Retour aux Exercices
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

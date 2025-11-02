@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Transport - Zémidjan | Formation IA Togo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .exercise-detail {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .exercise-header {
+            background: linear-gradient(135deg, #8B5CF6, #2563EB);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        .exercise-header h1 {
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+        }
+        .exercise-header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        .fictif-warning {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            color: #92400E;
+        }
+        .section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .profile-item {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+        }
+        .profile-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .prompt-box {
+            background: #1E293B;
+            color: #E2E8F0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #8B5CF6;
+        }
+        .prompt-box .label {
+            color: #8B5CF6;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .code-block {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        .response-box {
+            background: #EDE9FE;
+            border-left: 4px solid #8B5CF6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        .response-box .label {
+            color: #5B21B6;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #8B5CF6;
+        }
+        .timeline-item {
+            position: relative;
+            padding: 1rem 0 1rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #8B5CF6;
+            border: 3px solid var(--bg-primary);
+        }
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .result-table th,
+        .result-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .result-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .success-metric {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .warning-metric {
+            color: var(--warning);
+            font-weight: 700;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .tool-card {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            border: 2px solid var(--border);
+        }
+        .tool-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .tool-card h4 {
+            margin: 0.5rem 0;
+            color: var(--primary);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #EDE9FE, #DDD6FE);
+            border-left: 4px solid #8B5CF6;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        .lessons-list {
+            list-style: none;
+            padding: 0;
+        }
+        .lessons-list li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+        }
+        .lessons-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #8B5CF6;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-detail">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Retour aux exercices
+        </a>
+
+        <div class="fictif-warning">
+            <i class="fas fa-info-circle"></i> <strong>Exemple Fictif:</strong> Ce cas est réaliste mais les personnages et résultats sont fictifs à but pédagogique. Les montants sont donnés en pourcentages, pas en euros réels.
+        </div>
+
+        <div class="exercise-header">
+            <h1><i class="fas fa-motorcycle"></i> Exercice Transport</h1>
+            <p class="subtitle">Comment Komi a augmenté ses revenus de 40% avec ChatGPT (0€ investi)</p>
+        </div>
+
+        <!-- PROFIL ENTREPRISE -->
+        <div class="section">
+            <h2><i class="fas fa-building"></i> Profil de l'Entrepreneur</h2>
+
+            <div class="profile-grid">
+                <div class="profile-item">
+                    <strong>Nom</strong>
+                    Komi (fictif)
+                </div>
+                <div class="profile-item">
+                    <strong>Activité</strong>
+                    Chauffeur Zémidjan (taxi-moto)
+                </div>
+                <div class="profile-item">
+                    <strong>Localisation</strong>
+                    Lomé (zone Agoè - Bè Kpota)
+                </div>
+                <div class="profile-item">
+                    <strong>Expérience</strong>
+                    8 ans dans le métier
+                </div>
+                <div class="profile-item">
+                    <strong>Revenu Mensuel Initial</strong>
+                    Niveau de référence: 100%
+                </div>
+                <div class="profile-item">
+                    <strong>Véhicule</strong>
+                    Moto Jakarta TVS 125cc (propriétaire)
+                </div>
+                <div class="profile-item">
+                    <strong>Horaires</strong>
+                    6h-20h (14h/jour), 6 jours/semaine
+                </div>
+                <div class="profile-item">
+                    <strong>Clients</strong>
+                    Courses au hasard + quelques réguliers
+                </div>
+                <div class="profile-item">
+                    <strong>Téléphone</strong>
+                    Smartphone basique (WhatsApp, appels)
+                </div>
+                <div class="profile-item">
+                    <strong>Niveau Tech</strong>
+                    Basique (utilise WhatsApp, pas plus)
+                </div>
+            </div>
+        </div>
+
+        <!-- PROBLÈME INITIAL -->
+        <div class="section">
+            <h2><i class="fas fa-exclamation-triangle"></i> Le Problème Identifié</h2>
+
+            <div class="highlight-box">
+                <h3>Situation Avant IA:</h3>
+                <ul>
+                    <li><strong>Courses aléatoires:</strong> Attend au bord de la route sans stratégie</li>
+                    <li><strong>Temps morts:</strong> 30-40% du temps à attendre clients (non payé!)</li>
+                    <li><strong>Tarifs:</strong> Négocie à chaque fois, souvent baisse trop</li>
+                    <li><strong>Clients VIP:</strong> Aucun système pour fidéliser bons payeurs</li>
+                    <li><strong>Essence:</strong> Pas d'optimisation trajets = coûts élevés</li>
+                    <li><strong>Marketing:</strong> Bouche-à-oreille uniquement</li>
+                    <li><strong>Différenciation:</strong> Identique aux 1000 autres zéms de Lomé</li>
+                </ul>
+            </div>
+
+            <table class="result-table">
+                <tr>
+                    <th>Indicateur</th>
+                    <th>Avant IA</th>
+                    <th>Impact</th>
+                </tr>
+                <tr>
+                    <td>Temps attente client (% journée)</td>
+                    <td>30-40%</td>
+                    <td><span class="warning-metric">4-6h perdues/jour!</span></td>
+                </tr>
+                <tr>
+                    <td>Courses/jour</td>
+                    <td>25-30</td>
+                    <td><span class="warning-metric">Pourrait faire mieux</span></td>
+                </tr>
+                <tr>
+                    <td>Clients réguliers</td>
+                    <td>5-10</td>
+                    <td><span class="warning-metric">Trop peu</span></td>
+                </tr>
+                <tr>
+                    <td>Coût essence/jour</td>
+                    <td>Relatif élevé</td>
+                    <td><span class="warning-metric">Trajets non optimisés</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- LA SOLUTION IA -->
+        <div class="section">
+            <h2><i class="fas fa-lightbulb"></i> La Solution IA Mise en Place</h2>
+
+            <h3>Outils Utilisés (100% GRATUITS):</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="icon">💬</div>
+                    <h4>ChatGPT Free</h4>
+                    <p>Stratégie business & messages</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📱</div>
+                    <h4>WhatsApp Business</h4>
+                    <p>Réponses auto + catalogue</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🗺️</div>
+                    <h4>Google Maps</h4>
+                    <p>Optimisation trajets</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📊</div>
+                    <h4>Google Sheets (mobile)</h4>
+                    <p>Suivi clients VIP</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Étape 1: Créer Service "Zém VIP"</h3>
+
+            <div class="prompt-box">
+                <span class="label">📝 PROMPT UTILISÉ (ChatGPT):</span>
+                <div class="code-block">Tu es expert en stratégie business pour micro-entrepreneurs.
+
+CONTEXTE:
+- Métier: Zémidjan (taxi-moto) à Lomé, Togo
+- Problème: Trop de temps perdu à attendre clients
+- Concurrence: 1000+ autres zéms identiques
+- Budget marketing: 0 FCFA
+
+OBJECTIF: Me différencier et fidéliser clients payants
+
+TÂCHE:
+Propose-moi 3 idées de services "premium" réalistes que je peux offrir:
+1. Sans investissement matériel
+2. Simples à implémenter seul
+3. Qui justifient tarif légèrement supérieur
+4. Adaptées au contexte togolais
+
+Pour chaque idée: Nom | Description | Bénéfice client | Prix suggéré</div>
+            </div>
+
+            <div class="response-box">
+                <span class="label">🤖 RÉPONSE ChatGPT:</span>
+
+                <h4>🌟 3 Services Premium "Zém VIP"</h4>
+
+                <p><strong>1. "ZÉM PROPRE & SÛR" 🏍️✨</strong></p>
+                <ul>
+                    <li><strong>Description:</strong> Moto impeccable tous les jours, casque désinfecté, gilet haute-visibilité propre, masque disponible</li>
+                    <li><strong>Bénéfice:</strong> Client arrive propre au bureau (pas poussière), sécurité visible</li>
+                    <li><strong>Coût pour toi:</strong> 0 FCFA (juste discipline nettoyage quotidien)</li>
+                    <li><strong>Prix:</strong> +10-15% vs tarif standard (justifié!)</li>
+                </ul>
+
+                <p><strong>2. "RÉSERVATION GARANTIE" 📱⏰</strong></p>
+                <ul>
+                    <li><strong>Description:</strong> Clients réguliers réservent à l'avance via WhatsApp, tu garantis ponctualité (± 5min)</li>
+                    <li><strong>Bénéfice:</strong> Client planifie journée sans stress, pas d'attente</li>
+                    <li><strong>Coût pour toi:</strong> 0 FCFA (juste organisation avec Google Calendar)</li>
+                    <li><strong>Prix:</strong> Tarif normal MAIS fidélité = 10ème course -50%</li>
+                </ul>
+
+                <p><strong>3. "ZONE EXPRESS OPTIMISÉE" 🗺️⚡</strong></p>
+                <ul>
+                    <li><strong>Description:</strong> Tu connais TOUTES les rues de ta zone (Agoè-Bè Kpota) + parcours les plus rapides</li>
+                    <li><strong>Bénéfice:</strong> Client arrive 5-10min plus vite (évite embouteillages)</li>
+                    <li><strong>Coût pour toi:</strong> 0 FCFA (étudier zone avec Google Maps 2-3h)</li>
+                    <li><strong>Prix:</strong> Tarif normal MAIS gain temps = meilleure réputation = + clients</li>
+                </ul>
+
+                <div style="background: #f0f0f0; padding: 1rem; border-radius: 0.5rem; margin-top: 1rem;">
+                    <strong>💡 CONSEIL IMPLÉMENTATION:</strong> Combine les 3! Deviens "LE zém VIP de référence de la zone". Clients prêts à payer 10-20% de plus pour qualité constante.
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Étape 2: Messages Marketing WhatsApp</h3>
+
+            <div class="prompt-box">
+                <span class="label">📝 PROMPT (Communication):</span>
+                <div class="code-block">Écris 5 messages courts (max 100 mots) pour WhatsApp Status que je peux publier cette semaine.
+
+OBJECTIF: Faire connaître mon nouveau service "Zém VIP"
+
+AUDIENCE:
+- Mes contacts actuels (200 personnes)
+- Clients potentiels zone Agoè-Bè Kpota
+- Employés de bureau (trajets quotidiens)
+
+TONE: Professionnel mais accessible, pas arrogant
+
+CONTENU: Expliquer bénéfices concrets, pas juste dire "je suis le meilleur"
+
+FORMAT: Emoji + texte court + call-to-action (enregistrer mon numéro)</div>
+            </div>
+
+            <div class="response-box">
+                <span class="label">🤖 RÉPONSE (extraits):</span>
+
+                <p><strong>📅 Message 1 - Annonce:</strong></p>
+                <div style="background: #f9f9f9; padding: 1rem; border-radius: 0.5rem; margin: 0.5rem 0;">
+                    🏍️ NOUVEAU: ZÉM VIP LOMÉ! 🏍️<br><br>
+                    Fatigué d'arriver sale au travail? De chercher zém pendant 20min?<br><br>
+                    ✅ Moto propre tous les jours<br>
+                    ✅ Réservation garantie<br>
+                    ✅ Trajet le + rapide (je connais TOUS les raccourcis!)<br><br>
+                    Essai gratuit cette semaine!<br>
+                    📱 Enregistre ce numéro: "Komi Zém VIP"
+                </div>
+
+                <p><strong>📅 Message 3 - Témoignage (fictif mais réaliste):</strong></p>
+                <div style="background: #f9f9f9; padding: 1rem; border-radius: 0.5rem; margin: 0.5rem 0;">
+                    🙏 MERCI Madame Afi! 🙏<br><br>
+                    "Komi, tu me sauves la vie! Plus jamais en retard au bureau depuis que je te réserve à 7h30. Et j'arrive PROPRE!" - Cliente depuis 2 semaines<br><br>
+                    💼 Toi aussi, travailleur de bureau?<br>
+                    Réserve ton zém dès ce soir pour demain matin!<br><br>
+                    📱 WhatsApp: 90 XX XX XX
+                </div>
+
+                <p><strong>📅 Message 5 - Promo:</strong></p>
+                <div style="background: #f9f9f9; padding: 1rem; border-radius: 0.5rem; margin: 0.5rem 0;">
+                    🎉 PROMO LANCEMENT! 🎉<br><br>
+                    10 premières personnes qui réservent via WhatsApp cette semaine:<br>
+                    ➡️ 10 courses payées = 11ème GRATUITE! 🎁<br><br>
+                    Conditions: Enregistre "Komi Zém VIP" dans ton téléphone + réserve minimum 24h à l'avance.<br><br>
+                    📱 Message moi maintenant: 90 XX XX XX
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Étape 3: Optimisation Trajets & Tarifs</h3>
+
+            <div class="prompt-box">
+                <span class="label">📝 PROMPT (Stratégie Opérationnelle):</span>
+                <div class="code-block">Aide-moi à optimiser mes trajets pour gagner plus en travaillant moins.
+
+CONTEXTE:
+- Zone: Agoè à Bè-Kpota (Lomé)
+- Horaires pointe: 6h30-8h30 (vers centre) | 17h-19h (retour quartiers)
+- Courses longues profitables: Agoè → Centre-ville
+- Courses courtes: Hypermarché → Domiciles proches
+
+PROBLÈME ACTUEL:
+- Course Agoè → Centre (2,000 FCFA), retour à vide = perte temps/essence
+- Parfois j'accepte courses 200 FCFA pour pas attendre = pas rentable
+
+TÂCHE:
+1. Stratégie horaires (quand être où?)
+2. Quelles courses refuser/accepter (critères)
+3. Comment enchaîner intelligemment trajets?
+4. Grille tarifaire juste (selon distance/temps)</div>
+            </div>
+
+            <div class="response-box">
+                <span class="label">🤖 RÉPONSE (stratégie complète):</span>
+
+                <h4>📊 Stratégie Optimisation Revenus</h4>
+
+                <p><strong>A. PLANNING HORAIRES OPTIMISÉ:</strong></p>
+                <table class="result-table">
+                    <tr>
+                        <th>Horaire</th>
+                        <th>Positionnement</th>
+                        <th>Type courses</th>
+                        <th>Raison</th>
+                    </tr>
+                    <tr>
+                        <td>6h30-8h30</td>
+                        <td>Zone résidentielle Agoè</td>
+                        <td>Longues (vers centre)</td>
+                        <td>Bureaux ouvrent, tarifs élevés</td>
+                    </tr>
+                    <tr>
+                        <td>9h-12h</td>
+                        <td>Centre-ville</td>
+                        <td>Moyennes (inter-quartiers)</td>
+                        <td>Enchaîner courses centre</td>
+                    </tr>
+                    <tr>
+                        <td>12h-14h</td>
+                        <td>Près restaurants</td>
+                        <td>Courtes (pause déj)</td>
+                        <td>Volume élevé, tarifs corrects</td>
+                    </tr>
+                    <tr>
+                        <td>14h-17h</td>
+                        <td>Flex (selon réservations)</td>
+                        <td>Clients VIP réservés</td>
+                        <td>Fidèles garantis</td>
+                    </tr>
+                    <tr>
+                        <td>17h-19h</td>
+                        <td>Centre → Agoè</td>
+                        <td>Retours domicile</td>
+                        <td>Pic demande, tarifs max</td>
+                    </tr>
+                </table>
+
+                <p><strong>B. RÈGLES ACCEPTATION COURSES:</strong></p>
+                <ul style="margin-left: 1.5rem;">
+                    <li>✅ <strong>TOUJOURS accepter:</strong> &gt;1,500 FCFA OU clients VIP réservés</li>
+                    <li>⚠️ <strong>Accepter SI:</strong> 500-1,500 FCFA ET direction intéressante (pas retour à vide)</li>
+                    <li>❌ <strong>REFUSER poliment:</strong> &lt;500 FCFA (sauf si 2min et pas de client en vue)</li>
+                    <li>🌟 <strong>PRIORISER:</strong> Clients réguliers &gt; Nouvelles longues courses &gt; Aléatoire</li>
+                </ul>
+
+                <p><strong>C. ENCHAÎNEMENT INTELLIGENT:</strong></p>
+                <ol style="margin-left: 1.5rem;">
+                    <li>Course longue Agoè → Centre? Cherche client centre → quartier proche AVANT de rentrer</li>
+                    <li>Utilise temps attente (5-10min) pour répondre WhatsApp réservations</li>
+                    <li>Si 3+ clients VIP réservés même direction/horaire: groupe temporairement (tarif réduit mais 2-3 courses d'un coup!)</li>
+                </ol>
+
+                <p><strong>D. GRILLE TARIFAIRE JUSTE:</strong></p>
+                <div style="background: #f0f0f0; padding: 1rem; border-radius: 0.5rem;">
+                    <p><strong>Formule:</strong> Tarif de base (300 FCFA) + Distance (100 FCFA/km) + Prime heure pointe (+20%)</p>
+                    <p><strong>Exemples:</strong></p>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>• Agoè → Centre (8km): 300 + 800 = 1,100 FCFA (1,300 en pointe)</li>
+                        <li>• Centre → Bè (5km): 300 + 500 = 800 FCFA</li>
+                        <li>• Course courte (&lt;2km): 300-500 FCFA fixe</li>
+                    </ul>
+                    <p><em>⚠️ Clients VIP: -10% tarif (mais régularité = + rentable!)</em></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- MISE EN ŒUVRE -->
+        <div class="section">
+            <h2><i class="fas fa-tasks"></i> Calendrier de Mise en Œuvre</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Semaine 1 (10h):</strong> Formation + Setup
+                    <ul>
+                        <li>Suivre formation IA (5 jours)</li>
+                        <li>Créer compte ChatGPT</li>
+                        <li>Installer WhatsApp Business</li>
+                        <li>Nettoyer moto à fond (première impression!)</li>
+                        <li>Étudier zone avec Google Maps (2h = investissement crucial)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Semaine 2 (5h):</strong> Lancement Service VIP
+                    <ul>
+                        <li>Générer 10 messages WhatsApp Status avec ChatGPT</li>
+                        <li>Publier 1-2 status/jour pendant 7 jours</li>
+                        <li>Configurer messages automatiques WhatsApp Business</li>
+                        <li>Créer tableau Google Sheets clients VIP (sur téléphone)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Semaine 3-4 (2h/semaine):</strong> Acquisition Clients VIP
+                    <ul>
+                        <li>Proposer service VIP à TOUS les clients qui montent (pitch 30 secondes)</li>
+                        <li>Noter numéros clients intéressés</li>
+                        <li>Envoyer message personnalisé le soir: "Merci M./Mme X, voici comment réserver demain"</li>
+                        <li>Tenir promesses: ponctualité, propreté, amabilité (CRITIQUE!)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Mois 2 (maintenance 1h/semaine):</strong> Optimisation Continue
+                    <ul>
+                        <li>Analyser: Quels horaires/zones les plus rentables?</li>
+                        <li>Ajuster positionnement selon résultats</li>
+                        <li>Demander avis clients VIP: "Comment améliorer?"</li>
+                        <li>Générer nouveaux messages WhatsApp pour acquérir + clients</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Mois 3+ (automatique):</strong> Croissance & Bouche-à-Oreille
+                    <ul>
+                        <li>Clients VIP satisfaits recommandent à collègues/amis</li>
+                        <li>Réservations augmentent organiquement</li>
+                        <li>Temps morts diminuent drastiquement</li>
+                        <li>Réputation "zém fiable" = différenciation totale</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- RÉSULTATS -->
+        <div class="section">
+            <h2><i class="fas fa-chart-line"></i> Résultats Mesurés (Après 3 Mois)</h2>
+
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Indicateur</th>
+                        <th>Avant IA</th>
+                        <th>Après IA</th>
+                        <th>Amélioration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Clients VIP (réservations)</td>
+                        <td>5-10</td>
+                        <td>35-40</td>
+                        <td><span class="success-metric">+300%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Courses/jour</td>
+                        <td>25-30</td>
+                        <td>35-42</td>
+                        <td><span class="success-metric">+40%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Temps morts/jour</td>
+                        <td>4-6h (30-40%)</td>
+                        <td>1-2h (10-15%)</td>
+                        <td><span class="success-metric">-65% temps perdu</span></td>
+                    </tr>
+                    <tr>
+                        <td>Tarif moyen/course</td>
+                        <td>Référence</td>
+                        <td>+10-15%</td>
+                        <td><span class="success-metric">Premium justifié</span></td>
+                    </tr>
+                    <tr>
+                        <td>Consommation essence</td>
+                        <td>Référence</td>
+                        <td>-15%</td>
+                        <td><span class="success-metric">Trajets optimisés</span></td>
+                    </tr>
+                    <tr>
+                        <td>Stress quotidien</td>
+                        <td>Élevé (incertitude)</td>
+                        <td>Faible (prévisibilité)</td>
+                        <td><span class="success-metric">Qualité de vie!</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Revenu Mensuel</strong></td>
+                        <td><strong>100%</strong></td>
+                        <td><strong>140%</strong></td>
+                        <td><span class="success-metric">+40%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <h3>💰 Impact Financier</h3>
+                <table class="result-table">
+                    <tr>
+                        <td><strong>Investissement IA</strong></td>
+                        <td>0 FCFA (outils gratuits)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temps formation</strong></td>
+                        <td>5 jours (investissement temps)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temps setup</strong></td>
+                        <td>15-20h (semaines 1-4)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Maintenance</strong></td>
+                        <td>1h/semaine (messages, optimisation)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Heures travaillées</strong></td>
+                        <td>Identique (14h/jour)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mais: Heures productives</strong></td>
+                        <td><span class="success-metric">+3-4h/jour payées vs attente!</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Augmentation revenu</strong></td>
+                        <td><span class="success-metric">+40% en 3 mois</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ROI</strong></td>
+                        <td><span class="success-metric">INFINI (0 FCFA investi!)</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- LEÇONS APPRISES -->
+        <div class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Leçons Apprises & Conseils</h2>
+
+            <h3>✅ Ce Qui a Marché:</h3>
+            <ul class="lessons-list">
+                <li><strong>Différenciation visible:</strong> Moto propre + gilet = immédiatement reconnaissable</li>
+                <li><strong>Réservations WhatsApp:</strong> Éliminé incertitude = moins stress + plus prévisibilité</li>
+                <li><strong>Optimisation zone:</strong> Connaître raccourcis = clients arrivent 5-10min plus vite = réputation!</li>
+                <li><strong>Pitch 30 secondes:</strong> Proposer VIP à TOUS = 20-30% intéressés</li>
+                <li><strong>Ponctualité religieuse:</strong> Arriver ±5min promis = confiance totale = fidélité</li>
+                <li><strong>Bouche-à-oreille:</strong> 1 client VIP satisfait recommande 2-3 collègues</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">❌ Erreurs à Éviter:</h3>
+            <ul class="lessons-list">
+                <li><strong>Ne PAS:</strong> Dire "VIP" puis arriver en retard/moto sale (pire que rien!)</li>
+                <li><strong>Ne PAS:</strong> Accepter trop réservations (surbook = stress + retards)</li>
+                <li><strong>Ne PAS:</strong> Négliger clients aléatoires (restent 40-50% revenus!)</li>
+                <li><strong>Ne PAS:</strong> Augmenter tarifs trop haut (+30-40% = clients partent)</li>
+                <li><strong>Ne PAS:</strong> Oublier essence = trajet optimisé réduit coûts 15%!</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">🎯 Facteurs Clés de Succès:</h3>
+            <div class="highlight-box">
+                <ol style="margin: 0; padding-left: 1.5rem;">
+                    <li><strong>Constance qualité:</strong> Service VIP 100% du temps (pas seulement quand envie)</li>
+                    <li><strong>Ponctualité absolue:</strong> ±5min max (sinon client perd confiance)</li>
+                    <li><strong>Communication proactive:</strong> "Je suis à 10min" avant arrivée</li>
+                    <li><strong>Amabilité professionnelle:</strong> Sourire, bonjour, merci (coûte 0 FCFA!)</li>
+                    <li><strong>Optimisation continue:</strong> Tester horaires/zones, garder ce qui marche</li>
+                    <li><strong>Réputation long-terme:</strong> 1 client perdu par mauvais service = -10 potentiels (bouche-à-oreille négatif!)</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- RÉPLICABILITÉ -->
+        <div class="section">
+            <h2><i class="fas fa-copy"></i> Comment Répliquer dans Votre Activité Transport</h2>
+
+            <h3>Ce Modèle Fonctionne Pour:</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="icon">🏍️</div>
+                    <h4>Zémidjan</h4>
+                    <p>Tous chauffeurs taxi-moto</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🚗</div>
+                    <h4>Taxi</h4>
+                    <p>Taxis classiques urbains</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🚐</div>
+                    <h4>Transport Inter-villes</h4>
+                    <p>Minibus, cars...</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📦</div>
+                    <h4>Livraison</h4>
+                    <p>Colis, nourriture, courses</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🚚</div>
+                    <h4>Déménagement</h4>
+                    <p>Transport de marchandises</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🚕</div>
+                    <h4>Tout Transport!</h4>
+                    <p>Adaptable à toute mobilité</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">📋 Checklist de Démarrage:</h3>
+            <div class="highlight-box">
+                <ul style="list-style: none; padding: 0;">
+                    <li>☐ <strong>Jour 1:</strong> Créer compte ChatGPT + WhatsApp Business</li>
+                    <li>☐ <strong>Jour 2:</strong> Nettoyer véhicule à fond (première impression!)</li>
+                    <li>☐ <strong>Jour 3:</strong> Étudier zone avec Google Maps (2h = crucial)</li>
+                    <li>☐ <strong>Jour 4:</strong> Générer pitch "service VIP" avec ChatGPT</li>
+                    <li>☐ <strong>Jour 5:</strong> Tester pitch sur 10 clients, noter retours</li>
+                    <li>☐ <strong>Jour 6:</strong> Générer 10 messages WhatsApp Status</li>
+                    <li>☐ <strong>Jour 7:</strong> Publier premier status, lancer service</li>
+                    <li>☐ <strong>Semaine 2:</strong> Proposer VIP à TOUS, noter intéressés</li>
+                    <li>☐ <strong>Semaine 3:</strong> Envoyer messages personnalisés prospects</li>
+                    <li>☐ <strong>Semaine 4:</strong> Analyser résultats, ajuster stratégie</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 2rem;">💡 Prompt Bonus: Pitch Client 30 Secondes</h3>
+            <div class="prompt-box">
+                <div class="code-block">Écris-moi un pitch de 30 secondes (max 50 mots) pour proposer mon service "Zém VIP" aux clients pendant la course.
+
+CONTRAINTES:
+- Court (on est sur moto, bruit ambiant)
+- Clair (bénéfices concrets, pas blabla)
+- Call-to-action simple (enregistrer numéro)
+- Ton professionnel mais amical
+
+CONTEXTE: Client monte, on démarre, j'ai 2-3 minutes trajet pour parler
+
+Donne 3 versions différentes que je peux tester!</div>
+            </div>
+        </div>
+
+        <!-- CTA FINAL -->
+        <div class="section" style="background: linear-gradient(135deg, #8B5CF6, #2563EB); color: white; text-align: center;">
+            <h2 style="color: white;"><i class="fas fa-hand-point-right"></i> À Vous de Jouer!</h2>
+            <p style="font-size: 1.2rem; margin: 1rem 0;">Ce qu'a fait Komi, VOUS pouvez le faire!</p>
+            <p style="font-size: 1rem; opacity: 0.95;">Temps nécessaire: 15-20h setup + 1h/semaine maintenance</p>
+            <p style="font-size: 1rem; opacity: 0.95;">Investissement: 0 FCFA (outils gratuits)</p>
+            <p style="font-size: 1rem; opacity: 0.95;">Impact potentiel: +30-50% revenu en 3-6 mois</p>
+            <a href="index.html" style="display: inline-block; margin-top: 1.5rem; padding: 1rem 2rem; background: white; color: #8B5CF6; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">
+                Retour aux Exercices
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

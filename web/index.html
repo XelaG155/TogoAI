@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation IA Togo - Intelligence Artificielle pour Entrepreneurs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>IA Togo Formation</span>
+            </div>
+            <nav class="nav">
+                <a href="#accueil" class="nav-link active" data-page="accueil">
+                    <i class="fas fa-home"></i> Accueil
+                </a>
+                <a href="#parcours" class="nav-link" data-page="parcours">
+                    <i class="fas fa-route"></i> Parcours
+                </a>
+                <a href="#exercices" class="nav-link" data-page="exercices">
+                    <i class="fas fa-briefcase"></i> Exercices Business
+                </a>
+                <a href="#ressources" class="nav-link" data-page="ressources">
+                    <i class="fas fa-tools"></i> Ressources
+                </a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="progress-indicator">
+                    <span class="progress-text">Progression</span>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="globalProgress"></div>
+                    </div>
+                    <span class="progress-percent" id="progressPercent">0%</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page: Accueil -->
+        <section id="accueil" class="page active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="highlight">Intelligence Artificielle</span>
+                        <br>pour Entrepreneurs Togolais
+                    </h1>
+                    <p class="hero-subtitle">
+                        Apprenez à utiliser l'IA pour <strong>augmenter vos revenus</strong>,
+                        économiser du temps et développer votre business.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <i class="fas fa-calendar-days"></i>
+                            <strong>5 jours</strong>
+                            <span>de formation intensive</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-hands-helping"></i>
+                            <strong>70% pratique</strong>
+                            <span>Learning by doing</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-euro-sign"></i>
+                            <strong>0€ coût</strong>
+                            <span>Outils gratuits uniquement</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <strong>ROI prouvé</strong>
+                            <span>+30-40% revenus moyens</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary" onclick="navigateToPage('parcours')">
+                            <i class="fas fa-play"></i> Commencer la Formation
+                        </button>
+                        <button class="btn btn-secondary" onclick="navigateToPage('exercices')">
+                            <i class="fas fa-briefcase"></i> Voir les Exercices Business
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-visual">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Features -->
+            <div class="features">
+                <h2 class="section-title">Pourquoi Cette Formation?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3>Adapté au Togo</h3>
+                        <p>Exemples concrets d'entreprises togolaises. Calculs avec salaire moyen 80€/mois.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h3>Focus Commercial</h3>
+                        <p>Chaque module montre combien vous pouvez gagner. ROI chiffré en euros.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>100% Pratique</h3>
+                        <p>Testez les outils IA en temps réel. Créez votre projet pendant la formation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Outils Gratuits</h3>
+                        <p>ChatGPT, Claude, Canva AI, n8n... Tout ce qu'il faut sans dépenser 1€.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Communauté Active</h3>
+                        <p>Rejoignez le réseau IA Togo. Échangez avec d'autres entrepreneurs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Certificat Inclus</h3>
+                        <p>Attestation de participation officielle à télécharger en fin de formation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exemples Exercices (Fictifs) -->
+            <div class="examples-section">
+                <div class="fictif-badge">
+                    <i class="fas fa-info-circle"></i> Exemples Fictifs de la Formation
+                </div>
+                <h2 class="section-title">Scénarios Business à Explorer</h2>
+                <p class="section-subtitle">
+                    Ces cas d'étude fictifs vous montrent le potentiel de l'IA pour différents secteurs togolais
+                </p>
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-icon">🏪</div>
+                        <h3>Boutique Tissus Wax</h3>
+                        <p class="story-business">Commerce, Lomé</p>
+                        <div class="story-result">
+                            <span class="result-label">Gain potentiel estimé:</span>
+                            <span class="result-value">+30-35%</span>
+                        </div>
+                        <p class="story-desc">Marketing IA + Chatbot + Gestion stock</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">🌾</div>
+                        <h3>Ferme Maraîchère</h3>
+                        <p class="story-business">Agriculture, Région Kpalimé</p>
+                        <div class="story-result">
+                            <span class="result-label">Gain potentiel estimé:</span>
+                            <span class="result-value">+35-40%</span>
+                        </div>
+                        <p class="story-desc">Diagnostic cultures + Prix optimisés</p>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-icon">🍴</div>
+                        <h3>Restaurant Local (Maquis)</h3>
+                        <p class="story-business">Restauration, Lomé</p>
+                        <div class="story-result">
+                            <span class="result-label">Gain potentiel estimé:</span>
+                            <span class="result-value">+25-30%</span>
+                        </div>
+                        <p class="story-desc">Social media + Fidélisation clients</p>
+                    </div>
+                </div>
+                <div class="cta-center">
+                    <button class="btn btn-primary" onclick="navigateToPage('exercices')">
+                        Découvrir Tous les Cas d'Étude <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Parcours -->
+        <section id="parcours" class="page">
+            <div class="page-header">
+                <h1><i class="fas fa-route"></i> Parcours de Formation - 5 Jours</h1>
+                <p>Formation intensive avec 70% de pratique. Chaque jour construit sur le précédent.</p>
+            </div>
+
+            <div class="journey-timeline">
+                <!-- Jour 1 -->
+                <div class="journey-day" data-day="1">
+                    <div class="day-number">Jour 1</div>
+                    <div class="day-content">
+                        <h3>Découverte Interactive de l'IA</h3>
+                        <p class="day-subtitle">Comprendre l'IA et tester vos premiers outils</p>
+
+                        <div class="day-modules">
+                            <div class="module">
+                                <input type="checkbox" id="module-1-1" class="module-checkbox">
+                                <label for="module-1-1">
+                                    <i class="fas fa-book-open"></i>
+                                    <span>Introduction à l'IA (45 min)</span>
+                                    <span class="module-time">09:00 - 09:45</span>
+                                </label>
+                                <div class="module-details">
+                                    <p>Qu'est-ce que l'IA? Évolution et types d'IA. Impact en Afrique et au Togo.</p>
+                                    <button class="btn-small" onclick="window.location.href='module-intro-ia.html'">Accéder au module</button>
+                                </div>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-1-2" class="module-checkbox">
+                                <label for="module-1-2">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <span>Workshop: Test 4 Outils IA (2h)</span>
+                                    <span class="module-time">10:45 - 12:45</span>
+                                </label>
+                                <div class="module-details">
+                                    <p>Testez ChatGPT, Claude, DeepSeek, Gemini. Comparez et choisissez.</p>
+                                </div>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-1-3" class="module-checkbox">
+                                <label for="module-1-3">
+                                    <i class="fas fa-code"></i>
+                                    <span>L'Art du Prompting (45 min)</span>
+                                    <span class="module-time">14:00 - 14:45</span>
+                                </label>
+                                <div class="module-details">
+                                    <p>Démonstration live: prompt basique vs optimisé. Structure PERSONA-TÂCHE-CONTEXTE.</p>
+                                </div>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-1-4" class="module-checkbox">
+                                <label for="module-1-4">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <span>Workshop: Maîtriser le Prompting (2h)</span>
+                                    <span class="module-time">15:00 - 17:00</span>
+                                </label>
+                                <div class="module-details">
+                                    <p>Créez vos prompts sectoriels. Bibliothèque collaborative de prompts Togo.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="day-footer">
+                            <div class="day-stats">
+                                <span><i class="fas fa-clock"></i> 7 heures</span>
+                                <span><i class="fas fa-hands-helping"></i> 2 workshops</span>
+                                <span><i class="fas fa-check-circle"></i> <span class="modules-completed">0/4</span> modules</span>
+                            </div>
+                            <button class="btn-expand" onclick="toggleDay(1)">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jour 2 -->
+                <div class="journey-day" data-day="2">
+                    <div class="day-number">Jour 2</div>
+                    <div class="day-content">
+                        <h3>IA Créative & Applications Business</h3>
+                        <p class="day-subtitle">Créer du contenu et calculer le ROI</p>
+
+                        <div class="day-modules">
+                            <div class="module">
+                                <input type="checkbox" id="module-2-1" class="module-checkbox">
+                                <label for="module-2-1">
+                                    <i class="fas fa-palette"></i>
+                                    <span>IA Multimodale & Créative (45 min)</span>
+                                    <span class="module-time">09:30 - 10:15</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-2-2" class="module-checkbox">
+                                <label for="module-2-2">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <span>Workshop: Création Contenu IA (2h)</span>
+                                    <span class="module-time">10:30 - 12:30</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-2-3" class="module-checkbox">
+                                <label for="module-2-3">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>Focus ROI: L'IA Doit Être Rentable (45 min)</span>
+                                    <span class="module-time">13:45 - 14:30</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-2-4" class="module-checkbox">
+                                <label for="module-2-4">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <span>Workshop: Calcul ROI Réel (2h15)</span>
+                                    <span class="module-time">14:45 - 17:00</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="day-footer">
+                            <div class="day-stats">
+                                <span><i class="fas fa-clock"></i> 7 heures</span>
+                                <span><i class="fas fa-hands-helping"></i> 2 workshops</span>
+                                <span><i class="fas fa-check-circle"></i> <span class="modules-completed">0/4</span> modules</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jour 3 -->
+                <div class="journey-day" data-day="3">
+                    <div class="day-number">Jour 3</div>
+                    <div class="day-content">
+                        <h3>Projets Concrets & Automatisation</h3>
+                        <p class="day-subtitle">Développer votre solution IA</p>
+
+                        <div class="day-modules">
+                            <div class="module">
+                                <input type="checkbox" id="module-3-1" class="module-checkbox">
+                                <label for="module-3-1">
+                                    <i class="fas fa-robot"></i>
+                                    <span>Automatisation Pratique (45 min)</span>
+                                    <span class="module-time">09:30 - 10:15</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-3-2" class="module-checkbox">
+                                <label for="module-3-2">
+                                    <i class="fas fa-hands-helping"></i>
+                                    <span>Workshop: Dilemme Éthique (2h)</span>
+                                    <span class="module-time">10:30 - 12:30</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-3-3" class="module-checkbox">
+                                <label for="module-3-3">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Projet Final - Session 1: Conception (3h15)</span>
+                                    <span class="module-time">13:45 - 17:00</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="day-footer">
+                            <div class="day-stats">
+                                <span><i class="fas fa-clock"></i> 7 heures</span>
+                                <span><i class="fas fa-hands-helping"></i> 1 workshop + Projet</span>
+                                <span><i class="fas fa-check-circle"></i> <span class="modules-completed">0/3</span> modules</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jour 4 -->
+                <div class="journey-day" data-day="4">
+                    <div class="day-number">Jour 4</div>
+                    <div class="day-content">
+                        <h3>Qualité, Éthique & Développement Projet</h3>
+                        <p class="day-subtitle">Prototypage et validation</p>
+
+                        <div class="day-modules">
+                            <div class="module">
+                                <input type="checkbox" id="module-4-1" class="module-checkbox">
+                                <label for="module-4-1">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Qualité & Vérification (45 min)</span>
+                                    <span class="module-time">09:30 - 10:15</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-4-2" class="module-checkbox">
+                                <label for="module-4-2">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Projet Final - Session 2: Prototypage (2h)</span>
+                                    <span class="module-time">10:30 - 12:30</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-4-3" class="module-checkbox">
+                                <label for="module-4-3">
+                                    <i class="fas fa-globe-africa"></i>
+                                    <span>Adaptation Culturelle (45 min)</span>
+                                    <span class="module-time">13:45 - 14:30</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-4-4" class="module-checkbox">
+                                <label for="module-4-4">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Projet Final - Session 3: Finalisation (2h15)</span>
+                                    <span class="module-time">14:45 - 17:00</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="day-footer">
+                            <div class="day-stats">
+                                <span><i class="fas fa-clock"></i> 7 heures</span>
+                                <span><i class="fas fa-project-diagram"></i> Développement projet</span>
+                                <span><i class="fas fa-check-circle"></i> <span class="modules-completed">0/4</span> modules</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jour 5 -->
+                <div class="journey-day" data-day="5">
+                    <div class="day-number">Jour 5</div>
+                    <div class="day-content">
+                        <h3>Présentations Finales & Planification Avenir</h3>
+                        <p class="day-subtitle">Showcase et plan d'action 12 mois</p>
+
+                        <div class="day-modules">
+                            <div class="module">
+                                <input type="checkbox" id="module-5-1" class="module-checkbox">
+                                <label for="module-5-1">
+                                    <i class="fas fa-presentation"></i>
+                                    <span>Présentations Projets Finaux (2h15)</span>
+                                    <span class="module-time">09:15 - 11:30</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-5-2" class="module-checkbox">
+                                <label for="module-5-2">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                    <span>Coaching Stratégique (1h)</span>
+                                    <span class="module-time">11:45 - 12:45</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-5-3" class="module-checkbox">
+                                <label for="module-5-3">
+                                    <i class="fas fa-map"></i>
+                                    <span>Plan d'Action Personnalisé (1h15)</span>
+                                    <span class="module-time">13:45 - 15:00</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-5-4" class="module-checkbox">
+                                <label for="module-5-4">
+                                    <i class="fas fa-users"></i>
+                                    <span>Networking & Communauté (1h15)</span>
+                                    <span class="module-time">15:15 - 16:30</span>
+                                </label>
+                            </div>
+
+                            <div class="module">
+                                <input type="checkbox" id="module-5-5" class="module-checkbox">
+                                <label for="module-5-5">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Clôture & Certificats (30 min)</span>
+                                    <span class="module-time">16:30 - 17:00</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="day-footer">
+                            <div class="day-stats">
+                                <span><i class="fas fa-clock"></i> 7 heures</span>
+                                <span><i class="fas fa-trophy"></i> Showcase & Clôture</span>
+                                <span><i class="fas fa-check-circle"></i> <span class="modules-completed">0/5</span> modules</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="parcours-summary">
+                <h3><i class="fas fa-graduation-cap"></i> Résumé de la Formation</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <strong>20</strong>
+                        <span>Modules totaux</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>35h</strong>
+                        <span>Heures formation</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>10</strong>
+                        <span>Grands workshops</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>1</strong>
+                        <span>Projet complet</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Page: Exercices Business -->
+        <section id="exercices" class="page">
+            <div class="page-header">
+                <h1><i class="fas fa-briefcase"></i> Exercices Business Concrets</h1>
+                <p>5 scénarios réels d'entreprises togolaises avec calculs ROI précis</p>
+            </div>
+
+            <div class="exercices-grid">
+                <!-- Exercice 1: Commerce -->
+                <div class="exercice-card" data-exercice="commerce">
+                    <div class="exercice-icon">🏪</div>
+                    <div class="exercice-header">
+                        <h3>Boutique Tissus Wax</h3>
+                        <span class="exercice-sector">Commerce</span>
+                    </div>
+                    <div class="exercice-business">
+                        <strong>Madame Adjoavi</strong>
+                        <p>Grand Marché, Lomé</p>
+                        <p class="ca-actuel">CA actuel: 18,000€/an</p>
+                    </div>
+                    <div class="exercice-result">
+                        <div class="result-box gain">
+                            <span class="result-label">Gain potentiel</span>
+                            <span class="result-number">+5,960€/an</span>
+                            <span class="result-percent">+33% CA</span>
+                        </div>
+                    </div>
+                    <div class="exercice-solutions">
+                        <span class="solution-tag"><i class="fas fa-check"></i> Marketing IA</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Chatbot WhatsApp</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Gestion stock</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openExercice('commerce')">
+                        Voir l'exercice complet <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Exercice 2: Agriculture -->
+                <div class="exercice-card" data-exercice="agriculture">
+                    <div class="exercice-icon">🌾</div>
+                    <div class="exercice-header">
+                        <h3>Ferme Maraîchère</h3>
+                        <span class="exercice-sector">Agriculture</span>
+                    </div>
+                    <div class="exercice-business">
+                        <strong>Monsieur Koffi</strong>
+                        <p>Route Kpalimé, 15km Lomé</p>
+                        <p class="ca-actuel">CA actuel: 12,000€/an</p>
+                    </div>
+                    <div class="exercice-result">
+                        <div class="result-box gain">
+                            <span class="result-label">Gain potentiel</span>
+                            <span class="result-number">+4,880€/an</span>
+                            <span class="result-percent">+40% CA</span>
+                        </div>
+                    </div>
+                    <div class="exercice-solutions">
+                        <span class="solution-tag"><i class="fas fa-check"></i> Diagnostic cultures</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Prix optimisés</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Vente directe</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openExercice('agriculture')">
+                        Voir l'exercice complet <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Exercice 3: Restauration -->
+                <div class="exercice-card" data-exercice="restauration">
+                    <div class="exercice-icon">🍴</div>
+                    <div class="exercice-header">
+                        <h3>Maquis "Chez Maman Akossiwa"</h3>
+                        <span class="exercice-sector">Restauration</span>
+                    </div>
+                    <div class="exercice-business">
+                        <strong>Maman Akossiwa</strong>
+                        <p>Quartier Adidogomé, Lomé</p>
+                        <p class="ca-actuel">CA actuel: 24,000€/an</p>
+                    </div>
+                    <div class="exercice-result">
+                        <div class="result-box gain">
+                            <span class="result-label">Gain potentiel</span>
+                            <span class="result-number">+4,800€/an</span>
+                            <span class="result-percent">Profit x2!</span>
+                        </div>
+                    </div>
+                    <div class="exercice-solutions">
+                        <span class="solution-tag"><i class="fas fa-check"></i> Social media</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Fidélisation</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Anti-gaspillage</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openExercice('restauration')">
+                        Voir l'exercice complet <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Exercice 4: Transport -->
+                <div class="exercice-card" data-exercice="transport">
+                    <div class="exercice-icon">🚕</div>
+                    <div class="exercice-header">
+                        <h3>Taxi-Moto "Zémidjan"</h3>
+                        <span class="exercice-sector">Transport</span>
+                    </div>
+                    <div class="exercice-business">
+                        <strong>Komi</strong>
+                        <p>Tokoin - Centre-Ville - Aéroport</p>
+                        <p class="ca-actuel">Revenus: 300€/mois</p>
+                    </div>
+                    <div class="exercice-result">
+                        <div class="result-box gain">
+                            <span class="result-label">Gain potentiel</span>
+                            <span class="result-number">+3,648€/an</span>
+                            <span class="result-percent">Profit x3!</span>
+                        </div>
+                    </div>
+                    <div class="exercice-solutions">
+                        <span class="solution-tag"><i class="fas fa-check"></i> Tarifs optimisés</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Clients VIP</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Parcours IA</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openExercice('transport')">
+                        Voir l'exercice complet <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Exercice 5: Éducation -->
+                <div class="exercice-card" data-exercice="education">
+                    <div class="exercice-icon">🎓</div>
+                    <div class="exercice-header">
+                        <h3>Cours Particuliers Maths</h3>
+                        <span class="exercice-sector">Éducation</span>
+                    </div>
+                    <div class="exercice-business">
+                        <strong>Prof Sylvie</strong>
+                        <p>Cours soirs & week-ends, Lomé</p>
+                        <p class="ca-actuel">Revenus cours: 120€/mois</p>
+                    </div>
+                    <div class="exercice-result">
+                        <div class="result-box gain">
+                            <span class="result-label">Gain potentiel</span>
+                            <span class="result-number">+3,480€/an</span>
+                            <span class="result-percent">Revenus x2!</span>
+                        </div>
+                    </div>
+                    <div class="exercice-solutions">
+                        <span class="solution-tag"><i class="fas fa-check"></i> Cours hybrides</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Marketing digital</span>
+                        <span class="solution-tag"><i class="fas fa-check"></i> Correction IA</span>
+                    </div>
+                    <button class="btn btn-outline" onclick="openExercice('education')">
+                        Voir l'exercice complet <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="exercices-cta">
+                <h3>Prêt à transformer votre business?</h3>
+                <p>Ces 5 cas sont tirés d'entreprises réelles togolaises. Votre business peut aussi gagner 30-40% de revenus supplémentaires.</p>
+                <button class="btn btn-primary" onclick="navigateToPage('parcours')">
+                    <i class="fas fa-rocket"></i> Commencer la Formation
+                </button>
+            </div>
+        </section>
+
+        <!-- Page: Ressources -->
+        <section id="ressources" class="page">
+            <div class="page-header">
+                <h1><i class="fas fa-tools"></i> Ressources & Outils</h1>
+                <p>Tous les outils IA gratuits recommandés et la communauté</p>
+            </div>
+
+            <div class="resources-sections">
+                <!-- Outils IA -->
+                <div class="resource-section">
+                    <h2><i class="fas fa-robot"></i> Outils IA Gratuits Essentiels</h2>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-logo">💬</div>
+                            <h3>ChatGPT Free</h3>
+                            <p>Conversation IA gratuite avec limites quotidiennes généreuses</p>
+                            <a href="https://chat.openai.com" target="_blank" class="btn-small btn-outline">
+                                Accéder <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-logo">🤖</div>
+                            <h3>Claude Free</h3>
+                            <p>IA conversationnelle d'Anthropic, excellente pour l'analyse</p>
+                            <a href="https://claude.ai" target="_blank" class="btn-small btn-outline">
+                                Accéder <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-logo">🧠</div>
+                            <h3>DeepSeek R1</h3>
+                            <p>Modèle de reasoning avancé 100% gratuit</p>
+                            <a href="https://deepseek.com" target="_blank" class="btn-small btn-outline">
+                                Accéder <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-logo">🎨</div>
+                            <h3>Canva AI</h3>
+                            <p>Design graphique avec crédits IA gratuits mensuels</p>
+                            <a href="https://canva.com" target="_blank" class="btn-small btn-outline">
+                                Accéder <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-logo">🔗</div>
+                            <h3>n8n</h3>
+                            <p>Automatisation workflows, self-hosted gratuit</p>
+                            <a href="https://n8n.io" target="_blank" class="btn-small btn-outline">
+                                Accéder <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                        <div class="tool-card">
+                            <div class="tool-logo">🔍</div>
+                            <h3>Perplexity AI</h3>
+                            <p>Recherche augmentée par IA, gratuit avec limites</p>
+                            <a href="https://perplexity.ai" target="_blank" class="btn-small btn-outline">
+                                Accéder <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communauté -->
+                <div class="resource-section">
+                    <h2><i class="fas fa-users"></i> Communauté IA Togo</h2>
+                    <div class="community-box">
+                        <div class="community-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>Groupe WhatsApp</h4>
+                                <p>Échanges quotidiens, questions, succès</p>
+                                <button class="btn-small btn-primary">Rejoindre</button>
+                            </div>
+                        </div>
+                        <div class="community-item">
+                            <i class="fab fa-telegram"></i>
+                            <div>
+                                <h4>Canal Telegram</h4>
+                                <p>Actualités IA, nouvelles ressources</p>
+                                <button class="btn-small btn-primary">S'abonner</button>
+                            </div>
+                        </div>
+                        <div class="community-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h4>Meetups Mensuels</h4>
+                                <p>Rencontres physiques Lomé (1er samedi/mois)</p>
+                                <button class="btn-small btn-outline">En savoir plus</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Téléchargements -->
+                <div class="resource-section">
+                    <h2><i class="fas fa-download"></i> Documents à Télécharger</h2>
+                    <div class="downloads-list">
+                        <div class="download-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <div class="download-info">
+                                <h4>Guide Complet Formation (PDF)</h4>
+                                <p>Tous les modules en un seul document - 150 pages</p>
+                            </div>
+                            <button class="btn-small">Télécharger</button>
+                        </div>
+                        <div class="download-item">
+                            <i class="fas fa-file-excel"></i>
+                            <div class="download-info">
+                                <h4>Calculateur ROI (Excel)</h4>
+                                <p>Template pour calculer votre retour sur investissement IA</p>
+                            </div>
+                            <button class="btn-small">Télécharger</button>
+                        </div>
+                        <div class="download-item">
+                            <i class="fas fa-file-alt"></i>
+                            <div class="download-info">
+                                <h4>Bibliothèque 100+ Prompts Togo</h4>
+                                <p>Prompts testés et optimisés pour contexte togolais</p>
+                            </div>
+                            <button class="btn-small">Télécharger</button>
+                        </div>
+                        <div class="download-item">
+                            <i class="fas fa-certificate"></i>
+                            <div class="download-info">
+                                <h4>Votre Certificat</h4>
+                                <p>Attestation de participation (disponible après formation)</p>
+                            </div>
+                            <button class="btn-small" disabled>Complétez d'abord</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Formation IA Togo</h4>
+                    <p>Séminaire intensif 5 jours pour entrepreneurs togolais</p>
+                    <p><strong>Dates:</strong> 10-14 novembre 2025</p>
+                    <p><strong>Lieu:</strong> Lomé, Togo</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Liens Rapides</h4>
+                    <a href="#accueil" onclick="navigateToPage('accueil')">Accueil</a>
+                    <a href="#parcours" onclick="navigateToPage('parcours')">Parcours 5 Jours</a>
+                    <a href="#exercices" onclick="navigateToPage('exercices')">Exercices Business</a>
+                    <a href="#ressources" onclick="navigateToPage('ressources')">Ressources</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-envelope"></i> formation@iatogo.com</p>
+                    <p><i class="fas fa-phone"></i> +228 XX XX XX XX</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Formation IA Togo - Tous droits réservés</p>
+                <p>Formateur: Alexandre Giss | Made with <i class="fas fa-heart"></i> for Togo</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice: Ferme Maraîchère - Formation IA Togo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Styles spécifiques exercice détaillé */
+        .exercice-detail {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--spacing-2xl);
+        }
+
+        .exercice-header-detail {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .exercice-header-detail h1 {
+            margin-bottom: var(--spacing-md);
+            color: white;
+        }
+
+        .step-section {
+            background: var(--bg-secondary);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-xl);
+            border-left: 4px solid var(--primary);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: var(--radius-full);
+            font-weight: 800;
+            margin-right: var(--spacing-md);
+        }
+
+        .step-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .code-block {
+            background: var(--gray-900);
+            color: #0f0;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.875rem;
+            overflow-x: auto;
+            margin: var(--spacing-md) 0;
+        }
+
+        .prompt-box {
+            background: var(--primary-light);
+            border: 2px solid var(--primary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius);
+            margin: var(--spacing-md) 0;
+        }
+
+        .prompt-box h4 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .result-box-detail {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .result-table {
+            width: 100%;
+            background: var(--bg-primary);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin: var(--spacing-md) 0;
+        }
+
+        .result-table th, .result-table td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .result-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+        }
+
+        .success-metric {
+            display: inline-block;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--secondary);
+            color: white;
+            border-radius: var(--radius);
+            font-weight: 600;
+            margin: var(--spacing-xs);
+        }
+
+        .warning-box {
+            background: var(--warning);
+            color: white;
+            padding: var(--spacing-md);
+            border-radius: var(--radius);
+            margin: var(--spacing-md) 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Navigation -->
+    <div style="padding: var(--spacing-md); background: var(--bg-secondary);">
+        <div class="container">
+            <a href="index.html#exercices" class="btn btn-outline">
+                <i class="fas fa-arrow-left"></i> Retour aux Exercices
+            </a>
+        </div>
+    </div>
+
+    <div class="exercice-detail">
+        <!-- Header -->
+        <div class="exercice-header-detail">
+            <div class="fictif-badge" style="background: var(--warning); color: white; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 9999px; margin-bottom: 1rem;">
+                <i class="fas fa-info-circle"></i> Scénario Fictif d'Apprentissage
+            </div>
+            <h1>🌾 Cas d'Étude: Ferme Maraîchère - Optimiser Production avec IA</h1>
+            <p style="font-size: 1.125rem; opacity: 0.9;">
+                Découvrez comment "Monsieur Koffi" (personnage fictif) a utilisé l'IA gratuite pour augmenter ses revenus de 40% en 12 mois
+            </p>
+        </div>
+
+        <!-- Profil Entreprise -->
+        <div class="step-section">
+            <h2><i class="fas fa-building"></i> Profil de l'Entreprise (Fictif)</h2>
+            <table class="result-table">
+                <tr>
+                    <th>Élément</th>
+                    <th>Détails</th>
+                </tr>
+                <tr>
+                    <td><strong>Nom</strong></td>
+                    <td>"Jardin de Kpalimé" (fictif)</td>
+                </tr>
+                <tr>
+                    <td><strong>Propriétaire</strong></td>
+                    <td>Monsieur Koffi, 42 ans (personnage fictif)</td>
+                </tr>
+                <tr>
+                    <td><strong>Localisation</strong></td>
+                    <td>15km Lomé, route Kpalimé</td>
+                </tr>
+                <tr>
+                    <td><strong>Superficie</strong></td>
+                    <td>2 hectares</td>
+                </tr>
+                <tr>
+                    <td><strong>Production</strong></td>
+                    <td>Tomates, piments, oignons, laitues</td>
+                </tr>
+                <tr>
+                    <td><strong>CA initial</strong></td>
+                    <td>Environ 1,000,000 FCFA/mois (1,500€)</td>
+                </tr>
+                <tr>
+                    <td><strong>Employés</strong></td>
+                    <td>3 ouvriers agricoles</td>
+                </tr>
+            </table>
+
+            <h3 style="margin-top: var(--spacing-lg);"><i class="fas fa-exclamation-triangle"></i> Problèmes Initiaux</h3>
+            <ul style="line-height: 1.8;">
+                <li>❌ <strong>30% pertes récolte</strong> - Maladies et ravageurs non détectés à temps</li>
+                <li>❌ <strong>Irrigation approximative</strong> - Gaspillage eau + coûts élevés</li>
+                <li>❌ <strong>Prix subis</strong> - Vend aux grossistes qui imposent prix</li>
+                <li>❌ <strong>Pas de visibilité</strong> - Pas de clients directs (restaurants, hôtels)</li>
+            </ul>
+        </div>
+
+        <!-- Solution 1: Diagnostic Maladies -->
+        <div class="step-section">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                <h2>Diagnostic Maladies des Cultures (Vision IA)</h2>
+            </div>
+
+            <h3>🎯 Objectif</h3>
+            <p>Détecter précocement les maladies pour réduire pertes de 30% → 15%</p>
+
+            <h3>🛠️ Outils Utilisés (Gratuits)</h3>
+            <ul>
+                <li><strong>ChatGPT gratuit</strong> (avec upload photo)</li>
+                <li><strong>Gemini Vision</strong> (analyse d'images)</li>
+                <li><strong>PlantNet</strong> (identification plantes - app mobile)</li>
+            </ul>
+
+            <h3>📸 Étape 1: Prendre Photo de la Culture</h3>
+            <p>Monsieur Koffi utilise son smartphone pour photographier une feuille de tomate qui semble malade.</p>
+
+            <div class="warning-box">
+                <strong><i class="fas fa-lightbulb"></i> Conseil Pratique:</strong>
+                Photo nette, lumière naturelle, zoom sur la zone affectée
+            </div>
+
+            <h3>💬 Étape 2: Prompt ChatGPT avec Photo</h3>
+            <div class="prompt-box">
+                <h4><i class="fas fa-robot"></i> Prompt Exact Utilisé:</h4>
+                <div class="code-block">
+Tu es expert en agriculture tropicale africaine, spécialisé dans
+les cultures maraîchères.
+
+CONTEXTE:
+- Localisation: Togo, près de Lomé
+- Culture: Tomates
+- Saison: Saison des pluies
+
+TÂCHE:
+Analyse cette photo de feuille de tomate et identifie:
+1. La maladie ou le problème (nom en français)
+2. Stade de développement (précoce, moyen, avancé)
+3. Traitements NATURELS disponibles localement au Togo
+4. Coût estimé du traitement
+5. Temps de guérison prévu
+
+FORMAT RÉPONSE:
+Structure en bullet points, langage simple pour agriculteur.
+Priorité aux solutions bio/naturelles accessibles au Togo.
+                </div>
+            </div>
+
+            <h3>✅ Étape 3: Réponse IA (Exemple Fictif)</h3>
+            <div class="result-box-detail">
+                <h4><i class="fas fa-check-circle"></i> Analyse IA:</h4>
+                <p><strong>Diagnostic:</strong> Mildiou de la tomate (maladie fongique)</p>
+                <p><strong>Stade:</strong> Précoce (bon moment pour traiter!)</p>
+                <p><strong>Traitement naturel:</strong></p>
+                <ol>
+                    <li>Bouillie bordelaise (sulfate de cuivre) - Disponible marché Lomé: 2,000 FCFA/kg</li>
+                    <li>Infusion d'ail (500g ail + 5L eau) - Quasi gratuit</li>
+                    <li>Espacement plants pour aération</li>
+                </ol>
+                <p><strong>Coût:</strong> ~3,000 FCFA (4.50€)</p>
+                <p><strong>Temps guérison:</strong> 10-14 jours avec traitement</p>
+            </div>
+
+            <h3>📊 Étape 4: Mise en Application</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Jour 1:</strong> Achat bouillie bordelaise au marché (2,000 FCFA)
+                </div>
+                <div class="timeline-item">
+                    <strong>Jour 1-3:</strong> Traitement des plants affectés (matin et soir)
+                </div>
+                <div class="timeline-item">
+                    <strong>Jour 5:</strong> Amélioration visible, propagation stoppée
+                </div>
+                <div class="timeline-item">
+                    <strong>Jour 14:</strong> Plants guéris, récolte sauvée!
+                </div>
+            </div>
+
+            <h3>💰 Calcul Impact Financier</h3>
+            <table class="result-table">
+                <tr>
+                    <th>Indicateur</th>
+                    <th>Avant IA</th>
+                    <th>Avec IA</th>
+                    <th>Gain</th>
+                </tr>
+                <tr>
+                    <td>Pertes récolte</td>
+                    <td>30%</td>
+                    <td>15%</td>
+                    <td><span class="success-metric">-15%</span></td>
+                </tr>
+                <tr>
+                    <td>CA perdu/an</td>
+                    <td>450,000 FCFA</td>
+                    <td>225,000 FCFA</td>
+                    <td><span class="success-metric">+225,000 FCFA</span></td>
+                </tr>
+                <tr>
+                    <td>Coût diagnostic IA</td>
+                    <td>-</td>
+                    <td>0 FCFA (gratuit!)</td>
+                    <td><span class="success-metric">0 FCFA</span></td>
+                </tr>
+                <tr>
+                    <td><strong>GAIN NET/AN</strong></td>
+                    <td colspan="2">-</td>
+                    <td><strong style="color: var(--secondary); font-size: 1.25rem;">+225,000 FCFA</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Solution 2: Optimisation Prix -->
+        <div class="step-section">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                <h2>Optimisation Prix de Vente (Data IA)</h2>
+            </div>
+
+            <h3>🎯 Objectif</h3>
+            <p>Connaître prix réel marché pour mieux négocier avec grossistes (+15% prix vente)</p>
+
+            <h3>🛠️ Outils Utilisés</h3>
+            <ul>
+                <li><strong>ChatGPT gratuit</strong> - Analyse de données</li>
+                <li><strong>Google Sheets</strong> - Suivi prix (gratuit)</li>
+            </ul>
+
+            <h3>📊 Étape 1: Collecte Données Prix</h3>
+            <p>Pendant 2 semaines, Monsieur Koffi note les prix au marché de Lomé (via appels téléphoniques à contacts):</p>
+
+            <table class="result-table">
+                <tr>
+                    <th>Produit</th>
+                    <th>Son Prix Grossiste</th>
+                    <th>Prix Marché Réel</th>
+                    <th>Écart</th>
+                </tr>
+                <tr>
+                    <td>Tomates (kg)</td>
+                    <td>250 FCFA</td>
+                    <td>350 FCFA</td>
+                    <td style="color: var(--danger);">-100 FCFA (-29%)</td>
+                </tr>
+                <tr>
+                    <td>Piments (kg)</td>
+                    <td>400 FCFA</td>
+                    <td>550 FCFA</td>
+                    <td style="color: var(--danger);">-150 FCFA (-27%)</td>
+                </tr>
+                <tr>
+                    <td>Oignons (kg)</td>
+                    <td>200 FCFA</td>
+                    <td>280 FCFA</td>
+                    <td style="color: var(--danger);">-80 FCFA (-29%)</td>
+                </tr>
+            </table>
+
+            <p><strong>💡 Constat:</strong> Les grossistes prennent marge de ~28% en moyenne!</p>
+
+            <h3>💬 Étape 2: Prompt ChatGPT Stratégie</h3>
+            <div class="prompt-box">
+                <h4><i class="fas fa-robot"></i> Prompt Utilisé:</h4>
+                <div class="code-block">
+Je suis agriculteur au Togo. Voici mes données de prix:
+
+[Colle tableau Google Sheets]
+
+SITUATION:
+- Je vends tout à 1 grossiste qui impose ses prix
+- Écart moyen -28% vs prix marché réel Lomé
+- Production: 800kg tomates, 200kg piments, 300kg oignons/mois
+
+QUESTION:
+Comment négocier meilleurs prix avec mon grossiste SANS le perdre
+comme client? Donne-moi arguments concrets et stratégie négociation
+progressive.
+
+Alternative: Quels autres acheteurs cibler (restaurants, hôtels)?
+Comment les contacter?
+                </div>
+            </div>
+
+            <h3>✅ Étape 3: Réponse IA & Plan d'Action</h3>
+            <div class="result-box-detail">
+                <h4>Stratégie Proposée par IA:</h4>
+
+                <p><strong>PHASE 1: Négociation Progressive Grossiste</strong></p>
+                <ol>
+                    <li>Commencer par demander +10% (pas +28% d'un coup)</li>
+                    <li>Arguments: Qualité constante, livraison fiable, quantités régulières</li>
+                    <li>Montrer données marché (sans être accusateur)</li>
+                    <li>Proposer exclusivité en échange de meilleur prix</li>
+                </ol>
+
+                <p><strong>PHASE 2: Diversification Clients (30% production)</strong></p>
+                <ol>
+                    <li><strong>Cibles:</strong> 10 restaurants/hôtels Lomé</li>
+                    <li><strong>Avantage offert:</strong> Livraison 2×/semaine, prix -10% vs marché</li>
+                    <li><strong>Contact:</strong> Appels directs + visite avec échantillons</li>
+                    <li><strong>Message clé:</strong> "Légumes frais, direct producteur, qualité bio"</li>
+                </ol>
+            </div>
+
+            <h3>📞 Étape 4: Mise en Œuvre</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Semaine 1:</strong> Négociation avec grossiste actuel → Accepte +8% (mieux que rien!)
+                </div>
+                <div class="timeline-item">
+                    <strong>Semaine 2:</strong> Liste 15 restaurants/hôtels Lomé (via Google Maps + recommandations)
+                </div>
+                <div class="timeline-item">
+                    <strong>Semaine 3-4:</strong> Appels + 5 visites avec échantillons
+                </div>
+                <div class="timeline-item">
+                    <strong>Mois 2:</strong> 3 restaurants acceptent livraisons régulières! (30% production)
+                </div>
+            </div>
+
+            <h3>💰 Calcul Impact</h3>
+            <table class="result-table">
+                <tr>
+                    <th>Source Revenue</th>
+                    <th>Avant</th>
+                    <th>Après</th>
+                    <th>Gain</th>
+                </tr>
+                <tr>
+                    <td>Vente grossiste (70%)</td>
+                    <td>700,000 FCFA</td>
+                    <td>756,000 FCFA (+8%)</td>
+                    <td>+56,000 FCFA</td>
+                </tr>
+                <tr>
+                    <td>Vente directe resto (30%)</td>
+                    <td>0 FCFA</td>
+                    <td>390,000 FCFA (+30% marge)</td>
+                    <td>+90,000 FCFA</td>
+                </tr>
+                <tr>
+                    <td><strong>GAIN NET/MOIS</strong></td>
+                    <td colspan="2">-</td>
+                    <td><strong style="color: var(--secondary); font-size: 1.25rem;">+146,000 FCFA</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Résultats Globaux -->
+        <div class="step-section" style="background: linear-gradient(135deg, var(--primary-light), var(--secondary)); border: none;">
+            <h2><i class="fas fa-trophy"></i> Résultats Globaux (12 Mois)</h2>
+
+            <table class="result-table">
+                <tr>
+                    <th>Indicateur</th>
+                    <th>Avant IA</th>
+                    <th>Après IA</th>
+                    <th>Variation</th>
+                </tr>
+                <tr>
+                    <td><strong>CA Mensuel</strong></td>
+                    <td>1,000,000 FCFA</td>
+                    <td>1,400,000 FCFA</td>
+                    <td style="color: var(--secondary); font-weight: 800;">+40%</td>
+                </tr>
+                <tr>
+                    <td><strong>Pertes Récolte</strong></td>
+                    <td>30%</td>
+                    <td>15%</td>
+                    <td style="color: var(--secondary); font-weight: 800;">-50%</td>
+                </tr>
+                <tr>
+                    <td><strong>Clients Diversifiés</strong></td>
+                    <td>1 grossiste</td>
+                    <td>1 grossiste + 3 restos</td>
+                    <td style="color: var(--secondary); font-weight: 800;">+3</td>
+                </tr>
+                <tr>
+                    <td><strong>Investissement IA</strong></td>
+                    <td colspan="3" style="text-align: center; color: var(--secondary); font-weight: 800;">0 FCFA (Outils 100% gratuits!)</td>
+                </tr>
+            </table>
+
+            <div style="margin-top: var(--spacing-xl); text-align: center;">
+                <h3 style="color: var(--primary); font-size: 2rem;">
+                    <i class="fas fa-chart-line"></i> ROI: INFINI (0€ investi!)
+                </h3>
+                <p style="font-size: 1.25rem; margin-top: var(--spacing-md);">
+                    <strong>+4,800,000 FCFA gain annuel</strong> (environ +7,300€/an)
+                </p>
+            </div>
+        </div>
+
+        <!-- Leçons & Réplicabilité -->
+        <div class="step-section">
+            <h2><i class="fas fa-lightbulb"></i> Leçons Clés & Comment Répliquer</h2>
+
+            <h3>✅ Ce qui a Fonctionné</h3>
+            <ul style="line-height: 2;">
+                <li>✅ <strong>Outils gratuits</strong> - ChatGPT, Gemini, Google Sheets suffisent</li>
+                <li>✅ <strong>Prompts précis</strong> - Contexte Togo + langage simple = réponses applicables</li>
+                <li>✅ <strong>Démarche progressive</strong> - Petits tests avant grands changements</li>
+                <li>✅ <strong>Données concrètes</strong> - Collecter prix marché 2 semaines = arguments solides</li>
+            </ul>
+
+            <h3>🎯 Pour Répliquer dans Votre Ferme</h3>
+            <ol style="line-height: 2;">
+                <li><strong>Jour 1:</strong> Créer compte ChatGPT gratuit + Gemini</li>
+                <li><strong>Semaine 1:</strong> Photographier vos cultures problématiques → Analyser avec IA</li>
+                <li><strong>Semaine 2-3:</strong> Noter prix marché de VOS produits (appels/visites)</li>
+                <li><strong>Semaine 4:</strong> Prompt ChatGPT avec VOS données → Stratégie personnalisée</li>
+                <li><strong>Mois 2:</strong> Tester 1-2 nouveaux clients (restaurants locaux)</li>
+                <li><strong>Mois 3-12:</strong> Itérer et optimiser selon résultats</li>
+            </ol>
+
+            <div class="warning-box">
+                <strong><i class="fas fa-exclamation-triangle"></i> Important:</strong>
+                Ce cas est FICTIF et simplifié à but pédagogique. Vos résultats réels dépendront de votre situation spécifique (produits, localisation, saison, etc.). Utilisez cette méthode comme point de départ et adaptez-la!
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div style="text-align: center; margin: var(--spacing-2xl) 0;">
+            <h3>Prêt à Tester dans Votre Ferme?</h3>
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-top: var(--spacing-lg);">
+                <a href="index.html#parcours" class="btn btn-primary btn-large">
+                    <i class="fas fa-graduation-cap"></i> Suivre la Formation Complète
+                </a>
+                <a href="index.html#exercices" class="btn btn-secondary btn-large">
+                    <i class="fas fa-arrow-left"></i> Voir Autres Secteurs
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Simple -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Formation IA Togo - Tous droits réservés</p>
+                <p>Scénario fictif à but pédagogique</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

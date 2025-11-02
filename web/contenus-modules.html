@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contenus Modules | Formation IA Togo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .modules-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .page-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .page-header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+        }
+        .toc {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .toc h2 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .toc-item {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            border-left: 4px solid var(--primary);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .toc-item:hover {
+            transform: translateX(5px);
+        }
+        .module-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .module-section h2 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border);
+        }
+        .module-section h3 {
+            color: var(--secondary);
+            margin-top: 2rem;
+        }
+        .info-box {
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #FEF3C7, #FDE68A);
+            border-left: 4px solid #F59E0B;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        .code-example {
+            background: #1E293B;
+            color: #E2E8F0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .timeline-visual {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        table th, table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .resources-list {
+            list-style: none;
+            padding: 0;
+        }
+        .resources-list li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+        }
+        .resources-list li::before {
+            content: "📚";
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="modules-container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Retour à l'accueil
+        </a>
+
+        <div class="page-header">
+            <h1><i class="fas fa-book-open"></i> Contenus Théoriques</h1>
+            <p>Matériel d'approfondissement pour accompagner la formation pratique</p>
+        </div>
+
+        <!-- Table des matières -->
+        <div class="toc">
+            <h2><i class="fas fa-list"></i> Table des Matières</h2>
+            <div class="toc-grid">
+                <div class="toc-item" onclick="document.getElementById('histoire').scrollIntoView({behavior: 'smooth'})">
+                    <strong>1. Histoire de l'IA</strong>
+                    <p>Des pionniers à aujourd'hui</p>
+                </div>
+                <div class="toc-item" onclick="document.getElementById('fonctionnement').scrollIntoView({behavior: 'smooth'})">
+                    <strong>2. Fonctionnement LLMs</strong>
+                    <p>Architecture & Transformers</p>
+                </div>
+                <div class="toc-item" onclick="document.getElementById('rag').scrollIntoView({behavior: 'smooth'})">
+                    <strong>3. RAG Approfondi</strong>
+                    <p>Retrieval-Augmented Generation</p>
+                </div>
+                <div class="toc-item" onclick="document.getElementById('reglementation').scrollIntoView({behavior: 'smooth'})">
+                    <strong>4. Réglementation</strong>
+                    <p>AI Act, RGPD, Afrique</p>
+                </div>
+                <div class="toc-item" onclick="document.getElementById('tendances').scrollIntoView({behavior: 'smooth'})">
+                    <strong>5. Tendances Avancées</strong>
+                    <p>Agents, Multimodalité, Edge</p>
+                </div>
+                <div class="toc-item" onclick="document.getElementById('glossaire').scrollIntoView({behavior: 'smooth'})">
+                    <strong>6. Glossaire</strong>
+                    <p>Terminologie complète</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <strong><i class="fas fa-info-circle"></i> Note Importante:</strong> Ces contenus théoriques sont complémentaires et optionnels. Le séminaire principal couvre <strong>tout le nécessaire</strong> pour utiliser l'IA pratiquement. Cette annexe est pour les participants souhaitant approfondir les aspects techniques.
+        </div>
+
+        <!-- Section 1: Histoire -->
+        <div class="module-section" id="histoire">
+            <h2><i class="fas fa-history"></i> 1. Histoire Détaillée de l'IA</h2>
+
+            <h3>Les Pionniers (1940-1960)</h3>
+            <p><strong>Alan Turing et le Test de Turing (1950)</strong></p>
+            <p>Alan Turing, mathématicien britannique, pose la question fondamentale: <em>"Les machines peuvent-elles penser?"</em></p>
+
+            <div class="code-example">
+                <pre>┌─────────────────────────────────────────┐
+│  HUMAIN INTERROGATEUR                   │
+│         ↓         ↓                     │
+│    HUMAIN    MACHINE                    │
+│                                         │
+│  Si l'interrogateur ne peut pas        │
+│  distinguer qui est la machine,        │
+│  alors la machine "pense"              │
+└─────────────────────────────────────────┘</pre>
+            </div>
+
+            <div class="info-box">
+                <strong>🌍 Pertinence pour le Togo:</strong> Le test de Turing reste d'actualité. Quand vous utilisez ChatGPT, vous expérimentez cette question: "Est-ce que je peux faire la différence avec un humain expert?"
+            </div>
+
+            <h3>Timeline Innovation LLMs (2017-Aujourd'hui)</h3>
+            <div class="timeline-visual">
+                <ul>
+                    <li><strong>2017:</strong> Transformers (Google) - Architecture révolutionnaire</li>
+                    <li><strong>2018:</strong> BERT (Google) - Compréhension contexte bidirectionnelle</li>
+                    <li><strong>2019:</strong> GPT-2 (OpenAI) - Génération texte impressionnante</li>
+                    <li><strong>2020:</strong> GPT-3 (OpenAI) - 175B paramètres, capacités émergentes</li>
+                    <li><strong>2022:</strong> ChatGPT - Interface grand public, adoption massive</li>
+                    <li><strong>2023:</strong> GPT-4, Claude, Mistral - Multimodalité, raisonnement avancé</li>
+                    <li><strong>2024:</strong> DeepSeek R1 - Reasoning open source de qualité</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 2: Fonctionnement -->
+        <div class="module-section" id="fonctionnement">
+            <h2><i class="fas fa-cogs"></i> 2. Fonctionnement Technique des LLMs</h2>
+
+            <h3>Architecture Transformer (Simplifié)</h3>
+            <div class="code-example">
+                <pre>ENTRÉE: "Le chat mange"
+         ↓
+┌─────────────────────────────┐
+│   TOKENISATION              │
+│   ["Le", "chat", "mange"]   │
+└─────────────────────────────┘
+         ↓
+┌─────────────────────────────┐
+│   EMBEDDINGS                │
+│   Vecteurs numériques       │
+└─────────────────────────────┘
+         ↓
+┌─────────────────────────────┐
+│   ATTENTION LAYERS          │
+│   Relation entre mots       │
+└─────────────────────────────┘
+         ↓
+┌─────────────────────────────┐
+│   PRÉDICTION MOT SUIVANT    │
+│   Probabilités:             │
+│   "une" (45%)               │
+│   "la" (30%)                │
+└─────────────────────────────┘</pre>
+            </div>
+
+            <h3>Mécanisme d'Attention</h3>
+            <p><strong>Analogie simple:</strong> Imaginez lire une phrase et souligner les mots importants pour comprendre le contexte.</p>
+            <p><strong>Exemple:</strong> "La banque de la rivière était glissante"</p>
+            <ul>
+                <li>"banque" → "rivière" (donc banque = bord, pas institution financière)</li>
+                <li>"glissante" → "rivière" (contexte aquatique)</li>
+            </ul>
+
+            <h3>Coûts Entraînement</h3>
+            <table>
+                <tr>
+                    <th>Modèle</th>
+                    <th>Coût Entraînement</th>
+                    <th>Temps</th>
+                </tr>
+                <tr>
+                    <td>GPT-3 (175B)</td>
+                    <td>~$4-10 millions</td>
+                    <td>1-2 mois</td>
+                </tr>
+                <tr>
+                    <td>GPT-4</td>
+                    <td>~$100 millions</td>
+                    <td>3-6 mois</td>
+                </tr>
+                <tr>
+                    <td>Mistral-7B</td>
+                    <td>~$500,000</td>
+                    <td>2-4 semaines</td>
+                </tr>
+            </table>
+
+            <div class="info-box">
+                <strong>🌍 Implication pour Togo:</strong> Créer un LLM from scratch = impossible pour PME. <strong>MAIS:</strong>
+                <ul>
+                    <li>✅ Utiliser modèles existants = gratuit/abordable</li>
+                    <li>✅ Fine-tuner petits modèles = faisable (~$1000-5000)</li>
+                    <li>✅ Focus sur prompting efficace = gratuit!</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 3: RAG -->
+        <div class="module-section" id="rag">
+            <h2><i class="fas fa-database"></i> 3. RAG - Retrieval-Augmented Generation</h2>
+
+            <h3>Problème Résolu par RAG</h3>
+            <p><strong>❌ LLM Standard:</strong></p>
+            <div class="code-example">
+                <pre>Question: "Quel est le chiffre d'affaires
+          de notre entreprise en 2024?"
+
+LLM: "Je n'ai pas accès à vos données
+      spécifiques d'entreprise..."</pre>
+            </div>
+
+            <p><strong>✅ LLM + RAG:</strong></p>
+            <div class="code-example">
+                <pre>Question → [Recherche documents internes]
+        → Trouve rapport financier 2024
+        → LLM lit document
+        → Répond avec chiffres précis</pre>
+            </div>
+
+            <h3>Bases de Données Vectorielles - Comparaison</h3>
+            <table>
+                <tr>
+                    <th>BDD Vectorielle</th>
+                    <th>Open Source</th>
+                    <th>Coût Gratuit</th>
+                    <th>Facilité</th>
+                    <th>Best For</th>
+                </tr>
+                <tr>
+                    <td><strong>ChromaDB</strong></td>
+                    <td>✅ Oui</td>
+                    <td>✅ Illimité</td>
+                    <td>⭐⭐⭐⭐⭐</td>
+                    <td>Prototypage, PME</td>
+                </tr>
+                <tr>
+                    <td><strong>Pinecone</strong></td>
+                    <td>❌ Non</td>
+                    <td>⚠️ Limité</td>
+                    <td>⭐⭐⭐⭐</td>
+                    <td>Production, scale</td>
+                </tr>
+                <tr>
+                    <td><strong>Qdrant</strong></td>
+                    <td>✅ Oui</td>
+                    <td>✅ Self-hosted</td>
+                    <td>⭐⭐⭐⭐</td>
+                    <td>Performance, Rust</td>
+                </tr>
+            </table>
+
+            <div class="info-box">
+                <strong>🌍 Recommandation Togo:</strong>
+                <ol>
+                    <li><strong>Démarrage:</strong> ChromaDB (le plus simple, gratuit)</li>
+                    <li><strong>Croissance:</strong> Qdrant (open source, performant)</li>
+                    <li><strong>Enterprise:</strong> Pinecone (si budget disponible)</li>
+                </ol>
+            </div>
+
+            <h3>Coûts RAG - Options</h3>
+            <table>
+                <tr>
+                    <th>Option</th>
+                    <th>Coût/mois</th>
+                    <th>Capacités</th>
+                    <th>Bon pour</th>
+                </tr>
+                <tr>
+                    <td>Gratuit Total</td>
+                    <td>0€</td>
+                    <td>~10,000 pages, 100 req/jour</td>
+                    <td>Test, prototypage</td>
+                </tr>
+                <tr>
+                    <td>Freemium</td>
+                    <td>30-50€</td>
+                    <td>~50,000 pages, 1000 req/jour</td>
+                    <td>PME établie</td>
+                </tr>
+                <tr>
+                    <td>Professional</td>
+                    <td>150-300€</td>
+                    <td>Illimité, 10,000 req/jour</td>
+                    <td>Grande entreprise</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 4: Réglementation -->
+        <div class="module-section" id="reglementation">
+            <h2><i class="fas fa-balance-scale"></i> 4. Réglementation IA</h2>
+
+            <h3>AI Act Européen (2024)</h3>
+            <div class="warning-box">
+                <strong>Niveaux de Risque:</strong>
+                <ul>
+                    <li><strong>❌ Risque Inacceptable:</strong> Interdit (manipulation cognitive, scoring social)</li>
+                    <li><strong>⚠️ Haut Risque:</strong> Réglementation stricte (recrutement, crédit, éducation)</li>
+                    <li><strong>ℹ️ Risque Limité:</strong> Transparence requise (chatbots, deepfakes)</li>
+                    <li><strong>✅ Risque Minimal:</strong> Pas de réglementation (filtres spam, jeux)</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>🌍 Impact pour Togo:</strong> Entreprises togolaises exportant vers UE doivent respecter AI Act. Standard potentiel pour législation africaine future.
+            </div>
+
+            <h3>Initiatives Africaines</h3>
+            <ul>
+                <li><strong>🇰🇪 KENYA:</strong> Kenya AI Taskforce (2023)</li>
+                <li><strong>🇳🇬 NIGERIA:</strong> National AI Strategy (2024)</li>
+                <li><strong>🇷🇼 RWANDA:</strong> Smart Rwanda Master Plan</li>
+                <li><strong>🇹🇬 TOGO:</strong> Stratégie nationale IA (en cours)</li>
+            </ul>
+        </div>
+
+        <!-- Section 5: Tendances -->
+        <div class="module-section" id="tendances">
+            <h2><i class="fas fa-rocket"></i> 5. Tendances Avancées IA</h2>
+
+            <h3>Multimodalité</h3>
+            <p>Modèles capables de traiter texte, images, audio et vidéo simultanément.</p>
+            <p><strong>Exemples 2024:</strong></p>
+            <ul>
+                <li><strong>GPT-4V:</strong> Texte + Images</li>
+                <li><strong>Gemini Ultra:</strong> Texte + Images + Audio + Vidéo</li>
+                <li><strong>Claude 3:</strong> Texte + Images + PDFs</li>
+            </ul>
+
+            <div class="info-box">
+                <strong>🌍 Applications Togo:</strong>
+                <ul>
+                    <li><strong>Agriculture:</strong> Photo culture → Diagnostic maladie (texte)</li>
+                    <li><strong>Éducation:</strong> Vidéo cours → Transcription + Notes</li>
+                    <li><strong>Commerce:</strong> Image produit → Description marketing</li>
+                </ul>
+            </div>
+
+            <h3>Agents Autonomes</h3>
+            <p>Systèmes IA capables d'agir de manière autonome pour atteindre un objectif.</p>
+            <div class="code-example">
+                <pre>Vous: "Réserve un restaurant pour ce soir"
+
+Agent:
+  1. Recherche restaurants disponibles
+  2. Compare avis et prix
+  3. Vérifie votre agenda
+  4. Fait réservation
+  5. Ajoute à calendrier
+  6. Confirme: "✅ Réservé chez Le Palais, 20h"</pre>
+            </div>
+
+            <h3>IA sur Mobile et Edge</h3>
+            <p><strong>Avantages:</strong></p>
+            <ul>
+                <li>✅ Fonctionne offline</li>
+                <li>✅ Latence zéro</li>
+                <li>✅ Pas de coût data</li>
+                <li>✅ Privé (données restent locales)</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>🌍 Impact Togo: ÉNORME</strong> pour zones avec connexion limitée!
+                <ul>
+                    <li>Agriculteurs en zone rurale peuvent utiliser IA sans Internet</li>
+                    <li>Économie data mobile (crucial au Togo)</li>
+                    <li>Applications éducatives offline</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 6: Glossaire -->
+        <div class="module-section" id="glossaire">
+            <h2><i class="fas fa-book"></i> 6. Glossaire Technique</h2>
+
+            <h3>Termes Essentiels</h3>
+            <table>
+                <tr>
+                    <th>Terme</th>
+                    <th>Définition</th>
+                </tr>
+                <tr>
+                    <td><strong>API</strong></td>
+                    <td>Interface permettant à deux logiciels de communiquer</td>
+                </tr>
+                <tr>
+                    <td><strong>Embeddings</strong></td>
+                    <td>Représentation vecteur numérique d'un texte capturant son sens sémantique</td>
+                </tr>
+                <tr>
+                    <td><strong>Fine-Tuning</strong></td>
+                    <td>Adapter modèle pré-entraîné à tâche spécifique avec nouvelles données</td>
+                </tr>
+                <tr>
+                    <td><strong>Hallucination</strong></td>
+                    <td>Quand IA génère informations fausses mais plausibles</td>
+                </tr>
+                <tr>
+                    <td><strong>LLM</strong></td>
+                    <td>Large Language Model - Modèle langage grande taille</td>
+                </tr>
+                <tr>
+                    <td><strong>Prompt</strong></td>
+                    <td>Instruction/question donnée à LLM pour obtenir réponse souhaitée</td>
+                </tr>
+                <tr>
+                    <td><strong>RAG</strong></td>
+                    <td>Retrieval-Augmented Generation - Technique combinant recherche + génération</td>
+                </tr>
+                <tr>
+                    <td><strong>Temperature</strong></td>
+                    <td>Paramètre contrôlant créativité/randomness outputs IA</td>
+                </tr>
+                <tr>
+                    <td><strong>Token</strong></td>
+                    <td>Unité base traitement texte (~0.75 mots)</td>
+                </tr>
+                <tr>
+                    <td><strong>Transformer</strong></td>
+                    <td>Architecture réseau neuronal (2017) révolutionnant NLP</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Ressources -->
+        <div class="module-section">
+            <h2><i class="fas fa-link"></i> Ressources Complémentaires</h2>
+
+            <h3>Cours en Ligne Gratuits</h3>
+            <ul class="resources-list">
+                <li><strong>Coursera - AI for Everyone (Andrew Ng)</strong> - 10h, Débutant</li>
+                <li><strong>Fast.ai - Practical Deep Learning</strong> - 7 cours, 100% Gratuit</li>
+                <li><strong>edX - Introduction to AI</strong> - 12 semaines</li>
+            </ul>
+
+            <h3>Communautés Africaines IA</h3>
+            <ul class="resources-list">
+                <li><strong>Data Science Nigeria</strong> - Étendu Afrique Ouest</li>
+                <li><strong>AI Saturdays Africa</strong> - Chapitres locaux</li>
+                <li><strong>Deep Learning Indaba</strong> - Conférence annuelle</li>
+            </ul>
+        </div>
+
+        <!-- CTA -->
+        <div class="module-section" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; text-align: center;">
+            <h2 style="color: white;"><i class="fas fa-graduation-cap"></i> Continuer l'Apprentissage</h2>
+            <p style="font-size: 1.1rem; opacity: 0.95;">Ces contenus théoriques complètent votre formation pratique. Utilisez-les comme référence pour approfondir vos connaissances.</p>
+            <a href="index.html" style="display: inline-block; margin-top: 1.5rem; padding: 1rem 2rem; background: white; color: var(--primary); text-decoration: none; border-radius: 0.5rem; font-weight: 600;">
+                Retour à la Formation
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice Commerce - Boutique Tissus Wax | Formation IA Togo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .exercise-detail {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .exercise-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        .exercise-header h1 {
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+        }
+        .exercise-header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        .fictif-warning {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+            color: #92400E;
+        }
+        .section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .section h2 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .profile-item {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+        }
+        .profile-item strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .prompt-box {
+            background: #1E293B;
+            color: #E2E8F0;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--secondary);
+        }
+        .prompt-box .label {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .code-block {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        .response-box {
+            background: #F0FDF4;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+        .response-box .label {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        .timeline-item {
+            position: relative;
+            padding: 1rem 0 1rem 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.4rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid var(--bg-primary);
+        }
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .result-table th,
+        .result-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .result-table th {
+            background: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--primary);
+        }
+        .success-metric {
+            color: var(--secondary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .warning-metric {
+            color: var(--warning);
+            font-weight: 700;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .tool-card {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            border: 2px solid var(--border);
+        }
+        .tool-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .tool-card h4 {
+            margin: 0.5rem 0;
+            color: var(--primary);
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        .lessons-list {
+            list-style: none;
+            padding: 0;
+        }
+        .lessons-list li {
+            padding: 0.75rem 0 0.75rem 2rem;
+            position: relative;
+        }
+        .lessons-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="exercise-detail">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Retour aux exercices
+        </a>
+
+        <div class="fictif-warning">
+            <i class="fas fa-info-circle"></i> <strong>Exemple Fictif:</strong> Ce cas est réaliste mais les personnages et résultats sont fictifs à but pédagogique. Les montants sont donnés en pourcentages, pas en euros réels.
+        </div>
+
+        <div class="exercise-header">
+            <h1><i class="fas fa-shopping-bag"></i> Exercice Commerce</h1>
+            <p class="subtitle">Comment Madame Adjoavi a augmenté son CA de 30% avec ChatGPT (0€ investi)</p>
+        </div>
+
+        <!-- PROFIL ENTREPRISE -->
+        <div class="section">
+            <h2><i class="fas fa-building"></i> Profil de l'Entreprise</h2>
+
+            <div class="profile-grid">
+                <div class="profile-item">
+                    <strong>Nom Commercial</strong>
+                    "Tissus Bella" (fictif)
+                </div>
+                <div class="profile-item">
+                    <strong>Propriétaire</strong>
+                    Madame Adjoavi (fictif)
+                </div>
+                <div class="profile-item">
+                    <strong>Localisation</strong>
+                    Grand Marché de Lomé, Togo
+                </div>
+                <div class="profile-item">
+                    <strong>Type d'Activité</strong>
+                    Vente tissus Wax et pagnes
+                </div>
+                <div class="profile-item">
+                    <strong>CA Annuel Initial</strong>
+                    Niveau de référence: 100%
+                </div>
+                <div class="profile-item">
+                    <strong>Employés</strong>
+                    2 (Madame Adjoavi + 1 vendeuse)
+                </div>
+                <div class="profile-item">
+                    <strong>Présence Digitale</strong>
+                    Page Facebook (300 likes)
+                </div>
+                <div class="profile-item">
+                    <strong>Niveau Tech</strong>
+                    Basique (smartphone, WhatsApp, Facebook)
+                </div>
+            </div>
+        </div>
+
+        <!-- PROBLÈME INITIAL -->
+        <div class="section">
+            <h2><i class="fas fa-exclamation-triangle"></i> Le Problème Identifié</h2>
+
+            <div class="highlight-box">
+                <h3>Situation Avant IA:</h3>
+                <ul>
+                    <li><strong>Posts Facebook:</strong> 1-2 fois par semaine (photos floues, sans description)</li>
+                    <li><strong>WhatsApp:</strong> Répond aux mêmes questions 20 fois par jour</li>
+                    <li><strong>Catalogue:</strong> Inexistant (clients doivent venir physiquement)</li>
+                    <li><strong>Descriptions produits:</strong> "Joli tissu" / "Bon prix"</li>
+                    <li><strong>Service client:</strong> Débordée, répond tard le soir</li>
+                    <li><strong>Temps marketing:</strong> 5-6 heures/semaine (volé au temps de vente)</li>
+                </ul>
+            </div>
+
+            <table class="result-table">
+                <tr>
+                    <th>Indicateur</th>
+                    <th>Avant IA</th>
+                    <th>Impact</th>
+                </tr>
+                <tr>
+                    <td>Publications/semaine</td>
+                    <td>2 posts</td>
+                    <td><span class="warning-metric">Faible visibilité</span></td>
+                </tr>
+                <tr>
+                    <td>Taux de réponse WhatsApp</td>
+                    <td>~60% (répond tard)</td>
+                    <td><span class="warning-metric">Clients perdus</span></td>
+                </tr>
+                <tr>
+                    <td>Ventes en ligne</td>
+                    <td>5-10%</td>
+                    <td><span class="warning-metric">Opportunités manquées</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- LA SOLUTION IA -->
+        <div class="section">
+            <h2><i class="fas fa-lightbulb"></i> La Solution IA Mise en Place</h2>
+
+            <h3>Outils Utilisés (100% GRATUITS):</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="icon">💬</div>
+                    <h4>ChatGPT Free</h4>
+                    <p>Descriptions produits et posts</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📸</div>
+                    <h4>Canva (gratuit)</h4>
+                    <p>Design visuel professionnel</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📱</div>
+                    <h4>WhatsApp Business</h4>
+                    <p>Messages automatiques</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🤖</div>
+                    <h4>ManyChat (gratuit)</h4>
+                    <p>Réponses automatiques Facebook</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Étape 1: Créer Descriptions Produits Attractives</h3>
+
+            <div class="prompt-box">
+                <span class="label">📝 PROMPT UTILISÉ (ChatGPT):</span>
+                <div class="code-block">Tu es expert en vente de tissus africains et marketing digital.
+
+CONTEXTE:
+- Boutique: Tissus Wax au Grand Marché de Lomé
+- Client cible: Femmes togolaises 25-50 ans
+- Objectif: Descriptions qui donnent envie d'acheter
+
+TÂCHE:
+Écris une description vendeuse pour ce tissu:
+- Type: Wax hollandais
+- Motif: Fleurs rouges sur fond jaune
+- Prix: 4,500 FCFA/mètre
+- Qualité: Premium (ne déteint pas)
+
+Format souhaité:
+✓ Accrocheur (max 100 mots)
+✓ Émotionnel (parle aux femmes togolaises)
+✓ Appel à l'action WhatsApp
+✓ Hashtags pertinents</div>
+            </div>
+
+            <div class="response-box">
+                <span class="label">🤖 RÉPONSE ChatGPT (exemple):</span>
+                <p><strong>🌺 WAX PREMIUM "SOLEIL D'AFRIQUE" 🌺</strong></p>
+                <p>Le tissu qui fait tourner les têtes! 😍</p>
+                <p>Fleurs rouges éclatantes sur fond jaune doré - parfait pour mariages, baptêmes et grandes occasions. Ce Wax hollandais PREMIUM ne déteint JAMAIS, même après 100 lavages!</p>
+                <p>💰 Prix exceptionnel: 4,500 FCFA/mètre<br>
+                📦 Minimum 3 mètres (robe complète)</p>
+                <p><strong>⚡ STOCK LIMITÉ!</strong> Plus que 15 mètres disponibles.</p>
+                <p>📱 Commandez MAINTENANT sur WhatsApp: [votre numéro]</p>
+                <p>#WaxLomé #TissusBella #WaxPremium #ModeTogo #GrandMarché</p>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Étape 2: Créer Catalogue Digital</h3>
+
+            <div class="prompt-box">
+                <span class="label">📝 PROMPT (Organisationnel):</span>
+                <div class="code-block">Aide-moi à créer un catalogue digital simple pour WhatsApp.
+
+J'ai 30 types de tissus différents.
+
+BESOIN:
+1. Structure du catalogue (comment organiser)
+2. Template message pour chaque tissu
+3. Système de numérotation simple
+4. Comment envoyer rapidement aux clients
+
+Format: Messages WhatsApp (pas besoin d'app compliquée)</div>
+            </div>
+
+            <div class="response-box">
+                <span class="label">🤖 RÉPONSE (extraits):</span>
+                <p><strong>📚 STRUCTURE CATALOGUE WHATSAPP</strong></p>
+                <p><strong>A. Organisation par Catégories:</strong></p>
+                <ul>
+                    <li>WAX (W01-W15): Wax hollandais premium</li>
+                    <li>SUPER WAX (SW01-SW10): Wax super qualité</li>
+                    <li>FANCY (F01-F08): Wax fancy</li>
+                    <li>PAGNE (P01-P07): Pagnes traditionnels</li>
+                </ul>
+                <p><strong>B. Template Message:</strong></p>
+                <p style="background: #f5f5f5; padding: 1rem; border-radius: 0.5rem; font-family: monospace;">
+                    [Photo]<br>
+                    🆔 Réf: W05<br>
+                    📦 WAX PREMIUM "Fleurs Rouges"<br>
+                    💰 4,500 FCFA/m<br>
+                    ✓ Ne déteint pas<br>
+                    📱 Commander: "Je veux W05"
+                </p>
+                <p><em>+ Instructions complètes pour WhatsApp Business...</em></p>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Étape 3: Réponses Automatiques FAQ</h3>
+
+            <div class="prompt-box">
+                <span class="label">📝 PROMPT (Service Client):</span>
+                <div class="code-block">Liste les 10 questions les plus fréquentes que mes clients posent sur WhatsApp, avec réponses courtes et professionnelles.
+
+CONTEXTE:
+- Boutique tissus Wax
+- Livraison à Lomé uniquement
+- Paiement: espèces ou Mobile Money
+- Minimum commande: 3 mètres
+
+Rédige réponses prêtes à copier-coller!</div>
+            </div>
+
+            <div class="response-box">
+                <span class="label">🤖 RÉPONSE (extraits):</span>
+                <p><strong>Q1: "C'est combien le mètre?"</strong><br>
+                → "Bonjour! Prix selon qualité: Wax Premium 4,500 FCFA/m, Super Wax 6,000 FCFA/m. Quel tissu vous intéresse? (envoyez la photo ou le numéro)"</p>
+
+                <p><strong>Q2: "Vous livrez?"</strong><br>
+                → "Oui! Livraison GRATUITE à Lomé dans les 24h. Hors Lomé: 1,000-2,000 FCFA selon distance. 📦"</p>
+
+                <p><strong>Q3: "Je peux payer comment?"</strong><br>
+                → "3 options: 💵 Espèces (livraison) 📱 T-Money/Flooz 🏦 Virement bancaire. Vous préférez quoi?"</p>
+
+                <p><em>...+ 7 autres questions/réponses</em></p>
+            </div>
+        </div>
+
+        <!-- MISE EN ŒUVRE -->
+        <div class="section">
+            <h2><i class="fas fa-tasks"></i> Calendrier de Mise en Œuvre</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Semaine 1 (4-5h):</strong> Formation IA + premiers prompts
+                    <ul>
+                        <li>Suivre la formation (5 jours)</li>
+                        <li>Créer compte ChatGPT</li>
+                        <li>Générer 10 premières descriptions</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Semaine 2 (8-10h):</strong> Création catalogue complet
+                    <ul>
+                        <li>Photographier les 30 tissus</li>
+                        <li>Générer toutes les descriptions avec ChatGPT</li>
+                        <li>Organiser dans WhatsApp Business</li>
+                        <li>Créer visuels sur Canva (templates gratuits)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Semaine 3 (3h):</strong> Automatisation réponses
+                    <ul>
+                        <li>Configurer messages automatiques WhatsApp Business</li>
+                        <li>Installer ManyChat sur Facebook</li>
+                        <li>Sauvegarder 10 réponses FAQ</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Semaine 4 (2h/semaine):</strong> Contenu régulier
+                    <ul>
+                        <li>Générer 7 posts/semaine avec ChatGPT (30min)</li>
+                        <li>Designer visuels Canva (30min)</li>
+                        <li>Publier + répondre clients (1h)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Mois 2-3:</strong> Optimisation continue
+                    <ul>
+                        <li>Analyser posts qui marchent le mieux</li>
+                        <li>Ajuster prompts pour meilleurs résultats</li>
+                        <li>Tester nouveaux formats (vidéos courtes, stories)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- RÉSULTATS -->
+        <div class="section">
+            <h2><i class="fas fa-chart-line"></i> Résultats Mesurés (Après 3 Mois)</h2>
+
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Indicateur</th>
+                        <th>Avant IA</th>
+                        <th>Après IA</th>
+                        <th>Amélioration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Publications/semaine</td>
+                        <td>2 posts</td>
+                        <td>7-10 posts</td>
+                        <td><span class="success-metric">+350%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Portée Facebook</td>
+                        <td>Niveau de base</td>
+                        <td>3x plus</td>
+                        <td><span class="success-metric">+200%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Messages WhatsApp/jour</td>
+                        <td>15-20</td>
+                        <td>40-50</td>
+                        <td><span class="success-metric">+150%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Taux de réponse</td>
+                        <td>60%</td>
+                        <td>95%</td>
+                        <td><span class="success-metric">+35 points</span></td>
+                    </tr>
+                    <tr>
+                        <td>Ventes en ligne (% total)</td>
+                        <td>5-10%</td>
+                        <td>35-40%</td>
+                        <td><span class="success-metric">+30 points</span></td>
+                    </tr>
+                    <tr>
+                        <td>Temps marketing/semaine</td>
+                        <td>5-6h</td>
+                        <td>2-3h</td>
+                        <td><span class="success-metric">-50% temps</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>CA Global</strong></td>
+                        <td><strong>100%</strong></td>
+                        <td><strong>130%</strong></td>
+                        <td><span class="success-metric">+30%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <h3>💰 Impact Financier</h3>
+                <table class="result-table">
+                    <tr>
+                        <td><strong>Investissement IA</strong></td>
+                        <td>0€ (outils gratuits)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temps formation</strong></td>
+                        <td>5 jours (investissement temps)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temps setup initial</strong></td>
+                        <td>15-20h (semaines 1-3)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temps maintenance</strong></td>
+                        <td>2-3h/semaine (vs 5-6h avant)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Augmentation CA</strong></td>
+                        <td><span class="success-metric">+30% en 3 mois</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>ROI</strong></td>
+                        <td><span class="success-metric">INFINI (0€ investi!)</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- LEÇONS APPRISES -->
+        <div class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Leçons Apprises & Conseils</h2>
+
+            <h3>✅ Ce Qui a Marché:</h3>
+            <ul class="lessons-list">
+                <li><strong>Descriptions émotionnelles:</strong> Parler aux femmes togolaises (mariages, baptêmes) = +50% engagement</li>
+                <li><strong>Visuels pro Canva:</strong> Posts avec design attirent 3x plus que photos simples</li>
+                <li><strong>Références produits:</strong> Système W01, W02... facilite commandes (clients disent juste le code)</li>
+                <li><strong>Messages automatiques:</strong> Réponse immédiate = moins de clients perdus</li>
+                <li><strong>Stock limité:</strong> Créer urgence ("Plus que X mètres!") booste ventes</li>
+                <li><strong>Hashtags locaux:</strong> #WaxLomé #GrandMarché aide découvrabilité</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">❌ Erreurs à Éviter:</h3>
+            <ul class="lessons-list">
+                <li><strong>Ne PAS:</strong> Copier-coller descriptions ChatGPT sans adapter (trop "européen" parfois)</li>
+                <li><strong>Ne PAS:</strong> Publier 10 posts le même jour puis rien pendant 5 jours (régularité > quantité)</li>
+                <li><strong>Ne PAS:</strong> Oublier de mettre prix et contact dans chaque post</li>
+                <li><strong>Ne PAS:</strong> Utiliser mots compliqués (clients aiment "simple et clair")</li>
+                <li><strong>Ne PAS:</strong> Négliger orthographe (relire avant publier, même si ChatGPT écrit bien)</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">🎯 Facteurs Clés de Succès:</h3>
+            <div class="highlight-box">
+                <ol style="margin: 0; padding-left: 1.5rem;">
+                    <li><strong>Régularité:</strong> 1 post par jour minimum (7-10 optimal)</li>
+                    <li><strong>Qualité visuelle:</strong> Photos nettes + design Canva</li>
+                    <li><strong>Réactivité:</strong> Répondre en &lt;1h aux messages (automatisation aide!)</li>
+                    <li><strong>Adaptation locale:</strong> Parler aux Togolaises, pas aux Européennes</li>
+                    <li><strong>Call-to-action clair:</strong> "Commander sur WhatsApp: [numéro]" dans chaque post</li>
+                    <li><strong>Preuves sociales:</strong> Partager photos clientes satisfaites (avec permission)</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- RÉPLICABILITÉ -->
+        <div class="section">
+            <h2><i class="fas fa-copy"></i> Comment Répliquer dans Votre Commerce</h2>
+
+            <h3>Ce Modèle Fonctionne Pour:</h3>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="icon">👗</div>
+                    <h4>Vêtements</h4>
+                    <p>Robes, chemises, chaussures...</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📱</div>
+                    <h4>Électronique</h4>
+                    <p>Téléphones, accessoires...</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">💄</div>
+                    <h4>Beauté</h4>
+                    <p>Cosmétiques, coiffure...</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🏠</div>
+                    <h4>Maison</h4>
+                    <p>Décoration, meubles...</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🍲</div>
+                    <h4>Alimentation</h4>
+                    <p>Produits locaux, épices...</p>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">🎁</div>
+                    <h4>Tout Commerce!</h4>
+                    <p>Adaptable à toute activité</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">📋 Checklist de Démarrage (Votre Tour!):</h3>
+            <div class="highlight-box">
+                <ul style="list-style: none; padding: 0;">
+                    <li>☐ <strong>Jour 1:</strong> Créer compte ChatGPT (gratuit)</li>
+                    <li>☐ <strong>Jour 1:</strong> Créer compte Canva (gratuit)</li>
+                    <li>☐ <strong>Jour 2:</strong> Tester 3 prompts pour vos produits</li>
+                    <li>☐ <strong>Jour 3:</strong> Photographier 10 produits best-sellers</li>
+                    <li>☐ <strong>Jour 4:</strong> Générer 10 descriptions avec ChatGPT</li>
+                    <li>☐ <strong>Jour 5:</strong> Créer 5 visuels sur Canva</li>
+                    <li>☐ <strong>Jour 6:</strong> Publier premier post "nouvelle version"</li>
+                    <li>☐ <strong>Jour 7:</strong> Configurer WhatsApp Business</li>
+                    <li>☐ <strong>Semaine 2:</strong> 1 post par jour pendant 7 jours</li>
+                    <li>☐ <strong>Semaine 3:</strong> Mesurer résultats (vues, messages, ventes)</li>
+                    <li>☐ <strong>Semaine 4:</strong> Ajuster ce qui marche / arrêter ce qui marche pas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ALLER PLUS LOIN -->
+        <div class="section">
+            <h2><i class="fas fa-rocket"></i> Pour Aller Plus Loin</h2>
+
+            <h3>Prochaines Étapes (Mois 4-6):</h3>
+            <ul>
+                <li><strong>Vidéos courtes:</strong> Utiliser ChatGPT pour scripts TikTok/Reels (tissus en mouvement)</li>
+                <li><strong>Stories quotidiennes:</strong> Montrer nouveautés (ChatGPT génère légendes)</li>
+                <li><strong>Influenceurs locaux:</strong> Envoyer tissus gratuits à micro-influenceuses Lomé</li>
+                <li><strong>Programme fidélité:</strong> ChatGPT aide créer système points simples</li>
+                <li><strong>Newsletters WhatsApp:</strong> Envoyer "Tissus de la Semaine" tous les lundis</li>
+                <li><strong>Analyse concurrence:</strong> Utiliser ChatGPT pour analyser posts concurrents qui marchent</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>💡 Prompt Bonus: Analyse Concurrence</h3>
+                <div class="prompt-box">
+                    <div class="code-block">Analyse ces 5 posts Facebook de ma concurrente (captures d'écran attachées).
+
+Identifie:
+1. Quel post a eu le plus d'engagement (pourquoi?)
+2. Quels mots/phrases elle utilise qui fonctionnent
+3. Quelles techniques je pourrais adapter pour MA boutique
+4. 3 idées de posts différents mais inspirés de son succès
+
+Reste authentique à MON style "Tissus Bella"!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA FINAL -->
+        <div class="section" style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; text-align: center;">
+            <h2 style="color: white;"><i class="fas fa-hand-point-right"></i> À Vous de Jouer!</h2>
+            <p style="font-size: 1.2rem; margin: 1rem 0;">Ce qu'a fait Madame Adjoavi, VOUS pouvez le faire!</p>
+            <p style="font-size: 1rem; opacity: 0.95;">Temps nécessaire: 15-20h setup + 2-3h/semaine maintenance</p>
+            <p style="font-size: 1rem; opacity: 0.95;">Investissement: 0€ (outils gratuits)</p>
+            <p style="font-size: 1rem; opacity: 0.95;">Impact potentiel: +20-40% CA en 3-6 mois</p>
+            <a href="index.html" style="display: inline-block; margin-top: 1.5rem; padding: 1rem 2rem; background: white; color: var(--primary); text-decoration: none; border-radius: 0.5rem; font-weight: 600;">
+                Retour aux Exercices
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
