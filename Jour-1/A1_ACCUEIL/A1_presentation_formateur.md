@@ -1,85 +1,113 @@
 # 👨‍🏫 ALEXANDRE GISS - FORMATEUR IA
-**Expert Intelligence Artificielle | Formation & Conseil**
+
+**Senior IT Consultant ERP & AI | 30+ ans d'expérience IT**
 
 ---
 
 ## 🎯 **PROFIL PROFESSIONNEL**
 
 ### **💼 Expertise principale:**
-**Spécialiste Intelligence Artificielle appliquée aux PME**
-- 8+ années développement solutions IA
-- Focus économies émergentes et contraintes budgétaires
-- 500+ entrepreneurs formés à l'IA pratique
-- Expert outils gratuits et freemium
+
+**Senior IT Consultant - Digitalisation, ERP & Intelligence Artificielle**
+
+- 30+ années expérience IT (SAP, Odoo ERP, Cloud, IA)
+- Management équipes internationales (jusqu'à 75+ personnes)
+- Budget IT 10M+ CHF géré
+- Expérience internationale dans 16 pays
 
 ### **🌍 Expérience internationale:**
-- **Europe:** Allemagne, Suisse, France
-- **Afrique:** Togo, Ghana, Côte d'Ivoire, Sénégal
-- **Asie:** Vietnam, Thaïlande (marchés émergents)
+
+- **Europe:** Suisse, Allemagne, France, Espagne, Portugal, UK, Pays-Bas, Belgique
+- **Amériques:** USA, Mexique (9 ans), Panama, Colombie, Brésil, Argentine, Pérou
+- **Afrique:** Nigeria
+- **Asie:** Singapour
 
 ---
 
-## 📚 **FORMATION ACADÉMIQUE**
+## 📚 **FORMATION & CERTIFICATIONS**
 
-### **🎓 Diplômes:**
-- **Master Intelligence Artificielle** - Université Technique Munich
-- **Bachelor Informatique** - École Polytechnique Lausanne
-- **Certification Google AI** - Machine Learning spécialisé
-- **Certification OpenAI** - GPT Fine-tuning avancé
+### **🏆 Certifications professionnelles récentes:**
 
-### **🏆 Certifications professionnelles:**
-- **Google Cloud AI Platform** - Architect certifié
-- **Azure AI Services** - Solutions Architect Expert
-- **AWS Machine Learning** - Specialty certification
-- **Hugging Face Expert** - Transformers et modèles open-source
+- **SAFe 6 Product Owner/Product Manager** - Scaled Agile (2024)
+- **SAFe 6 Scrum Master** - Scaled Agile (2024)
+- **CAS Blockchain** - HSLU Rotkreuz (2023)
+- **CAS IT Management** - FHNW Olten (2022)
+- **Professional Scrum Master** - Scrum.org (2020)
+- **HERMES Foundation** - TÜV SÜD Akademie (2023)
+- **ITIL v3 Foundation** - Digicomp (2013)
+- **Career Essentials in Generative AI** - Microsoft & LinkedIn (2024)
 
 ---
 
 ## 💡 **EXPÉRIENCE PRATIQUE**
 
-### **🚀 Projets marquants:**
-**2023-2024: Programme IA Ghana**
-- Formation 200 entrepreneurs ghanéens
-- 60% projets IA implémentés avec ROI >200%
-- Focus agriculture et commerce digital
+### **🚀 Parcours professionnel récent:**
 
-**2022-2023: Consultant IA Vietnam**
-- Déploiement solutions chatbot PME
-- Budget moyen: 300 USD/an par entreprise
-- 85% satisfaction client maintenue
+**2024: Senior IT Consultant ERP & AI - Consenso Solutions GmbH**
 
-**2021-2022: Formation IA Europe**
-- Séminaires entreprises Allemagne/Suisse
-- Spécialisation outils gratuits et low-cost
-- 1000+ professionnels formés techniques pratiques
+- Implémentation Odoo ERP pour environnements multi-sociétés
+- Intégration IA dans processus métier
+- Développement interfaces E-Commerce
+- Migration et optimisation systèmes ERP
+
+**2023-2024: Senior Projektleiter & Consultant - Linkyard AG**
+
+- Migration BE-Login (Kanton Bern)
+- Projet CIO Office 2.0
+- Conseil IA pour administration publique
+
+**2022-2023: Consultant IT Operations - Backbone Infrastructure Nigeria (Remote)**
+
+- Mise en place stratégie IT
+- Établissement politiques sécurité
+- Structuration opérations IT
+
+**2021-2022: Leiter Systembetrieb - Coop Genossenschaft**
+
+- Opérations 24/7 - 500'000 jobs/jour
+- Migration Multi-Cloud (Azure, AWS)
+- Management équipe de 11 personnes
+
+**1993-2019: 26 ans chez Panalpina - Diverses positions leadership**
+
+- Head of IT Service Delivery (75+ personnes, 10M+ CHF budget)
+- IT Security Program Manager
+- Area Head of IT Mexico (9 ans)
+- SAP Project Manager LATAM
 
 ---
 
 ## 🛠️ **COMPÉTENCES TECHNIQUES**
 
-### **🤖 Intelligence Artificielle:**
-- **LLMs:** GPT-4/5, Claude, DeepSeek, Mistral, Gemini
-- **No-Code:** Zapier, n8n, Make, Bubble, Airtable
-- **RAG Systems:** ChromaDB, Pinecone, Weaviate
-- **Automation:** Python, LangChain, APIs REST
+### **🤖 Technologies & Systèmes:**
 
-### **📊 Outils Business:**
-- **ROI Calculation:** Excel avancé, calculateurs personnalisés
-- **Project Management:** Notion, Monday, ClickUp
-- **Analytics:** Google Analytics, Power BI
-- **CRM Integration:** HubSpot, Salesforce, Pipedrive
+- **ERP:** Odoo, SAP (ERP, TM, PI, BW, CRM), ABAP/4
+- **Cloud:** Azure, AWS, Multi-Cloud Migration
+- **IA & Outils modernes:** GPT, Claude, DeepSeek, Python, APIs REST
+- **Blockchain:** CAS Blockchain HSLU
+- **Développement:** Python, ABAP, Intégrations E-Commerce
+
+### **📊 Management & Méthodologies:**
+
+- **Gestion projet:** SAFe, Scrum, HERMES, ITIL
+- **Outils:** Jira, Confluence, Microsoft 365
+- **Leadership:** Équipes internationales, budgets >10M CHF
+- **Opérations:** 24/7 IT Operations, 500k+ jobs/jour
 
 ### **🌍 Langues:**
-- **Français:** Natif
-- **Anglais:** Bilingue professionnel
-- **Allemand:** Courant (C1)
-- **Notions:** Ewé, Espagnol
+
+- **Allemand:** Langue maternelle
+- **Français:** Langue maternelle
+- **Anglais:** Courant (C1)
+- **Espagnol:** Courant (C1) - 8 ans au Mexique
+- **Portugiesisch:** Bien (B1-B2)
 
 ---
 
 ## 🎯 **PHILOSOPHIE PÉDAGOGIQUE**
 
 ### **💰 Focus économique pragmatique:**
+
 > *"L'IA doit être rentable dès le premier mois, surtout dans les économies émergentes."*
 
 - Solutions gratuites prioritaires
@@ -88,12 +116,14 @@
 - Budgets réalistes adaptés au contexte
 
 ### **🤝 Apprentissage par la pratique:**
+
 - 70% hands-on, 30% théorie
 - Projets réels développés pendant formation
 - Peer-to-peer learning encouragé
 - Erreurs vues comme opportunités d'apprentissage
 
 ### **🌍 Adaptation culturelle:**
+
 - Solutions respectueuses du contexte local
 - Exemples africains et togolais prioritaires
 - Infrastructure limitée prise en compte
@@ -101,95 +131,94 @@
 
 ---
 
-## 📈 **RÉSULTATS FORMATIONS PRÉCÉDENTES**
+## 📈 **APPROCHE PÉDAGOGIQUE ÉPROUVÉE**
 
-### **📊 Statistiques de succès:**
-- **95%** participants completent formations
-- **85%** implémentent solution IA dans 3 mois
-- **9.2/10** satisfaction moyenne
-- **75%** maintiennent usage outils 6 mois après
+### **💼 Expérience concrète à transmettre:**
 
-### **🏆 Success stories:**
-**Agriculture Ghana:** Farmer John Mensah
-- ChatBot conseils cultures en Twi
-- +40% rendement cacao année 1
-- Coût: 0 USD (outils gratuits uniquement)
+- **30+ années** de transformation digitale dans grandes organisations
+- **Migration Cloud** réussie pour entreprise retail (500k jobs/jour)
+- **Implémentation ERP** multi-pays et multi-sociétés
+- **Leadership international** dans contextes multiculturels variés
 
-**Commerce Sénégal:** Boutique Aïcha Diallo
-- Automatisation commandes WhatsApp
-- +60% ventes en ligne
-- Coût: 200 EUR/an (Zapier premium)
+### **🎓 Points forts de mon expérience:**
 
-**Services Togo:** Cabinet Conseil Koffi & Associates
-- Génération automatique rapports
-- -70% temps rédaction
-- Coût: 0 EUR (Claude + templates Excel)
+**Transformation Digitale à grande échelle**
 
----
+- Migration systèmes legacy vers Cloud (Azure/AWS)
+- Gestion changement organisationnel
+- Formation équipes techniques internationales
 
-## 🔬 **RECHERCHE ET PUBLICATIONS**
+**Gestion budgétaire pragmatique**
 
-### **📝 Articles techniques:**
-- **"IA Abordable Afrique"** - Journal Digital Afrique (2024)
-- **"ROI IA Économies Émergentes"** - MIT Technology Review (2023)
-- **"No-Code AI Solutions SMEs"** - Harvard Business Review (2022)
+- Responsabilité budgets IT >10M CHF
+- Optimisation coûts et ROI
+- Choix outils adaptés aux contraintes économiques
 
-### **🎤 Conférences internationales:**
-- **AI for Development Summit** - Nairobi 2024
-- **Emerging Markets Tech** - Lagos 2023
-- **European AI Conference** - Munich 2022
+**Leadership multiculturel**
+
+- 9 ans au Mexique, expérience LATAM, Europe, Afrique, Asie
+- Management équipes jusqu'à 75 personnes
+- Communication interculturelle efficace
 
 ---
 
-## 🤝 **ENGAGEMENT COMMUNAUTAIRE**
+## 🤝 **POURQUOI CETTE FORMATION?**
 
-### **🌟 Initiatives bénévoles:**
-- **Mentor IA4Good:** 50+ projets sociaux soutenus
-- **Open Source Contributor:** Templates formation gratuits
-- **Africa AI Network:** Co-fondateur communauté 2000+ membres
+### **🌟 Valeur ajoutée unique:**
 
-### **📚 Ressources gratuites créées:**
-- **"Guide PME IA Gratuit"** - 10,000+ téléchargements
-- **Templates Excel ROI** - Usage libre commercial
-- **Cours vidéo YouTube** - 100+ heures contenu gratuit
+**Expérience terrain concrète**
 
----
+- Pas de théorie académique pure - 30 ans de mise en pratique
+- Projets réels dans contextes variés (PME, multinationales, secteur public)
+- Connaissance contraintes budgétaires réelles
 
-## 📞 **CONTACT ET RÉSEAUX**
+**Perspective internationale pragmatique**
 
-### **📧 Professionnel:**
-- **Email:** alexandre.giss@formation-ia-afrique.com
-- **LinkedIn:** /in/alexandre-giss-ai-expert
-- **Website:** alexandre-giss-ai-consultant.com
+- Travail dans économies émergentes et développées
+- Adaptation solutions aux contextes locaux
+- Expérience Nigeria - compréhension réalités africaines
 
-### **🌐 Ressources:**
-- **Blog:** insights-ia-afrique.com
-- **YouTube:** IA Pratique Afrique (50k abonnés)
-- **GitHub:** github.com/alexgiss-ai-templates
+**Approche ROI et efficacité**
+
+- Focus sur solutions rentables rapidement
+- Priorisation outils gratuits/abordables quand pertinent
+- Mesure concrète de la valeur ajoutée
 
 ---
 
-## 🎯 **POURQUOI CETTE FORMATION AU TOGO?**
+## 📞 **CONTACT**
 
-### **💕 Motivation personnelle:**
-> *"Le Togo a un potentiel IA énorme avec des entrepreneurs brillants. Ma mission: leur donner les outils pour réussir sans se ruiner."*
+### **📧 Coordonnées:**
 
-### **🎯 Objectifs spécifiques:**
-1. **Démocratiser l'IA** pour PME togolaises
-2. **Créer réseau local** d'experts IA autonomes  
-3. **Documenter solutions** adaptées contexte togolais
-4. **Mesurer impact économique** réel sur 12 mois
-
-### **🚀 Vision long terme:**
-- Formation formateurs locaux (Train-the-Trainer)
-- Hub IA Afrique Ouest basé à Lomé
-- Incubateur projets IA à impact social
-- Recherche universitaire partenariats USL/UL
+- **LinkedIn:** linkedin.com/in/alexgiss
+- **Localisation:** Laufen, Suisse
 
 ---
 
-**🌟 "Ensemble, nous allons transformer le Togo en pionnier de l'IA abordable et responsable en Afrique de l'Ouest!"**
+## 🎯 **OBJECTIFS POUR CETTE FORMATION AU TOGO**
+
+### **💡 Ma motivation:**
+
+> *"Après 30 ans dans l'IT corporate, je veux partager une expertise pragmatique avec des entrepreneurs qui ont des ressources limitées mais des idées brillantes."*
+
+### **🎯 Ce que j'apporte:**
+
+1. **Expérience terrain réelle** - pas de théorie pure
+2. **Solutions adaptées contraintes budgétaires** - vécu dans contextes variés
+3. **Vision ROI pragmatique** - chaque franc/euro doit compter
+4. **Perspective internationale** - ce qui marche ailleurs, adapté ici
+
+### **🤝 Mon approche:**
+
+- **Honnêteté:** Je ne survends pas l'IA - c'est un outil, pas une magie
+- **Pragmatisme:** Focus sur ce qui marche vraiment
+- **Respect du contexte:** Adaptation aux réalités économiques locales
+- **Transmission:** Vous rendre autonomes, pas dépendants
 
 ---
 
-*Formation dispensée avec passion, expertise et respect du contexte économique togolais.*
+**🌟 "Mon but: vous donner les clés pour utiliser l'IA de façon rentable et durable dans votre entreprise togolaise."**
+
+---
+
+*Formation basée sur 30 ans d'expérience IT internationale, dispensée avec pragmatisme et respect du contexte économique togolais.*
