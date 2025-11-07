@@ -1,107 +1,299 @@
-# 📅 AGENDA JOUR 5 - SÉMINAIRE IA TOGO
-**Vendredi 14 novembre 2025 - Atelier Projet & Plan d'Action**  
-**Formateur:** Alexandre Giss | **Lieu:** Lomé, Togo
+# 📅 AGENDA JOUR 5 - FORMATION IA TOGO
+
+**Vendredi 14 novembre 2025**
+**Hôtel Saint LAZARE – Lomé, Togo**
+**Horaire:** 9h00 - 16h30
 
 ---
 
-## 🚀 **JOUR 5 - VENDREDI 14 NOVEMBRE 2025**
-### *Atelier Projet & Plan d'Action*
+## 🎯 THÈME DU JOUR
+### Atelier projet, coaching stratégique et plan d'action IA
 
-### **09:00 - 09:30 | Chapitre 9: Perspectives d'Avenir**
-- **Tendances IA 2025-2026 (15 min):**
-  - Évolutions technologiques attendues
-  - Impact sur secteurs togolais
-- **Opportunités entrepreneuriales (15 min):**
-  - Niches à exploiter au Togo
-  - Success stories africaines récentes
+---
 
-### **09:30 - 10:30 | 👥 WORKSHOP EN GROUPES 5: Adaptation Culturelle**
-- **🌍 TOUS LES GROUPES:** Same brief "campagne mobile générique africain" (45 min)
-  - Identifier stéréotypes + adapter authentiquement au Togo
-  - Versions urbaine (Lomé) + rurale, utiliser IA pour optimiser
-  - Développer checklist anti-stéréotypes réutilisable
-- **Présentation culturelle (15 min):**
-  - Chaque groupe: stéréotypes identifiés + adaptations togolaises (2 min)
-  - Synthèse: Guide complet "IA et Sensibilité Culturelle Togolaise"
-  - **Conclusion:** Standards culturels pour contenu IA responsable
+## 📋 PROGRAMME DÉTAILLÉ
 
-### **10:30 - 10:45 | Pause**
+### **09h00 – 09h30 | Ouverture de la Dernière Journée**
+**Objectifs de restitution**
 
-### **10:45 - 12:00 | Présentation Projets Finaux**
-- **4-5 projets x 10 minutes chacun:**
-  - Démonstration fonctionnelle
-  - Modèle économique
-  - Plan de déploiement
-  - Q&A et feedback
+- **Mot d'ouverture** (10 min)
+  - Accueil et mise en énergie
+  - Bilan de la semaine
+  - Importance de cette dernière journée
 
-### **12:00 - 12:30 | Chapitre 10: Ressources et Communauté**
-- **Ressources continues (15 min):**
-  - Formations gratuites en ligne
-  - Communautés IA africaines
-  - Événements régionaux
-- **Plan de suivi (15 min):**
-  - Groupe WhatsApp/Telegram
-  - Sessions de suivi mensuelle (optionnel)
-  - Partage d'expériences
+- **Programme et objectifs** (10 min)
+  - Déroulement de la journée
+  - Attentes pour les présentations
+  - Critères d'évaluation des projets
+  - Organisation logistique
 
-### **12:30 - 13:30 | Pause Déjeuner**
+- **Préparation finale** (10 min)
+  - Temps de préparation des groupes
+  - Vérifications techniques
+  - Derniers ajustements
 
-### **13:30 - 15:00 | Planification Post-Formation**
-- **Plan d'action individuel (45 min):**
-  - Objectifs 3, 6, 12 mois
-  - Ressources allouées
-  - Métriques de succès
-- **Roadmap implémentation (45 min):**
-  - Étapes progressives
-  - Gestion changement équipe
-  - Budget réaliste échelonné
+---
 
-### **15:00 - 15:15 | Pause**
+### **09h30 – 11h00 | Atelier Final**
+**Présentation des mini-projets IA des participants**
 
-### **15:15 - 16:30 | Session de Networking**
-- **Échange contacts et opportunités (30 min):**
-  - Collaborations potentielles
-  - Partage de ressources
-  - Projets communs
-- **Création du réseau IA Togo (45 min):**
-  - Structure communauté
-  - Événements futurs
-  - Advocacy et sensibilisation
+**Format des présentations:** 7-10 minutes par groupe + 3 min Q&A
 
-### **16:30 - 17:00 | Clôture et Évaluation**
-- **Évaluation du séminaire (15 min):**
-  - Questionnaire satisfaction
+### Structure recommandée pour chaque présentation:
+
+1. **Contexte et problématique** (2 min)
+   - Présentation de l'entreprise/secteur
+   - Problème identifié
+   - Impact actuel
+
+2. **Solution IA proposée** (3 min)
+   - Description de la solution
+   - Outils et technologies utilisés
+   - Architecture et fonctionnement
+   - Démonstration (si possible)
+
+3. **Résultats et ROI** (2 min)
+   - Bénéfices attendus
+   - Calcul du ROI
+   - Timeline d'implémentation
+   - Métriques de succès
+
+4. **Questions-Réponses** (3 min)
+   - Échanges avec l'audience
+   - Clarifications
+   - Suggestions
+
+**6-8 présentations de groupes** (10 min chacune)
+
+---
+
+### **11h00 – 12h30 | Coaching Stratégique**
+**Analyse critique et recommandations des experts**
+
+- **Feedback global** (20 min)
+  - Points forts observés
+  - Tendances et patterns
+  - Innovations remarquables
+  - Axes d'amélioration généraux
+
+- **Analyse approfondie par projet** (60 min)
+
+  Pour chaque projet (7-8 min):
+  - ✅ Forces de la solution
+  - ⚠️ Risques identifiés
+  - 💡 Suggestions d'optimisation
+  - 🔧 Outils alternatifs à considérer
+  - 📊 Validation du ROI
+  - 🚀 Prochaines étapes recommandées
+
+- **Synthèse et best practices** (10 min)
+  - Facteurs clés de succès
+  - Erreurs à éviter
+  - Ressources recommandées
+  - Opportunités de collaboration
+
+---
+
+### **12h30 – 13h30 | PAUSE DÉJEUNER**
+
+---
+
+### **13h30 – 15h00 | Plan d'Action Individuel**
+**Feuille de route pour l'intégration post-formation**
+
+- **Introduction méthodologique** (15 min)
+  - Importance du plan d'action
+  - Structure et composantes
+  - Méthodologie de planification
+  - Exemples de plans réussis
+
+- **Travail individuel guidé** (60 min)
+
+  **Phase 1: Diagnostic de départ** (15 min)
+  - État actuel de l'IA dans votre organisation
+  - Ressources disponibles (humaines, financières, techniques)
+  - Contraintes et obstacles identifiés
+
+  **Phase 2: Définition des objectifs** (20 min)
+  - Objectifs à 3 mois (quick wins)
+  - Objectifs à 6 mois (consolidation)
+  - Objectifs à 12 mois (transformation)
+  - Indicateurs de performance (KPIs)
+
+  **Phase 3: Plan d'action détaillé** (25 min)
+  - Actions prioritaires
+  - Ressources nécessaires
+  - Timeline réaliste
+  - Budget estimatif
+  - Risques et mitigation
+  - Formation d'équipe
+  - Partenaires potentiels
+
+- **Partage en binômes** (15 min)
+  - Présentation croisée des plans
+  - Feedback mutuel
+  - Enrichissement des plans
+
+---
+
+### **15h00 – 16h00 | Synthèse et Clôture Technique**
+**Engagements des participants et remise symbolique**
+
+- **Tour de table des engagements** (30 min)
+  - Chaque participant partage:
+    - Son principal apprentissage de la semaine
+    - Son premier engagement concret (action dans les 7 jours)
+    - Son objectif à 3 mois
+  - Création d'une culture de redevabilité
+
+- **Ressources post-formation** (10 min)
+  - Communauté et réseau IA Togo
+  - Plateforme de partage et support
+  - Sessions de suivi (optionnel)
+  - Ressources en ligne
+  - Contacts des experts
+
+- **Remise symbolique** (10 min)
+  - Distribution des kits de démarrage IA
+  - Documents récapitulatifs
+  - Certificats de participation (pré-annonce)
+  - Matériel pédagogique
+
+- **Évaluation de la formation** (10 min)
+  - Questionnaire de satisfaction
   - Suggestions d'amélioration
-  - Besoins formation future
-- **Discours de clôture (15 min):**
-  - Remise des attestations
-  - Remerciements et encouragements
-  - Rendez-vous Table Ronde (15 novembre)
+  - Besoins de formation future
+  - Témoignages express
 
 ---
 
-## 📚 **MATÉRIAUX NÉCESSAIRES JOUR 5**
-- Templates présentation projets finaux
-- Materials Workshop 5 adaptation culturelle
-- Plans d'action individuels personnalisables
-- Attestations de formation
-- Contacts réseau IA Togo
+### **16h00 – 16h30 | Photo de Groupe & Annonce Table Ronde**
 
-## 🎯 **OBJECTIFS JOUR 5**
-À la fin de cette journée, les participants doivent :
-1. Présenter projet IA finalisé avec démo
-2. Avoir plan d'action 12 mois personnalisé
-3. Maîtriser adaptation culturelle contenu IA
-4. Intégrer réseau professionnel IA Togo
-5. Partir avec roadmap claire d'implémentation
+- **Photo officielle** (10 min)
+  - Photo de groupe complète
+  - Photos par équipes projets
+  - Moments conviviaux
+
+- **Annonce officielle de la Table Ronde** (15 min)
+
+  **Présentation de l'événement du 15 novembre:**
+  - Objectifs et importance
+  - Programme détaillé
+  - Intervenants et panels
+  - Remise officielle des certificats
+  - Cocktail de réseautage
+  - Informations pratiques
+
+- **Invitation formelle** (5 min)
+  - Confirmation des présences
+  - Instructions logistiques
+  - Dress code et protocole
+  - Opportunités de networking
 
 ---
 
-## 📋 **SAMEDI 15 NOVEMBRE 2025 - TABLE RONDE**
-### *Intelligence Artificielle et Développement du Togo*
+## 🎯 OBJECTIFS D'APPRENTISSAGE JOUR 5
 
-### **09:00 - 12:00 | Table Ronde Publique**
-- **Panel d'experts locaux et internationaux**
-- **Présentation des projets développés**
-- **Discussions sur politiques IA nationales**
-- **Vision stratégique IA pour le Togo**
+À la fin de cette journée, les participants auront :
+
+1. ✅ Présenté leur mini-projet IA devant pairs et experts
+2. ✅ Reçu un feedback expert personnalisé
+3. ✅ Élaboré un plan d'action individuel sur 12 mois
+4. ✅ Défini des engagements concrets et mesurables
+5. ✅ Rejoint la communauté IA Togo
+
+---
+
+## 📚 DOCUMENTS ET RESSOURCES
+
+- Template de présentation projet
+- Grilles d'évaluation des projets
+- Template de plan d'action individuel
+- Guide post-formation (roadmap 12 mois)
+- Annuaire des participants (réseau)
+- Ressources complémentaires en ligne
+- Questionnaire d'évaluation
+
+---
+
+## 📊 LIVRABLES DE LA SEMAINE
+
+À l'issue de ces 5 jours, chaque participant repart avec:
+
+1. **Mini-projet IA** fonctionnel ou prototypé
+2. **Plan d'action personnalisé** sur 12 mois
+3. **Charte d'usage éthique** de l'IA
+4. **Bibliothèque de prompts** sectoriels
+5. **Calculateur ROI** adapté
+6. **Framework de gouvernance** IA
+7. **Réseau professionnel** IA Togo
+8. **Kit de démarrage** IA (outils et ressources)
+
+---
+
+## 🎖️ REMISES ET RÉCOMPENSES
+
+**Aujourd'hui:**
+- Kit de démarrage IA
+- Documents récapitulatifs
+- Accès plateforme communautaire
+
+**Demain (15 novembre - Table Ronde):**
+- 🎓 Certificat officiel de participation
+- 🏆 Prix spéciaux (meilleur projet, innovation, impact social)
+- 🤝 Opportunités de partenariats
+
+---
+
+## 📅 SAMEDI 15 NOVEMBRE - TABLE RONDE
+
+**Événement de clôture officiel:**
+
+📍 **Lieu:** Hôtel Saint LAZARE – Lomé
+🕐 **Horaire:** 15h00 - 20h30
+
+**Programme:**
+- 15h00: Ouverture officielle (autorités)
+- 15h30-17h45: 3 panels d'experts
+- 17h45: Témoignages startups togolaises
+- 18h15: **Remise officielle des certificats**
+- 18h45: Distinctions honorifiques
+- 19h15: Cocktail et networking
+
+---
+
+## 💬 ENGAGEMENTS POST-FORMATION
+
+### Dans les 7 jours:
+- Implémenter une première action IA
+- Rejoindre la communauté IA Togo
+- Partager un apprentissage avec son équipe
+
+### Dans les 30 jours:
+- Lancer le projet IA ébauché
+- Former 1-2 collaborateurs
+- Mesurer les premiers résultats
+
+### Dans les 3 mois:
+- Atteindre le premier jalon du plan d'action
+- Participer aux meetups IA Togo
+- Partager un retour d'expérience
+
+### Dans les 6 mois:
+- Évaluer les résultats et ROI
+- Étendre l'utilisation de l'IA
+- Mentorat de nouveaux utilisateurs
+
+---
+
+## 🙏 REMERCIEMENTS
+
+La formation se termine, mais le parcours IA ne fait que commencer!
+
+**Merci à:**
+- IF&C TOGO pour l'organisation
+- GTPME/PMI pour le support
+- Experts suisses pour l'expertise
+- Tous les participants pour leur engagement
+
+**À demain pour la Table Ronde! 🚀**
