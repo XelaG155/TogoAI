@@ -6,7 +6,6 @@
 const AppState = {
     currentPage: 'accueil',
     completedModules: new Set(),
-    theme: 'light',
     progress: 0
 };
 
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadProgress();
     updateProgress();
     setupEventListeners();
-    initializeTheme();
 });
 
 function initializeApp() {
@@ -28,7 +26,6 @@ function initializeApp() {
         try {
             const parsed = JSON.parse(savedState);
             AppState.completedModules = new Set(parsed.completedModules || []);
-            AppState.theme = parsed.theme || 'light';
             AppState.currentPage = parsed.currentPage || 'accueil';
         } catch (e) {
             console.warn('Impossible de charger l\'état sauvegardé');
@@ -42,7 +39,6 @@ function initializeApp() {
 function saveState() {
     const state = {
         completedModules: Array.from(AppState.completedModules),
-        theme: AppState.theme,
         currentPage: AppState.currentPage,
         lastVisit: new Date().toISOString()
     };
@@ -93,12 +89,6 @@ function setupEventListeners() {
         });
     });
 
-    // Theme toggle
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-        themeToggle.addEventListener('click', toggleTheme);
-    }
-
     // Module checkboxes
     document.querySelectorAll('.module-checkbox').forEach(checkbox => {
         checkbox.addEventListener('change', handleModuleComplete);
@@ -113,33 +103,6 @@ function setupEventListeners() {
             }
         });
     });
-}
-
-// === Theme ===
-function initializeTheme() {
-    const savedTheme = AppState.theme;
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-}
-
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.setAttribute('data-theme', newTheme);
-    AppState.theme = newTheme;
-    updateThemeIcon(newTheme);
-    saveState();
-
-    // Animation
-    document.body.style.transition = 'background-color 0.3s ease';
-}
-
-function updateThemeIcon(theme) {
-    const icon = document.querySelector('#themeToggle i');
-    if (icon) {
-        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
 }
 
 // === Progress Tracking ===
