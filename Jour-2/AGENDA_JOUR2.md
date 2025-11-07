@@ -1,89 +1,208 @@
-# 📅 AGENDA JOUR 2 - SÉMINAIRE IA TOGO
-**Mardi 11 novembre 2025 - Maîtriser les Outils d'IA**  
-**Formateur:** Alexandre Giss | **Lieu:** Lomé, Togo
+# 📅 AGENDA JOUR 2 - FORMATION IA TOGO
+
+**Mardi 11 novembre 2025**
+**Hôtel Saint LAZARE – Lomé, Togo**
+**Horaire:** 9h00 - 16h30
 
 ---
 
-## 🛠️ **JOUR 2 - MARDI 11 NOVEMBRE 2025**
-### *Maîtriser les Outils d'IA pour son Activité*
-
-### **09:00 - 09:15 | Retour d'expérience Jour 1**
-- Partage des tests réalisés en soirée
-- Questions et difficultés rencontrées
-
-### **09:15 - 10:30 | Chapitre 3: Outils IA par Modalité**
-- **LLMs textuels avancés (30 min):**
-  - **Perplexity AI gratuit** pour la recherche
-  - **Claude** pour l'analyse et synthèse
-  - **Ollama** pour déploiement local
-- **Vision-LLMs abordables (30 min):**
-  - **GPT-4V gratuit** (limites quotidiennes)
-  - **Google Lens** et applications
-  - **Hugging Face Transformers** pour l'image
-- **Audio-LLMs accessibles (15 min):**
-  - **Whisper OpenAI** (transcription gratuite)
-  - Options text-to-speech gratuites
-
-### **10:30 - 10:45 | Pause**
-
-### **10:45 - 12:30 | Chapitre 4: IA Générative Créative**
-- **Génération d'images gratuites (45 min):**
-  - **Stable Diffusion** via Hugging Face
-  - **Canva AI** (crédits gratuits)
-  - **Leonardo AI** (version gratuite)
-- **Création de contenu (30 min):**
-  - **NotionAI** pour documentation
-  - **Gamma** pour présentations
-  - **Copy.ai** (version limitée)
-- **Exercice pratique (30 min):**
-  - Création logo/visuel pour entreprise fictive togolaise
-  - Génération contenu marketing
-
-### **12:30 - 13:30 | Pause Déjeuner**
-
-### **13:30 - 15:00 | Chapitre 5: Maîtrise du Prompting**
-- **Techniques de base (30 min):**
-  - Structure d'un prompt efficace
-  - Importance du contexte et de la précision
-  - Adaptation selon les modèles
-- **Prompting avancé (30 min):**
-  - Chain-of-thought reasoning
-  - Few-shot learning
-  - Optimisation pour modèles gratuits
-- **Atelier créatif (30 min):**
-  - Création prompts spécifiques au contexte togolais
-  - Bibliothèque collaborative de prompts
-
-### **15:00 - 15:15 | Pause**
-
-### **15:15 - 16:30 | 👥 WORKSHOP EN GROUPES 2: Optimisation Prompts Business**
-- **🏪 TOUS LES GROUPES:** Same prompt "Stratégie Croissance PME", secteurs différents (45 min)
-  - Chaque groupe choisit 1 secteur (Agriculture/Commerce/Artisanat/Services)
-  - Test sur 2-3 outils gratuits, comparaison résultats
-  - Adaptation spécifique au contexte togolais + calcul ROI
-- **Présentations sectorielles (15 min):**
-  - Chaque groupe: secteur choisi, outil préféré, top 3 recommandations
-  - Synthèse: meilleures pratiques transversales pour PME togolaises
-  - **Conclusion:** Stratégies universelles vs spécifiques par secteur
-
-### **16:30 - 17:00 | Synthèse et Planification**
-- Récap outils testés
-- Sélection outils prioritaires par participant
-- Préparation projets Jour 3
+## 🎯 THÈME DU JOUR
+### Découverte et maîtrise des outils d'IA pour son activité professionnelle
 
 ---
 
-## 📚 **MATÉRIAUX NÉCESSAIRES JOUR 2**
-- Supports théoriques (chapitres 3, 4, 5)
-- Accès outils IA génératifs (Canva, Leonardo, etc.)
-- Grilles comparatives Workshop 2
-- Templates prompts par secteur
-- Matériel créatif (exercices visuels)
+## 📋 PROGRAMME DÉTAILLÉ
 
-## 🎯 **OBJECTIFS JOUR 2**
-À la fin de cette journée, les participants doivent :
-1. Maîtriser l'utilisation de 10+ outils IA gratuits
-2. Savoir créer du contenu visuel avec IA
-3. Maîtriser les techniques de prompting avancé
-4. Avoir développé des prompts spécifiques à leur secteur
-5. Comprendre les applications pratiques pour leur business
+### **09h00 – 09h30 | Récapitulatif et Introduction**
+
+- **Retour sur le Jour 1** (15 min)
+  - Points clés à retenir
+  - Questions et clarifications
+  - Partage des réflexions personnelles
+
+- **Introduction du thème du jour** (15 min)
+  - Vue d'ensemble des outils IA
+  - Objectifs d'apprentissage
+  - Organisation de la journée
+
+---
+
+### **09h30 – 11h00 | Démonstration Guidée**
+**Découverte des outils IA essentiels**
+
+- **ChatGPT** (20 min)
+  - Interface et fonctionnalités
+  - Version gratuite vs payante
+  - Cas d'usage pour l'entreprise
+  - Démonstration pratique
+
+- **Microsoft Copilot** (20 min)
+  - Intégration avec Office 365
+  - Fonctionnalités principales
+  - Applications professionnelles
+  - Démonstration live
+
+- **Notion AI** (15 min)
+  - Gestion documentaire intelligente
+  - Automatisation de tâches
+  - Collaboration d'équipe
+  - Exemples pratiques
+
+- **Canva AI** (15 min)
+  - Création de visuels professionnels
+  - Templates et personnalisation
+  - IA pour le design
+  - Démonstration créative
+
+- **Autres outils** (20 min)
+  - Perplexity AI (recherche)
+  - Claude AI (analyse)
+  - DeepSeek (raisonnement)
+  - Aperçu rapide de chaque outil
+
+---
+
+### **11h00 – 12h30 | Atelier Interactif**
+**Rédaction, analyse, reporting et automatisation avec l'IA générative**
+
+- **Module 1: Rédaction assistée par IA** (30 min)
+  - Rédiger des emails professionnels
+  - Créer des rapports et documents
+  - Générer du contenu marketing
+  - Exercice pratique guidé
+
+- **Module 2: Analyse de données** (25 min)
+  - Analyser des tableaux et statistiques
+  - Synthétiser des informations complexes
+  - Extraire des insights
+  - Exercice avec données réelles
+
+- **Module 3: Reporting automatisé** (20 min)
+  - Générer des rapports automatiquement
+  - Visualiser des données
+  - Créer des présentations
+  - Démonstration pratique
+
+- **Module 4: Automatisation de tâches** (15 min)
+  - Workflows automatisés simples
+  - Gain de temps et efficacité
+  - Exemples concrets
+
+---
+
+### **12h30 – 13h30 | PAUSE DÉJEUNER**
+
+---
+
+### **13h30 – 15h00 | Travaux Pratiques**
+**Créer ses propres prompts et assistants IA personnalisés**
+
+- **Introduction au prompting** (20 min)
+  - Qu'est-ce qu'un prompt efficace?
+  - Structure et éléments clés
+  - Bonnes pratiques
+  - Exemples avant/après
+
+- **Atelier prompts personnalisés** (50 min)
+  - Création de prompts pour votre secteur
+  - Tests et itérations
+  - Optimisation des résultats
+  - Constitution d'une bibliothèque de prompts
+
+- **Assistants IA personnalisés** (20 min)
+  - Créer un GPT personnalisé (ChatGPT)
+  - Configurer un assistant métier
+  - Cas d'usage spécifiques
+  - Démonstration et pratique
+
+---
+
+### **15h00 – 16h00 | Application Métier**
+**IA pour la gestion RH, financière, commerciale et communication**
+
+- **Ressources Humaines** (15 min)
+  - Recrutement et sélection de CVs
+  - Rédaction de fiches de poste
+  - Formation et onboarding
+  - Exemples et outils
+
+- **Gestion Financière** (15 min)
+  - Analyse financière automatisée
+  - Prévisions et budgets
+  - Détection d'anomalies
+  - Cas pratiques
+
+- **Gestion Commerciale** (15 min)
+  - Génération de leads
+  - Personnalisation de l'approche client
+  - Suivi et CRM intelligent
+  - Démonstrations
+
+- **Communication** (15 min)
+  - Création de contenu social media
+  - Newsletters automatisées
+  - Relations publiques
+  - Exemples concrets
+
+---
+
+### **16h00 – 16h30 | Échanges et Recommandations**
+
+- **Session de questions-réponses** (15 min)
+  - Clarifications sur les outils
+  - Défis rencontrés
+  - Solutions et alternatives
+
+- **Recommandations des experts** (15 min)
+  - Best practices à retenir
+  - Outils prioritaires selon votre profil
+  - Pièges à éviter
+  - Ressources complémentaires
+  - Aperçu du Jour 3
+
+---
+
+## 🎯 OBJECTIFS D'APPRENTISSAGE JOUR 2
+
+À la fin de cette journée, les participants seront capables de :
+
+1. ✅ Utiliser au moins 5 outils IA différents
+2. ✅ Créer des prompts efficaces pour leurs besoins spécifiques
+3. ✅ Automatiser des tâches professionnelles avec l'IA
+4. ✅ Appliquer l'IA aux fonctions RH, finance, commercial et communication
+5. ✅ Créer un assistant IA personnalisé pour leur activité
+
+---
+
+## 📚 DOCUMENTS ET RESSOURCES
+
+- Guide des outils IA (fiches techniques)
+- Templates de prompts par secteur
+- Tutoriels vidéo (accès en ligne)
+- Bibliothèque de prompts collaborative
+- Guides d'utilisation détaillés
+
+---
+
+## 💻 OUTILS UTILISÉS AUJOURD'HUI
+
+**Outils principaux:**
+- ChatGPT (chat.openai.com)
+- Microsoft Copilot (copilot.microsoft.com)
+- Notion AI (notion.so)
+- Canva AI (canva.com)
+
+**Outils complémentaires:**
+- Claude AI (claude.ai)
+- Perplexity AI (perplexity.ai)
+- DeepSeek (deepseek.com)
+- Gemini (gemini.google.com)
+
+---
+
+## 🔜 À PRÉVOIR POUR DEMAIN (JOUR 3)
+
+- Identifier un processus concret de votre entreprise à automatiser
+- Lister 3 domaines où vous souhaitez intégrer l'IA
+- Réfléchir à un mini-projet IA à développer pendant la formation
+- Avoir accès à des documents/données de votre entreprise (pour tests)

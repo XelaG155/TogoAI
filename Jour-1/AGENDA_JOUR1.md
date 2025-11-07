@@ -1,94 +1,174 @@
-# 📅 AGENDA JOUR 1 - SÉMINAIRE IA TOGO
+# 📅 AGENDA JOUR 1 - FORMATION IA TOGO
 
-**Lundi 10 novembre 2025 - Introduction Stratégique à l'IA**  
-**Formateur:** Alexandre Giss | **Lieu:** Lomé, Togo
-
----
-
-## 🎯 **JOUR 1 - LUNDI 10 NOVEMBRE 2025**
-
-### *Introduction Stratégique à l'IA et Contexte Africain*
-
-### **09:00 - 09:30 | Accueil et Présentation**
-
-- Présentation du formateur Alexandre Giss
-- Tour de table des participants
-- Présentation des objectifs du séminaire
-- **Important:** Mise en contexte des contraintes économiques locales
-
-### **09:30 - 11:00 | Chapitre 1: Fondamentaux de l'IA**
-
-- **Théorie (45 min):**
-  - Qu'est-ce que l'Intelligence Artificielle ?
-  - Évolution historique de l'IA
-  - Types d'IA : faible vs forte, supervisée vs non-supervisée
-  - Introduction aux Large Language Models (LLMs)
-- **Démonstration pratique (30 min):**
-  - Première utilisation de **ChatGPT gratuit**
-  - Test de **DeepSeek R1** (gratuit et performant)
-  - Comparaison avec **Claude gratuit**
-
-### **11:00 - 11:15 | Pause**
-
-### **11:15 - 12:30 | Impact de l'IA en Afrique**
-
-- **Contexte togolais et africain (45 min):**
-  - Opportunités spécifiques pour le Togo
-  - Exemples de succès africains en IA
-  - Défis d'adoption (infrastructure, coûts, compétences)
-- **Solutions abordables (30 min):**
-  - Focus sur outils gratuits et freemium
-  - Stratégies d'optimisation des coûts
-  - ROI réaliste pour PME togolaises
-
-### **12:30 - 13:30 | Pause Déjeuner**
-
-### **13:30 - 15:00 | Chapitre 2: Panorama des LLMs**
-
-- **Modèles gratuits/abordables prioritaires (45 min):**
-  - **DeepSeek R1:** Capacités de reasoning avancées
-  - **Mistral AI:** Modèles européens open source
-  - **Hugging Face:** Écosystème complet gratuit
-  - **Gemini:** Alternative gratuite de Google
-- **Exercice pratique (45 min):**
-  - Création de comptes sur 3-4 plateformes
-  - Tests comparatifs simples
-  - Évaluation des limites gratuites
-
-### **15:00 - 15:15 | Pause**
-
-### **15:15 - 16:30 | 👥 WORKSHOP EN GROUPES 1: Test GPT-5 vs GPT-5-Nano**
-
-- **🔍 TOUS LES GROUPES (5-8 groupes de 6-8 personnes):** Same prompt, analyse comparative (45 min)
-  - Prompt identique sur les 2 modèles via OpenAI Playground
-  - Chaque groupe teste et remplit grille d'évaluation
-  - Analyse coût-bénéfice pour contexte togolais
-- **Présentations rapides (15 min):**
-  - Chaque groupe: 2 minutes pour résultats et recommandation
-  - Synthèse collective: Guidelines "quand utiliser quel modèle?"
-  - **Conclusion:** Stratégies optimales pour budgets togolais
-
-### **16:30 - 17:00 | Synthèse Jour 1**
-
-- Récapitulatif des apprentissages
-- Assignation lecture : tester les outils découverts
+**Lundi 10 novembre 2025**
+**Hôtel Saint LAZARE – Lomé, Togo**
+**Horaire:** 9h00 - 16h30
 
 ---
 
-## 📚 **MATÉRIAUX NÉCESSAIRES JOUR 1**
+## 🎯 THÈME DU JOUR
+### Introduction stratégique à l'intelligence artificielle et aux enjeux pour l'entreprise africaine
 
-- Supports théoriques (slides + handouts)
-- Grilles d'évaluation Workshop 1
-- Accès OpenAI Playground configuré
-- Comptes sur plateformes IA gratuites
-- Matériel technique (projecteur, Internet)
+---
 
-## 🎯 **OBJECTIFS JOUR 1**
+## 📋 PROGRAMME DÉTAILLÉ
 
-À la fin de cette journée, les participants doivent :
+### **09h00 – 09h30 | Accueil et Ouverture Officielle**
+- **Allocutions officielles**
+  - Mot de bienvenue IF&C TOGO
+  - Présentation des experts suisses
+  - Contexte et objectifs de la formation
+- **Tour de table des participants**
+- **Présentation du programme de la semaine**
 
-1. Comprendre les bases de l'IA et des LLMs
-2. Avoir testé 4 outils IA gratuits différents
-3. Savoir évaluer qualité vs coût (GPT-5 vs Nano)
-4. Connaître les contraintes économiques du contexte togolais
-5. Avoir une stratégie de choix d'outils selon budget
+---
+
+### **09h30 – 10h30 | Conférence Introductive**
+**L'IA dans le monde, l'Afrique et le Togo – Enjeux, opportunités et mythes à dépasser**
+
+- **État des lieux mondial de l'IA** (15 min)
+  - Grandes tendances et innovations récentes
+  - Les acteurs majeurs et leurs stratégies
+  - Impact économique global
+
+- **L'IA en Afrique et au Togo** (25 min)
+  - Opportunités spécifiques pour le continent africain
+  - Initiatives et succès africains en IA
+  - Position et potentiel du Togo
+
+- **Mythes et réalités** (20 min)
+  - Démystification de l'IA
+  - Ce que l'IA peut et ne peut pas faire
+  - Idées reçues à dépasser
+
+---
+
+### **10h30 – 12h30 | Cours Interactif**
+**Comprendre les fondamentaux de l'IA**
+
+- **Types d'IA** (30 min)
+  - IA faible vs IA forte
+  - IA supervisée vs non supervisée
+  - Machine Learning, Deep Learning, IA générative
+
+- **Historique et évolution** (30 min)
+  - Les grandes étapes de développement
+  - De Turing à ChatGPT
+  - Accélération récente et causes
+
+- **Concepts-clés** (30 min)
+  - Algorithmes et modèles
+  - Données et apprentissage
+  - Large Language Models (LLMs)
+  - Réseaux de neurones
+
+- **Applications pratiques** (30 min)
+  - IA dans différents secteurs
+  - Exemples concrets d'utilisation
+  - Démonst rations interactives
+
+---
+
+### **12h30 – 13h30 | PAUSE DÉJEUNER**
+
+---
+
+### **13h30 – 15h00 | Atelier Pratique**
+**Identifier les domaines de l'entreprise où l'IA crée de la valeur**
+
+- **Introduction à l'atelier** (15 min)
+  - Méthodologie d'identification
+  - Critères d'évaluation du potentiel IA
+
+- **Travail en groupes** (60 min)
+  - Constitution de groupes sectoriels
+  - Cartographie des processus d'entreprise
+  - Identification des opportunités IA
+  - Priorisation selon impact/faisabilité
+
+- **Restitution collective** (15 min)
+  - Partage des findings par groupe
+  - Discussion et enrichissement mutuel
+
+---
+
+### **15h00 – 16h00 | Étude de Cas**
+**Les succès de l'IA dans les entreprises africaines**
+
+- **Cas #1: Secteur Bancaire** (15 min)
+  - Détection de fraude
+  - Service client automatisé
+  - Résultats et ROI
+
+- **Cas #2: Agriculture** (15 min)
+  - Prévision des récoltes
+  - Optimisation irrigation
+  - Impact sur productivité
+
+- **Cas #3: Commerce/E-commerce** (15 min)
+  - Personnalisation client
+  - Gestion stocks intelligente
+  - Augmentation des ventes
+
+- **Discussion interactive** (15 min)
+  - Questions-réponses
+  - Applicabilité au contexte togolais
+  - Facteurs de succès
+
+---
+
+### **16h00 – 16h30 | Synthèse et Clôture Jour 1**
+
+- **Récapitulatif de la journée** (10 min)
+  - Points clés à retenir
+  - Acquis de la journée
+
+- **Préparation des objectifs personnels** (15 min)
+  - Réflexion individuelle guidée
+  - Définition d'objectifs d'apprentissage
+  - Fiche individuelle à compléter
+
+- **Aperçu du Jour 2** (5 min)
+  - Thèmes et activités
+  - Préparation nécessaire
+
+---
+
+## 🎯 OBJECTIFS D'APPRENTISSAGE JOUR 1
+
+À la fin de cette journée, les participants seront capables de :
+
+1. ✅ Comprendre les fondamentaux de l'intelligence artificielle
+2. ✅ Distinguer les différents types et applications d'IA
+3. ✅ Identifier les opportunités d'IA dans leur secteur d'activité
+4. ✅ Analyser des cas de succès africains en IA
+5. ✅ Définir des objectifs personnels pour la formation
+
+---
+
+## 📚 DOCUMENTS ET RESSOURCES
+
+- Slides de présentation (format PDF)
+- Fiches de travail pour l'atelier pratique
+- Études de cas africaines détaillées
+- Fiche objectifs personnels
+- Glossaire des termes IA
+
+---
+
+## 👥 INTERVENANTS
+
+- **IF&C TOGO** - Organisation et coordination
+- **Experts suisses** - Formateurs principaux
+- **Témoins** - Entrepreneurs africains (cas de succès)
+
+---
+
+## 🔜 À PRÉVOIR POUR DEMAIN (JOUR 2)
+
+- Avoir créé des comptes sur les plateformes IA suivantes (optionnel mais recommandé):
+  - ChatGPT (chat.openai.com)
+  - Claude AI (claude.ai)
+  - Canva (canva.com)
+
+- Réfléchir à un processus spécifique de votre entreprise à optimiser avec l'IA
