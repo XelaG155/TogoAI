@@ -14,6 +14,10 @@
 - Présentation des objectifs du séminaire
 - **Important:** Mise en contexte des contraintes économiques locales
 
+📊 **Matériel:**
+- [Slides Présentation](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Ouverture_Officielle_SLIDES.md)
+- [Support Étudiants](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Ouverture_Officielle_ETUDIANTS.md)
+
 ### **09:30 - 11:00 | Chapitre 1: Fondamentaux de l'IA**
 - **Théorie (45 min):**
   - Qu'est-ce que l'Intelligence Artificielle ?
@@ -24,6 +28,10 @@
   - Première utilisation de **ChatGPT gratuit**
   - Test de **DeepSeek R1** (gratuit et performant)
   - Comparaison avec **Claude gratuit**
+
+📊 **Matériel:**
+- [Slides Fondamentaux](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Cours_Fondamentaux_IA_SLIDES.md)
+- [Support Étudiants](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Cours_Fondamentaux_IA_ETUDIANTS.md)
 
 ### **11:00 - 11:15 | Pause**
 
@@ -36,6 +44,11 @@
   - Focus sur outils gratuits et freemium
   - Stratégies d'optimisation des coûts
   - ROI réaliste pour PME togolaises
+
+📊 **Matériel:**
+- [Conférence IA Monde/Afrique/Togo - Slides](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Conference_IA_Monde_Afrique_Togo_SLIDES.md)
+- [Conférence IA Monde/Afrique/Togo - Support Étudiants](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Conference_IA_Monde_Afrique_Togo_ETUDIANTS.md)
+- [Études de cas: Succès IA en Afrique](Formation_Officielle_Nov2025/Jour_1/05_Etudes_de_Cas/Succes_IA_Afrique_ETUDIANTS.md)
 
 ### **12:30 - 13:30 | Pause Déjeuner**
 
@@ -75,6 +88,10 @@
 - Partage des tests réalisés en soirée
 - Questions et difficultés rencontrées
 
+📊 **Matériel:**
+- [Récap Jour 1 / Intro Jour 2 - Slides](Formation_Officielle_Nov2025/Jour_2/01_Presentations/Recap_Jour1_Intro_Jour2_SLIDES.md)
+- [Récap Jour 1 / Intro Jour 2 - Support Étudiants](Formation_Officielle_Nov2025/Jour_2/01_Presentations/Recap_Jour1_Intro_Jour2_ETUDIANTS.md)
+
 ### **09:15 - 10:30 | Chapitre 3: Outils IA par Modalité**
 - **LLMs textuels avancés (30 min):**
   - **Perplexity AI gratuit** pour la recherche
@@ -87,6 +104,10 @@
 - **Audio-LLMs accessibles (15 min):**
   - **Whisper OpenAI** (transcription gratuite)
   - Options text-to-speech gratuites
+
+📊 **Matériel:**
+- [Démonstration Outils IA - Slides](Formation_Officielle_Nov2025/Jour_2/01_Presentations/Demo_Outils_IA_SLIDES.md)
+- [Démonstration Outils IA - Support Étudiants](Formation_Officielle_Nov2025/Jour_2/01_Presentations/Demo_Outils_IA_ETUDIANTS.md)
 
 ### **10:30 - 10:45 | Pause**
 
@@ -144,6 +165,10 @@
 - Chaque participant identifie 3 processus à optimiser
 - Priorisation selon impact/faisabilité
 - Formation de groupes par secteur d'activité
+
+📊 **Matériel:**
+- [Conférence IA Stratégique - Slides](Formation_Officielle_Nov2025/Jour_3/01_Presentations/Conference_IA_Strategique_SLIDES.md)
+- [Conférence IA Stratégique - Support Étudiants](Formation_Officielle_Nov2025/Jour_3/01_Presentations/Conference_IA_Strategique_ETUDIANTS.md)
 
 ### **09:30 - 10:45 | Chapitre 6: RAG et Gestion des Connaissances**
 - **Bases de données vectorielles simples (30 min):**
@@ -209,6 +234,10 @@
 - Impact pour l'Afrique de l'Ouest
 - Perspective Togo et CEDEAO
 
+📊 **Matériel:**
+- [Introduction Éthique IA - Slides](Formation_Officielle_Nov2025/Jour_4/01_Presentations/Intro_Ethique_IA_SLIDES.md)
+- [Introduction Éthique IA - Support Étudiants](Formation_Officielle_Nov2025/Jour_4/01_Presentations/Intro_Ethique_IA_ETUDIANTS.md)
+
 ### **09:30 - 10:45 | Chapitre 7: Évaluation Critique et Fact-Checking**
 - **Détection fake news et biais (30 min):**
   - Limitations des modèles IA
@@ -237,6 +266,10 @@
   - Enjeux pour l'Afrique
   - Solutions locales vs internationales
   - Stratégies long terme
+
+📊 **Matériel:**
+- [Conférence Biais & Sécurité - Slides](Formation_Officielle_Nov2025/Jour_4/01_Presentations/Conference_Biais_Securite_SLIDES.md)
+- [Conférence Biais & Sécurité - Support Étudiants](Formation_Officielle_Nov2025/Jour_4/01_Presentations/Conference_Biais_Securite_ETUDIANTS.md)
 
 ### **12:30 - 13:30 | Pause Déjeuner**
 
@@ -314,6 +347,10 @@
   - Modèle économique
   - Plan de déploiement
   - Q&A et feedback
+
+📊 **Matériel:**
+- [Template Présentation Projet - Slides](Formation_Officielle_Nov2025/Jour_5/01_Presentations/Template_Presentation_Projet_SLIDES.md)
+- [Template Présentation Projet - Support Étudiants](Formation_Officielle_Nov2025/Jour_5/01_Presentations/Template_Presentation_Projet_ETUDIANTS.md)
 
 ### **10:30 - 10:45 | Pause**
 
