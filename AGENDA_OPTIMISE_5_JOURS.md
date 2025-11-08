@@ -32,6 +32,10 @@
   - Culture d'entraide, pas de "question bête"
   - 70% pratique = on apprend en faisant des erreurs
 
+📊 **Matériel:**
+- [Slides Présentation](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Ouverture_Officielle_SLIDES.md)
+- [Support Étudiants](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Ouverture_Officielle_ETUDIANTS.md)
+
 ### **09:45 - 10:30 | 📚 Mini-Input 1: IA - Les Bases Essentielles**
 - **Qu'est-ce que l'IA vraiment?** (15 min)
   - 🎨 Schéma visuel simple: IA faible vs IA forte
@@ -43,6 +47,13 @@
   - 🌍 Carte: Initiatives IA en Afrique
   - 📊 Opportunités sectorielles au Togo (infographie)
   - **Important:** Contexte économique (80 EUR salaire moyen)
+
+📊 **Matériel:**
+- [Slides Fondamentaux](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Cours_Fondamentaux_IA_SLIDES.md)
+- [Support Étudiants](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Cours_Fondamentaux_IA_ETUDIANTS.md)
+- [Conférence IA Monde/Afrique/Togo - Slides](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Conference_IA_Monde_Afrique_Togo_SLIDES.md)
+- [Conférence IA Monde/Afrique/Togo - Support Étudiants](Formation_Officielle_Nov2025/Jour_1/01_Presentations/Conference_IA_Monde_Afrique_Togo_ETUDIANTS.md)
+- [Études de cas: Succès IA en Afrique](Formation_Officielle_Nov2025/Jour_1/05_Etudes_de_Cas/Succes_IA_Afrique_ETUDIANTS.md)
 
 ### **10:30 - 10:45 | ☕ Pause**
 
@@ -142,6 +153,10 @@
   - 1 succès, 1 difficulté rencontrée
 - **Troubleshooting collectif** des problèmes communs
 
+📊 **Matériel:**
+- [Récap Jour 1 / Intro Jour 2 - Slides](Formation_Officielle_Nov2025/Jour_2/01_Presentations/Recap_Jour1_Intro_Jour2_SLIDES.md)
+- [Récap Jour 1 / Intro Jour 2 - Support Étudiants](Formation_Officielle_Nov2025/Jour_2/01_Presentations/Recap_Jour1_Intro_Jour2_ETUDIANTS.md)
+
 ### **09:30 - 10:15 | 📚 Mini-Input 2: IA Multimodale & Créative**
 - **Au-delà du texte: Images, Audio, Vidéo** (20 min)
   - 🎨 Démonstration rapide: Génération d'image (Stable Diffusion/Canva AI)
@@ -152,6 +167,10 @@
   - **Leonardo AI** - Images de qualité
   - **NotionAI** - Documentation rapide
   - 📊 Tableau comparatif visuel avec coûts
+
+📊 **Matériel:**
+- [Démonstration Outils IA - Slides](Formation_Officielle_Nov2025/Jour_2/01_Presentations/Demo_Outils_IA_SLIDES.md)
+- [Démonstration Outils IA - Support Étudiants](Formation_Officielle_Nov2025/Jour_2/01_Presentations/Demo_Outils_IA_ETUDIANTS.md)
 
 ### **10:15 - 10:30 | ☕ Pause**
 
@@ -256,6 +275,10 @@
 ### **09:00 - 09:30 | 🔄 Partage ROI & Questions**
 - Retours sur calculs ROI personnels
 - Clarifications et ajustements
+
+📊 **Matériel:**
+- [Conférence IA Stratégique - Slides](Formation_Officielle_Nov2025/Jour_3/01_Presentations/Conference_IA_Strategique_SLIDES.md)
+- [Conférence IA Stratégique - Support Étudiants](Formation_Officielle_Nov2025/Jour_3/01_Presentations/Conference_IA_Strategique_ETUDIANTS.md)
 
 ### **09:30 - 10:15 | 📚 Mini-Input 3: Automatisation Pratique**
 - **Workflows no-code simples** (25 min)
@@ -365,6 +388,10 @@
 - Où en sont les groupes?
 - Besoins d'aide spécifiques?
 
+📊 **Matériel:**
+- [Introduction Éthique IA - Slides](Formation_Officielle_Nov2025/Jour_4/01_Presentations/Intro_Ethique_IA_SLIDES.md)
+- [Introduction Éthique IA - Support Étudiants](Formation_Officielle_Nov2025/Jour_4/01_Presentations/Intro_Ethique_IA_ETUDIANTS.md)
+
 ### **09:30 - 10:15 | 📚 Mini-Input 4: Qualité & Vérification**
 - **Fake news et biais IA** (25 min)
   - 📊 Exemples concrets (visuels)
@@ -374,6 +401,10 @@
   - Outils gratuits
   - Méthode en 3 étapes
   - 📊 Infographie "Vérifier info IA"
+
+📊 **Matériel:**
+- [Conférence Biais & Sécurité - Slides](Formation_Officielle_Nov2025/Jour_4/01_Presentations/Conference_Biais_Securite_SLIDES.md)
+- [Conférence Biais & Sécurité - Support Étudiants](Formation_Officielle_Nov2025/Jour_4/01_Presentations/Conference_Biais_Securite_ETUDIANTS.md)
 
 ### **10:15 - 10:30 | ☕ Pause**
 
@@ -465,6 +496,10 @@
 4. **Budget & ROI calculé**
 5. **Plan implémentation** 6 mois
 6. **Leçons apprises** pendant le projet
+
+📊 **Matériel:**
+- [Template Présentation Projet - Slides](Formation_Officielle_Nov2025/Jour_5/01_Presentations/Template_Presentation_Projet_SLIDES.md)
+- [Template Présentation Projet - Support Étudiants](Formation_Officielle_Nov2025/Jour_5/01_Presentations/Template_Presentation_Projet_ETUDIANTS.md)
 
 **🏆 Vote collectif:**
 - Meilleur projet (impact potentiel)
