@@ -59,17 +59,17 @@ paginate: true
 
 ---
 
-## 2025: La Maturité
+## 2025: Diffusion rapide
 
 **Chiffres clés:**
-- 📊 75% des grandes entreprises utilisent l'IA générative
-- 💰 Marché mondial: 200 milliards USD
-- 💼 100 millions de nouveaux emplois liés à l'IA
+- 📊 33% des entreprises expérimentent l'IA générative (McKinsey 2024)
+- 💡 65% utilisent au moins une solution d'IA (McKinsey 2024)
+- 💰 Marché mondial ~200 Md$ (IDC 2024)
 
 **Réalité:**
-- IA intégrée dans tous les logiciels professionnels
-- Coûts en baisse continue
-- Performance en hausse exponentielle
+- Intégration progressive dans de nombreux logiciels professionnels
+- Adoption en croissance mais hétérogène selon les secteurs
+- Impacts sur l'emploi: 69M postes créés vs 83M transformés/supprimés d'ici 2027 (WEF)
 
 <!-- Notes: L'IA n'est plus du futur, c'est le présent -->
 

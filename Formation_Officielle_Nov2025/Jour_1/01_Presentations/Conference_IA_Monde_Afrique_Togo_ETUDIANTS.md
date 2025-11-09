@@ -46,18 +46,18 @@
 - Génération de musique (Suno, Udio)
 - Génération de code (GitHub Copilot)
 
-#### 2025: La maturité
+#### 2025: Diffusion rapide
 
-**IA Générative partout:**
-- Intégration dans tous les logiciels professionnels
-- Adoption massive dans les entreprises
+**IA générative en forte progression:**
+- Intégration progressive dans de nombreux logiciels professionnels
+- Adoption en croissance mais encore hétérogène selon les secteurs
 - Coûts en baisse continue
-- Performance en hausse exponentielle
+- Performance en amélioration rapide
 
 **Chiffres clés 2025:**
-- 75% des grandes entreprises utilisent l'IA générative
-- Marché mondial IA: 200 milliards USD
-- Création de 100 millions de nouveaux emplois liés à l'IA
+- 33% des entreprises expérimentent l'IA générative (McKinsey 2024)
+- 65% utilisent au moins une solution d'IA (McKinsey 2024)
+- Le Forum économique mondial anticipe 69M nouveaux emplois liés à l'IA d'ici 2027, mais aussi 83M emplois transformés ou supprimés
 
 ---
 

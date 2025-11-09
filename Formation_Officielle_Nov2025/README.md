@@ -177,7 +177,7 @@ Chaque groupe travaille ensemble pendant toute la semaine sur:
 - Remise officielle des certificats
 - Cocktail de réseautage
 
-Voir dossier: `/Table_Ronde_15_Nov/`
+Consultez le fichier `../TABLE_RONDE_15_NOVEMBRE.md` pour le programme détaillé.
 
 ---
 

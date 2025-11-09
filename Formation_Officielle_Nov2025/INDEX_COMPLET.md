@@ -108,8 +108,8 @@ Formation_Officielle_Nov2025/
 | 2 | Applications métier | Atelier_Applications_Metier.md | 📝 |
 | 3 | Mini-projet IA | Atelier_Mini_Projet.md | 📝 |
 | 3 | No-code/Low-code | Atelier_NoCode.md | 📝 |
-| 4 | Charte éthique | Atelier_Charte_Ethique.md | 📝 |
-| 4 | Gouvernance IA | Atelier_Gouvernance.md | 📝 |
+| 4 | Charte éthique | Atelier_Charte_Ethique.md | ✅ |
+| 4 | Souveraineté numérique | Atelier_Souverainete_Numerique.md | ✅ |
 
 ### EXERCICES (03_Exercices/)
 
@@ -118,8 +118,8 @@ Formation_Officielle_Nov2025/
 | 1 | Cartographie opportunités | Exercice_Cartographie_Opportunites.md | ✅ |
 | 2 | Création prompts | Exercice_Creation_Prompts.md | 📝 |
 | 3 | Diagnostic processus | Exercice_Diagnostic_Processus.md | 📝 |
-| 4 | Évaluation éthique | Exercice_Evaluation_Ethique.md | 📝 |
-| 5 | Plan d'action | Exercice_Plan_Action.md | 📝 |
+| 4 | Gouvernance IA | Exercice_Gouvernance_IA.md | ✅ |
+| 5 | Plan d'action 12 mois | Exercice_Plan_Action_12mois.md | ✅ |
 
 ### TEMPLATES (04_Templates/)
 
@@ -130,7 +130,7 @@ Formation_Officielle_Nov2025/
 | Jour 2 | Fiche prompt | Template_Fiche_Prompt.md | 📝 |
 | Jour 3 | Fiche mini-projet | Template_Mini_Projet.md | 📝 |
 | Jour 4 | Charte éthique IA | Template_Charte_Ethique.md | 📝 |
-| Jour 5 | Plan d'action 12 mois | Template_Plan_Action_12mois.md | 📝 |
+| Jour 5 | Présentation de projet | Template_Presentation_Projet.md | ✅ |
 
 ---
 
