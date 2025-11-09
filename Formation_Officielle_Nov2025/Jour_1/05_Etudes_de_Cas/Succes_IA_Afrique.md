@@ -114,7 +114,7 @@
 **ROI agriculteur moyen:**
 - Coût: 2$/mois (version premium)
 - Gain: 800$/an (économies pertes + meilleurs prix)
-- **ROI: 33 000%!**
+- **ROI: ≈3 233% ((800$ − 24$) / 24$)**
 
 ---
 
