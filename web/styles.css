@@ -996,6 +996,33 @@ a:hover {
     min-height: 3em;
 }
 
+.tool-meta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-md);
+}
+
+.tool-badge {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.tool-badge.free {
+    background: var(--secondary);
+    color: white;
+}
+
+.tool-badge.freemium {
+    background: var(--warning);
+    color: white;
+}
+
 .community-box {
     display: flex;
     flex-direction: column;
