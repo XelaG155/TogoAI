@@ -328,6 +328,7 @@ AVEC IA:
 - NotionAI (essai puis limité)
 - Gamma (présentations)
 - Perplexity AI (recherche)
+- Manus AI (documents et résumés)
 
 **Bases Vectorielles (RAG):**
 - ChromaDB (gratuit, simple)
