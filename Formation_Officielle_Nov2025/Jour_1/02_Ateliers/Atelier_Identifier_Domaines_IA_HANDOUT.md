@@ -5,6 +5,10 @@
 
 ---
 
+FIGMA:  https://www.figma.com/board/YVpQmElUb6vKzVbChzsz6F/TogoAI?node-id=0-1&t=d3gtVORaFTwjOSKh-1
+
+---
+
 ## 🎯 OBJECTIFS DE L'ATELIER
 
 À la fin de cet atelier, votre groupe aura:
