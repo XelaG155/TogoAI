@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TogoMoney - L'Argent Mobile Pour Tous les Togolais 🇹🇬</title>
+    <meta name="description" content="La nouvelle plateforme mobile money qui révolutionne les paiements au Togo. Simple, rapide, accessible à tous.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Couleurs togolaises vibrantes */
+            --vert-togo: #006A4E;
+            --jaune-togo: #FFCE00;
+            --rouge-togo: #D21034;
+            --orange-vif: #FF6B35;
+            --bleu-ciel: #00B4D8;
+            --vert-clair: #90E0EF;
+            --blanc: #FFFFFF;
+            --gris-clair: #F8F9FA;
+            --gris-moyen: #6C757D;
+            --noir: #212529;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--noir);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--noir);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--vert-togo);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 106, 78, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 106, 78, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--vert-togo) 0%, var(--bleu-ciel) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            animation: fadeInUp 0.8s ease 0.4s backwards;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: var(--gris-clair);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gris-moyen);
+            margin-bottom: 4rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            color: white;
+            box-shadow: 0 8px 20px rgba(0, 106, 78, 0.3);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--vert-togo);
+        }
+
+        .feature-card p {
+            color: var(--gris-moyen);
+            line-height: 1.8;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--jaune-togo), var(--orange-vif));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--vert-togo);
+        }
+
+        .step p {
+            color: var(--gris-moyen);
+            line-height: 1.8;
+        }
+
+        /* Slider Section - Témoignages */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--vert-clair) 0%, var(--bleu-ciel) 100%);
+        }
+
+        .slider-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none;
+        }
+
+        .testimonial.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--gris-moyen);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            color: var(--vert-togo);
+            font-weight: 700;
+        }
+
+        .author-info p {
+            color: var(--gris-moyen);
+            font-size: 0.9rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .slider-dot.active {
+            background: white;
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 6rem 2rem;
+            background: var(--gris-clair);
+        }
+
+        .pricing-table {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .pricing-row:hover {
+            background: var(--gris-clair);
+        }
+
+        .pricing-row:first-child {
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            color: white;
+            font-weight: 700;
+        }
+
+        .pricing-row:first-child div {
+            font-weight: 700;
+        }
+
+        .price-highlight {
+            color: var(--vert-togo);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .price-old {
+            text-decoration: line-through;
+            color: var(--gris-moyen);
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+
+        .badge-economie {
+            background: var(--jaune-togo);
+            color: var(--noir);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-left: 1rem;
+        }
+
+        /* Interactive Calculator */
+        .calculator {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .calculator-card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--vert-clair), rgba(255, 206, 0, 0.2));
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator-input {
+            margin-bottom: 2rem;
+        }
+
+        .calculator-input label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--vert-togo);
+        }
+
+        .slider-input {
+            width: 100%;
+            height: 10px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .slider-input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 106, 78, 0.3);
+        }
+
+        .slider-input::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 106, 78, 0.3);
+            border: none;
+        }
+
+        .slider-value {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--vert-togo);
+            margin: 1rem 0;
+        }
+
+        .calculator-result {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .result-comparison {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 1.5rem;
+            gap: 1rem;
+        }
+
+        .result-item {
+            flex: 1;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--gris-moyen);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .result-value.ours {
+            color: var(--vert-togo);
+        }
+
+        .result-value.theirs {
+            color: var(--gris-moyen);
+        }
+
+        .savings {
+            background: var(--jaune-togo);
+            color: var(--noir);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        /* Investors Section */
+        .investors {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--noir) 0%, #1a1a1a 100%);
+            color: white;
+        }
+
+        .investors-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .investors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .investor-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .investor-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .investor-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--jaune-togo), var(--orange-vif));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .investor-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--rouge-togo) 0%, var(--orange-vif) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-section p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--rouge-togo);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--rouge-togo);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--noir);
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--jaune-togo);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--jaune-togo);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .pricing-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 6px 20px rgba(0, 106, 78, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 999;
+        }
+
+        .fab:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: 0 8px 30px rgba(0, 106, 78, 0.6);
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">💰 TogoMoney</div>
+            <ul class="nav-links">
+                <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                <li><a href="#comment-ca-marche">Comment ça marche</a></li>
+                <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#calculateur">Calculateur</a></li>
+                <li><a href="#investisseurs">Investisseurs</a></li>
+            </ul>
+            <a href="#inscription" class="cta-button">S'inscrire Gratuit</a>
+            <button class="mobile-menu-toggle">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>💸 L'Argent Mobile Simple et Accessible Pour Tous 🇹🇬</h1>
+            <p>Envoyez, recevez, épargnez et empruntez en quelques secondes. Pas de banque, juste votre téléphone!</p>
+            <a href="#inscription" class="cta-button" style="font-size: 1.2rem; padding: 1rem 3rem;">
+                Commencer Maintenant - Bonus 1000 FCFA 🎁
+            </a>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">-20%</span>
+                    <span class="stat-label">Moins Cher</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10K</span>
+                    <span class="stat-label">Agents Partout</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Disponible</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Sécurisé</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="fonctionnalites">
+        <div class="container">
+            <h2 class="section-title">🚀 Pourquoi Choisir TogoMoney?</h2>
+            <p class="section-subtitle">Plus rapide, moins cher, plus de services pour vous!</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3>Prix Imbattables</h3>
+                    <p><strong>20% moins cher</strong> que T-Money et Flooz. Plus d'argent dans votre poche!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Ultra Rapide</h3>
+                    <p>Vos transactions en <strong>moins de 3 secondes</strong>. Envoyez de l'argent plus vite qu'un SMS!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Partout au Togo</h3>
+                    <p><strong>10 000 agents</strong> dans tout le pays. Trouvez-en un près de chez vous!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Épargnez Facilement</h3>
+                    <p>Gagnez jusqu'à <strong>8% d'intérêts</strong> sur votre épargne. Faites fructifier votre argent!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Crédit Express</h3>
+                    <p>Besoin d'argent? Obtenez un <strong>prêt en 2 minutes</strong> directement sur votre téléphone!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Assurance Pour Tous</h3>
+                    <p>Protégez votre famille dès <strong>500 FCFA/mois</strong>. Santé, accidents, tout est couvert!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Tontines Digitales</h3>
+                    <p>Organisez vos tontines en ligne. <strong>100% transparent</strong>, zéro tracas!</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Marche Partout</h3>
+                    <p>Smartphone ou téléphone simple? <strong>Ça marche sur les deux!</strong> USSD: *777#</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🗣️</div>
+                    <h3>En Votre Langue</h3>
+                    <p>Français, Éwé, Kabyè, Tem, Mina. <strong>On parle votre langue!</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="comment-ca-marche">
+        <div class="container">
+            <h2 class="section-title">🎯 Comment Ça Marche?</h2>
+            <p class="section-subtitle">3 étapes simples pour commencer</p>
+
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>📝 Inscrivez-vous</h3>
+                    <p>Allez chez un agent TogoMoney avec votre carte d'identité. En <strong>10 minutes</strong>, votre compte est créé!</p>
+                    <p style="margin-top: 1rem; color: var(--vert-togo); font-weight: 700;">🎁 Bonus 1000 FCFA offert!</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>💵 Déposez de l'Argent</h3>
+                    <p>Donnez du cash à l'agent, il le met sur votre compte. <strong>Gratuit pendant 6 mois!</strong></p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>🚀 Profitez!</h3>
+                    <p>Envoyez, recevez, épargnez, empruntez. Composez <strong>*777#</strong> ou utilisez l'app. C'est parti!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">💬 Ils Nous Font Confiance</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Des milliers de Togolais utilisent déjà TogoMoney</p>
+
+            <div class="slider-container">
+                <div class="testimonial-slider">
+                    <div class="testimonial active">
+                        <p class="testimonial-text">"Avant, je payais 2000 FCFA pour retirer 50 000 FCFA. Maintenant avec TogoMoney, c'est seulement 1000 FCFA! J'ai économisé plus de 12 000 FCFA en 1 mois. Merci!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">A</div>
+                            <div class="author-info">
+                                <h4>Akossiwa M.</h4>
+                                <p>Commerçante, Lomé</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Le crédit express a sauvé mon commerce! J'avais besoin de 100 000 FCFA pour acheter du stock. En 2 minutes, j'avais l'argent. Incroyable!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">K</div>
+                            <div class="author-info">
+                                <h4>Kofi D.</h4>
+                                <p>Boutique de quartier, Kara</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Ma tontine avec mes copines n'a jamais été aussi simple. Tout est transparent, pas de disputes, chacune voit tout. Et c'est gratuit!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">É</div>
+                            <div class="author-info">
+                                <h4>Élise A.</h4>
+                                <p>Enseignante, Atakpamé</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial">
+                        <p class="testimonial-text">"Je suis chauffeur de taxi. Avec TogoMoney, je sécurise mon argent chaque jour. Plus peur des voleurs. Et l'épargne automatique, c'est génial!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">S</div>
+                            <div class="author-info">
+                                <h4>Sébastien K.</h4>
+                                <p>Taxi-conducteur, Sokodé</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <span class="slider-dot active" onclick="showTestimonial(0)"></span>
+                    <span class="slider-dot" onclick="showTestimonial(1)"></span>
+                    <span class="slider-dot" onclick="showTestimonial(2)"></span>
+                    <span class="slider-dot" onclick="showTestimonial(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="pricing" id="tarifs">
+        <div class="container">
+            <h2 class="section-title">💵 Nos Tarifs Imbattables</h2>
+            <p class="section-subtitle">Comparez et voyez la différence!</p>
+
+            <div class="pricing-table">
+                <div class="pricing-row">
+                    <div>Type de Transaction</div>
+                    <div>TogoMoney</div>
+                    <div>Autres (T-Money/Flooz)</div>
+                </div>
+                <div class="pricing-row">
+                    <div>💳 Inscription</div>
+                    <div class="price-highlight">GRATUIT 🎁 <span class="badge-economie">+ Bonus 1000 FCFA</span></div>
+                    <div>Gratuit</div>
+                </div>
+                <div class="pricing-row">
+                    <div>💵 Dépôt d'argent</div>
+                    <div class="price-highlight">GRATUIT (6 mois)</div>
+                    <div>Gratuit</div>
+                </div>
+                <div class="pricing-row">
+                    <div>🏧 Retrait 50 000 FCFA</div>
+                    <div class="price-highlight">1 000 FCFA <span class="badge-economie">-50%</span></div>
+                    <div>2 000 FCFA <span class="price-old"></span></div>
+                </div>
+                <div class="pricing-row">
+                    <div>📲 Transfert 10 000 FCFA</div>
+                    <div class="price-highlight">100 FCFA <span class="badge-economie">-33%</span></div>
+                    <div>150 FCFA <span class="price-old"></span></div>
+                </div>
+                <div class="pricing-row">
+                    <div>⚡ Paiement facture électricité</div>
+                    <div class="price-highlight">100 FCFA <span class="badge-economie">-50%</span></div>
+                    <div>200 FCFA <span class="price-old"></span></div>
+                </div>
+                <div class="pricing-row">
+                    <div>💰 Épargne avec intérêts</div>
+                    <div class="price-highlight">4-8% par an ✨</div>
+                    <div>❌ Pas disponible</div>
+                </div>
+                <div class="pricing-row">
+                    <div>🎯 Crédit express</div>
+                    <div class="price-highlight">Dès 2% / mois 🚀</div>
+                    <div>❌ Pas disponible</div>
+                </div>
+                <div class="pricing-row">
+                    <div>🛡️ Assurance santé</div>
+                    <div class="price-highlight">Dès 500 FCFA/mois 💙</div>
+                    <div>❌ Pas disponible</div>
+                </div>
+                <div class="pricing-row">
+                    <div>🤝 Tontines digitales</div>
+                    <div class="price-highlight">Gratuit 🎊</div>
+                    <div>❌ Pas disponible</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#calculateur" class="cta-button" style="font-size: 1.1rem; padding: 1rem 2.5rem;">
+                    Calculez Vos Économies 🧮
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Calculator -->
+    <section class="calculator" id="calculateur">
+        <div class="container">
+            <h2 class="section-title">🧮 Calculez Combien Vous Économisez</h2>
+            <p class="section-subtitle">Bougez le curseur pour voir la différence!</p>
+
+            <div class="calculator-card">
+                <div class="calculator-input">
+                    <label for="amount">💵 Montant à Transférer (FCFA)</label>
+                    <input type="range" id="amount" class="slider-input" min="1000" max="500000" value="50000" step="1000" oninput="calculateSavings()">
+                    <div class="slider-value" id="amountValue">50 000 FCFA</div>
+                </div>
+
+                <div class="calculator-input">
+                    <label for="frequency">📅 Nombre de Fois Par Mois</label>
+                    <input type="range" id="frequency" class="slider-input" min="1" max="30" value="4" oninput="calculateSavings()">
+                    <div class="slider-value" id="frequencyValue">4 fois</div>
+                </div>
+
+                <div class="calculator-result">
+                    <h3 style="color: var(--vert-togo); margin-bottom: 1.5rem;">💡 Résultat des Frais</h3>
+                    <div class="result-comparison">
+                        <div class="result-item">
+                            <div class="result-label">Avec TogoMoney</div>
+                            <div class="result-value ours" id="oursFees">4 000 FCFA</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Avec Autres</div>
+                            <div class="result-value theirs" id="theirFees">8 000 FCFA</div>
+                        </div>
+                    </div>
+                    <div class="savings">
+                        💰 Vous Économisez: <span id="savingsAmount">4 000 FCFA</span> par mois!
+                    </div>
+                    <p style="margin-top: 1rem; color: var(--gris-moyen); font-size: 0.9rem;">
+                        Soit <strong id="savingsYear">48 000 FCFA</strong> par an! De quoi payer:
+                    </p>
+                    <p style="margin-top: 0.5rem; color: var(--vert-togo); font-weight: 600;">
+                        ✓ 1 mois de loyer • ✓ Frais scolaires • ✓ 2 sacs de riz • ✓ Voyage en famille
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors Section -->
+    <section class="investors" id="investisseurs">
+        <div class="investors-content">
+            <h2 class="section-title" style="color: white;">📈 Une Opportunité d'Investissement Unique</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Rejoignez-nous pour transformer l'inclusion financière au Togo</p>
+
+            <div class="investors-grid">
+                <div class="investor-card">
+                    <div class="investor-number">8,5M</div>
+                    <div class="investor-label">Togolais à servir</div>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-number">34 Mds</div>
+                    <div class="investor-label">FCFA de marché total</div>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-number">15%</div>
+                    <div class="investor-label">Parts de marché cible (An 3)</div>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-number">71x</div>
+                    <div class="investor-label">Multiple retour sur investissement</div>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-number">32%</div>
+                    <div class="investor-label">Marge EBITDA (An 5)</div>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-number">3M</div>
+                    <div class="investor-label">Utilisateurs projetés (An 5)</div>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-number">160%</div>
+                    <div class="investor-label">IRR annualisé</div>
+                </div>
+                <div class="investor-card">
+                    <div class="investor-number">3 ans</div>
+                    <div class="investor-label">Break-even opérationnel</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">💰 Nous Levons: 3,5 Milliards FCFA (~6M USD)</h3>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                    Round Seed • Valorisation pré-money: 8 Mds FCFA • Dilution: 30%
+                </p>
+                <div class="cta-buttons">
+                    <a href="mailto:invest@togomoney.tg" class="btn-primary">
+                        📧 Recevoir le Pitch Deck
+                    </a>
+                    <a href="tel:+22890000000" class="btn-secondary">
+                        📞 Prendre Rendez-vous
+                    </a>
+                </div>
+                <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">
+                    ✓ Business Plan Complet • ✓ Projections Financières • ✓ Analyse de Marché • ✓ Due Diligence Ready
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="inscription">
+        <div class="container">
+            <h2>🎉 Prêt à Économiser et Gagner Plus?</h2>
+            <p>Rejoignez les milliers de Togolais qui font déjà confiance à TogoMoney!</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-primary" onclick="alert('Merci! Notre service sera bientôt disponible. Trouvez un agent TogoMoney près de chez vous dès le lancement!')">
+                    S'Inscrire Maintenant 🚀
+                </a>
+                <a href="#" class="btn-secondary" onclick="alert('Composez *777# sur votre téléphone pour accéder au menu TogoMoney!')">
+                    Composer *777# 📱
+                </a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 1.1rem;">
+                ⏰ Offre de lancement: <strong>Bonus 1000 FCFA + 5 transactions gratuites</strong> pour les 10 000 premiers inscrits!
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TogoMoney</h3>
+                <p>L'argent mobile simple et accessible pour tous les Togolais.</p>
+                <p style="margin-top: 1rem;">
+                    📍 Lomé, Togo<br>
+                    📧 contact@togomoney.tg<br>
+                    📞 +228 XX XX XX XX
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Transferts d'argent</a></li>
+                    <li><a href="#">Paiement de factures</a></li>
+                    <li><a href="#">Épargne</a></li>
+                    <li><a href="#">Crédit express</a></li>
+                    <li><a href="#">Assurance</a></li>
+                    <li><a href="#">Tontines digitales</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Entreprises</h3>
+                <ul>
+                    <li><a href="#">Devenir agent</a></li>
+                    <li><a href="#">Solutions B2B</a></li>
+                    <li><a href="#">APIs pour développeurs</a></li>
+                    <li><a href="#">Paiement salaires</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>À Propos</h3>
+                <ul>
+                    <li><a href="#">Notre histoire</a></li>
+                    <li><a href="#">Équipe</a></li>
+                    <li><a href="#">Investisseurs</a></li>
+                    <li><a href="#">Carrières</a></li>
+                    <li><a href="#">Presse</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Légal</h3>
+                <ul>
+                    <li><a href="#">Conditions d'utilisation</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">Sécurité</a></li>
+                    <li><a href="#">Conformité AML/CFT</a></li>
+                    <li><a href="#">Protection des données</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 TogoMoney - Tous droits réservés | Agréé BCEAO | Certifié ISO 27001</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+                🇹🇬 Fièrement togolais • Pour les Togolais • Par des Togolais
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="alert('Composez *777# sur votre téléphone ou téléchargez l\'application TogoMoney!')">
+        💬
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.slider-dot');
+
+        function showTestimonial(index) {
+            testimonials.forEach(t => t.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentTestimonial = index;
+        }
+
+        // Auto-rotate testimonials
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        // Calculator
+        function calculateSavings() {
+            const amount = parseInt(document.getElementById('amount').value);
+            const frequency = parseInt(document.getElementById('frequency').value);
+
+            // Update display values
+            document.getElementById('amountValue').textContent = amount.toLocaleString('fr-FR') + ' FCFA';
+            document.getElementById('frequencyValue').textContent = frequency + (frequency === 1 ? ' fois' : ' fois');
+
+            // Calculate fees (simplified - based on typical 2% fee structure)
+            let ourFeePerTransaction, theirFeePerTransaction;
+
+            // Our fees (20% cheaper)
+            if (amount <= 5000) {
+                ourFeePerTransaction = 50;
+                theirFeePerTransaction = 100;
+            } else if (amount <= 15000) {
+                ourFeePerTransaction = 200;
+                theirFeePerTransaction = 250;
+            } else if (amount <= 50000) {
+                ourFeePerTransaction = 1000;
+                theirFeePerTransaction = 2000;
+            } else if (amount <= 150000) {
+                ourFeePerTransaction = 2000;
+                theirFeePerTransaction = 3000;
+            } else {
+                ourFeePerTransaction = 3000;
+                theirFeePerTransaction = 5000;
+            }
+
+            const ourMonthlyFees = ourFeePerTransaction * frequency;
+            const theirMonthlyFees = theirFeePerTransaction * frequency;
+            const savings = theirMonthlyFees - ourMonthlyFees;
+            const savingsYear = savings * 12;
+
+            // Update display
+            document.getElementById('oursFees').textContent = ourMonthlyFees.toLocaleString('fr-FR') + ' FCFA';
+            document.getElementById('theirFees').textContent = theirMonthlyFees.toLocaleString('fr-FR') + ' FCFA';
+            document.getElementById('savingsAmount').textContent = savings.toLocaleString('fr-FR') + ' FCFA';
+            document.getElementById('savingsYear').textContent = savingsYear.toLocaleString('fr-FR') + ' FCFA';
+        }
+
+        // Initialize calculator
+        calculateSavings();
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card, .step, .investor-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

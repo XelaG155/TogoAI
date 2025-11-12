@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonctionnalités - TogoMoney 🇹🇬</title>
+    <meta name="description" content="Découvrez toutes les fonctionnalités de TogoMoney: transferts, épargne, crédit, assurance, tontines et bien plus!">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="changeLanguage('fr')" class="lang-btn" data-lang="fr">🇫🇷 FR</button>
+        <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        <button onclick="changeLanguage('ee')" class="lang-btn" data-lang="ee">🇹🇬 ÉWÉ</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">💰 TogoMoney</div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="features.html" class="active" data-i18n="nav.features">Fonctionnalités</a></li>
+                <li><a href="pricing.html" data-i18n="nav.pricing">Tarifs</a></li>
+                <li><a href="investors.html" data-i18n="nav.investors">Investisseurs</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <a href="contact.html" class="cta-button" data-i18n="nav.signup">S'inscrire Gratuit</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 6rem 2rem 3rem;">
+        <div class="hero-content">
+            <h1 data-i18n="featurespage.hero.title">🚀 Toutes les Fonctionnalités TogoMoney</h1>
+            <p data-i18n="featurespage.hero.subtitle">Plus qu'un simple portefeuille mobile - votre partenaire financier complet au Togo</p>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="features-preview">
+        <div class="container">
+            <h2 class="section-title" data-i18n="featurespage.core.title">💸 Fonctionnalités de Base</h2>
+
+            <div class="features-grid">
+                <!-- Money Transfers -->
+                <div class="feature-card" style="grid-column: span 2;">
+                    <div class="feature-icon">💸</div>
+                    <h3 data-i18n="featurespage.core.transfer.title">Transferts d'Argent Ultra-Rapides</h3>
+                    <p data-i18n="featurespage.core.transfer.desc">Envoyez de l'argent à n'importe qui au Togo en moins de 3 secondes. Juste le numéro de téléphone suffit!</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.core.transfer.point1">✅ Transferts instantanés 24/7</li>
+                        <li data-i18n="featurespage.core.transfer.point2">✅ Envoyez de 100 FCFA à 5 000 000 FCFA</li>
+                        <li data-i18n="featurespage.core.transfer.point3">✅ Notifications SMS instantanées</li>
+                        <li data-i18n="featurespage.core.transfer.point4">✅ Historique complet de transactions</li>
+                        <li data-i18n="featurespage.core.transfer.point5">✅ Envoi groupé (jusqu'à 50 personnes)</li>
+                    </ul>
+                </div>
+
+                <!-- Cash In/Out -->
+                <div class="feature-card">
+                    <div class="feature-icon">🏪</div>
+                    <h3 data-i18n="featurespage.core.cashio.title">Dépôt & Retrait Cash</h3>
+                    <p data-i18n="featurespage.core.cashio.desc">10 000 agents partout au Togo pour déposer et retirer votre argent en toute sécurité.</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.core.cashio.point1">✅ Agents dans toutes les villes</li>
+                        <li data-i18n="featurespage.core.cashio.point2">✅ Dépôts gratuits 6 mois</li>
+                        <li data-i18n="featurespage.core.cashio.point3">✅ Retraits 50% moins chers</li>
+                    </ul>
+                </div>
+
+                <!-- Bill Payments -->
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 data-i18n="featurespage.core.bills.title">Paiement de Factures</h3>
+                    <p data-i18n="featurespage.core.bills.desc">Payez toutes vos factures depuis votre téléphone. Électricité, eau, internet, tout!</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.core.bills.point1">✅ CEET (électricité)</li>
+                        <li data-i18n="featurespage.core.bills.point2">✅ TdE (eau)</li>
+                        <li data-i18n="featurespage.core.bills.point3">✅ Togocel, Moov</li>
+                        <li data-i18n="featurespage.core.bills.point4">✅ Canal+, Internet</li>
+                    </ul>
+                </div>
+
+                <!-- Airtime -->
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3 data-i18n="featurespage.core.airtime.title">Crédit Téléphone</h3>
+                    <p data-i18n="featurespage.core.airtime.desc">Rechargez votre crédit téléphone ou celui d'un proche en 5 secondes.</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.core.airtime.point1">✅ Togocel & Moov</li>
+                        <li data-i18n="featurespage.core.airtime.point2">✅ Recharges automatiques</li>
+                        <li data-i18n="featurespage.core.airtime.point3">✅ Bonus sur gros montants</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Features -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-i18n="featurespage.premium.title">⭐ Fonctionnalités Premium</h2>
+            <p class="section-subtitle" data-i18n="featurespage.premium.subtitle">Ce qui nous rend unique au Togo</p>
+
+            <div class="features-grid" style="margin-top: 3rem;">
+                <!-- Savings -->
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 data-i18n="featurespage.premium.savings.title">Comptes d'Épargne Intelligents</h3>
+                    <p data-i18n="featurespage.premium.savings.desc">Faites fructifier votre argent avec jusqu'à 8% d'intérêts par an!</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.premium.savings.point1">📊 <strong>Épargne Classique</strong>: 5% par an</li>
+                        <li data-i18n="featurespage.premium.savings.point2">🎯 <strong>Épargne à Objectif</strong>: 6% (mariage, études, maison)</li>
+                        <li data-i18n="featurespage.premium.savings.point3">🔒 <strong>Épargne Bloquée</strong>: 8% (minimum 6 mois)</li>
+                        <li data-i18n="featurespage.premium.savings.point4">🤖 <strong>Épargne Automatique</strong>: Mettez de côté chaque jour/semaine</li>
+                        <li data-i18n="featurespage.premium.savings.point5">💪 <strong>Défi Épargne</strong>: Challenges pour augmenter votre épargne</li>
+                    </ul>
+                </div>
+
+                <!-- Instant Credit -->
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 data-i18n="featurespage.premium.credit.title">Crédit Express en 2 Minutes</h3>
+                    <p data-i18n="featurespage.premium.credit.desc">Besoin d'argent urgent? Obtenez un prêt directement sur votre compte!</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.premium.credit.point1">⚡ Approbation en <strong>moins de 2 minutes</strong></li>
+                        <li data-i18n="featurespage.premium.credit.point2">💵 De 5 000 à 500 000 FCFA</li>
+                        <li data-i18n="featurespage.premium.credit.point3">📅 Remboursement sur 1 à 12 mois</li>
+                        <li data-i18n="featurespage.premium.credit.point4">📈 Limite augmente avec votre historique</li>
+                        <li data-i18n="featurespage.premium.credit.point5">🎁 Premier crédit à <strong>taux réduit -50%</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Insurance -->
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 data-i18n="featurespage.premium.insurance.title">Assurance Micro-Santé</h3>
+                    <p data-i18n="featurespage.premium.insurance.desc">Protégez vous et votre famille pour seulement 500 FCFA/mois!</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.premium.insurance.point1">🏥 <strong>Santé Basique</strong>: 500 FCFA/mois (consultations)</li>
+                        <li data-i18n="featurespage.premium.insurance.point2">💊 <strong>Santé Premium</strong>: 2000 FCFA/mois (hospitalisations)</li>
+                        <li data-i18n="featurespage.premium.insurance.point3">🚑 <strong>Accidents</strong>: 1000 FCFA/mois</li>
+                        <li data-i18n="featurespage.premium.insurance.point4">👨‍👩‍👧‍👦 <strong>Pack Famille</strong>: -30% de réduction</li>
+                        <li data-i18n="featurespage.premium.insurance.point5">📱 Activation/désactivation en 1 clic</li>
+                    </ul>
+                </div>
+
+                <!-- Digital Tontines -->
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 data-i18n="featurespage.premium.tontines.title">Tontines Digitales</h3>
+                    <p data-i18n="featurespage.premium.tontines.desc">Gérez vos tontines facilement avec vos amis et famille. Tout est transparent!</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.premium.tontines.point1">🔄 Cotisations automatiques</li>
+                        <li data-i18n="featurespage.premium.tontines.point2">📊 Suivi transparent en temps réel</li>
+                        <li data-i18n="featurespage.premium.tontines.point3">🔔 Rappels SMS automatiques</li>
+                        <li data-i18n="featurespage.premium.tontines.point4">👑 Gestion simplifiée pour l'organisateur</li>
+                        <li data-i18n="featurespage.premium.tontines.point5">💯 <strong>100% gratuit!</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Merchant Payments -->
+                <div class="feature-card">
+                    <div class="feature-icon">🛒</div>
+                    <h3 data-i18n="featurespage.premium.merchant.title">Paiements Commerçants</h3>
+                    <p data-i18n="featurespage.premium.merchant.desc">Payez dans les boutiques, restaurants, stations-service avec TogoMoney!</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.premium.merchant.point1">🏪 +5000 commerces partenaires</li>
+                        <li data-i18n="featurespage.premium.merchant.point2">💳 Paiement par QR Code</li>
+                        <li data-i18n="featurespage.premium.merchant.point3">🎁 Points de fidélité</li>
+                        <li data-i18n="featurespage.premium.merchant.point4">🧾 Reçus électroniques</li>
+                    </ul>
+                </div>
+
+                <!-- International Transfers -->
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 data-i18n="featurespage.premium.international.title">Transferts Internationaux</h3>
+                    <p data-i18n="featurespage.premium.international.desc">Envoyez et recevez de l'argent depuis l'étranger à tarifs compétitifs!</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.premium.international.point1">🇫🇷 France, Europe</li>
+                        <li data-i18n="featurespage.premium.international.point2">🇺🇸 USA, Canada</li>
+                        <li data-i18n="featurespage.premium.international.point3">🌍 Afrique de l'Ouest (UEMOA)</li>
+                        <li data-i18n="featurespage.premium.international.point4">⚡ Réception en 1 heure max</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Features -->
+    <section class="features-preview">
+        <div class="container">
+            <h2 class="section-title" data-i18n="featurespage.business.title">🏢 Solutions Entreprises</h2>
+            <p class="section-subtitle" data-i18n="featurespage.business.subtitle">Outils professionnels pour votre business</p>
+
+            <div class="features-grid" style="margin-top: 3rem;">
+                <!-- Payroll -->
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 data-i18n="featurespage.business.payroll.title">Paiement Salaires en Masse</h3>
+                    <p data-i18n="featurespage.business.payroll.desc">Payez tous vos employés en 1 clic avec fichier Excel.</p>
+                </div>
+
+                <!-- Collections -->
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3 data-i18n="featurespage.business.collections.title">Collecte de Paiements</h3>
+                    <p data-i18n="featurespage.business.collections.desc">Acceptez les paiements TogoMoney dans votre business.</p>
+                </div>
+
+                <!-- API -->
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3 data-i18n="featurespage.business.api.title">API Développeurs</h3>
+                    <p data-i18n="featurespage.business.api.desc">Intégrez TogoMoney dans votre application ou site web.</p>
+                </div>
+
+                <!-- Analytics -->
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 data-i18n="featurespage.business.analytics.title">Tableau de Bord Analytics</h3>
+                    <p data-i18n="featurespage.business.analytics.desc">Suivez vos ventes et transactions en temps réel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USSD vs App Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-i18n="featurespage.access.title">📱 Accessible de Partout</h2>
+
+            <div class="steps-container" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="step">
+                    <div class="step-number">*777#</div>
+                    <h3 data-i18n="featurespage.access.ussd.title">Code USSD</h3>
+                    <p data-i18n="featurespage.access.ussd.desc">Pas de smartphone? Pas de problème! Composez <strong>*777#</strong> sur n'importe quel téléphone.</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.access.ussd.point1">✅ Marche sur tous les téléphones</li>
+                        <li data-i18n="featurespage.access.ussd.point2">✅ Pas de connexion Internet</li>
+                        <li data-i18n="featurespage.access.ussd.point3">✅ Menu simple en français/éwé</li>
+                    </ul>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">📱</div>
+                    <h3 data-i18n="featurespage.access.app.title">Application Mobile</h3>
+                    <p data-i18n="featurespage.access.app.desc">Téléchargez l'app TogoMoney pour une expérience complète!</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li data-i18n="featurespage.access.app.point1">✅ Interface moderne et simple</li>
+                        <li data-i18n="featurespage.access.app.point2">✅ Toutes les fonctionnalités</li>
+                        <li data-i18n="featurespage.access.app.point3">✅ Historique complet</li>
+                        <li data-i18n="featurespage.access.app.point4">✅ Notifications push</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="features-preview">
+        <div class="container">
+            <h2 class="section-title" data-i18n="featurespage.security.title">🔐 Sécurité Maximale</h2>
+            <p class="section-subtitle" data-i18n="featurespage.security.subtitle">Votre argent est plus en sécurité qu'à la banque</p>
+
+            <div class="features-grid" style="margin-top: 3rem;">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 data-i18n="featurespage.security.encryption.title">Chiffrement Bancaire</h3>
+                    <p data-i18n="featurespage.security.encryption.desc">Toutes vos transactions sont protégées par cryptage militaire 256-bit.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔑</div>
+                    <h3 data-i18n="featurespage.security.pin.title">Code PIN + Biométrie</h3>
+                    <p data-i18n="featurespage.security.pin.desc">Double protection: code secret + empreinte digitale sur smartphone.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚨</div>
+                    <h3 data-i18n="featurespage.security.fraud.title">Anti-Fraude IA</h3>
+                    <p data-i18n="featurespage.security.fraud.desc">Intelligence artificielle qui détecte et bloque les tentatives de fraude.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💯</div>
+                    <h3 data-i18n="featurespage.security.guarantee.title">Garantie 100%</h3>
+                    <p data-i18n="featurespage.security.guarantee.desc">Si votre compte est piraté, nous remboursons intégralement sous 24h.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3 data-i18n="featurespage.security.bceao.title">Agréé BCEAO</h3>
+                    <p data-i18n="featurespage.security.bceao.desc">Établissement de Monnaie Électronique certifié par la Banque Centrale.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 data-i18n="featurespage.security.iso.title">Certifié ISO 27001</h3>
+                    <p data-i18n="featurespage.security.iso.desc">Standard international de sécurité de l'information respecté.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-i18n="cta.title">🎉 Prêt à Économiser et Gagner Plus?</h2>
+            <p data-i18n="cta.subtitle">Rejoignez les milliers de Togolais qui font déjà confiance à TogoMoney!</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn-primary">
+                    <span data-i18n="cta.signup">S'Inscrire Maintenant 🚀</span>
+                </a>
+                <a href="pricing.html" class="btn-secondary">
+                    <span data-i18n="featurespage.cta.pricing">Voir les Tarifs 💸</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TogoMoney</h3>
+                <p data-i18n="footer.tagline">L'argent mobile simple et accessible pour tous les Togolais.</p>
+                <p style="margin-top: 1rem;">
+                    📍 Lomé, Togo<br>
+                    📧 contact@togomoney.tg<br>
+                    📞 +228 XX XX XX XX
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-i18n="footer.services.title">Services</h3>
+                <ul>
+                    <li><a href="features.html" data-i18n="footer.services.transfers">Transferts d'argent</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.bills">Paiement de factures</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.savings">Épargne</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.credit">Crédit express</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.insurance">Assurance</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.tontines">Tontines digitales</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-i18n="footer.business.title">Entreprises</h3>
+                <ul>
+                    <li><a href="contact.html" data-i18n="footer.business.agent">Devenir agent</a></li>
+                    <li><a href="contact.html" data-i18n="footer.business.b2b">Solutions B2B</a></li>
+                    <li><a href="contact.html" data-i18n="footer.business.api">APIs pour développeurs</a></li>
+                    <li><a href="contact.html" data-i18n="footer.business.payroll">Paiement salaires</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-i18n="footer.about.title">À Propos</h3>
+                <ul>
+                    <li><a href="about.html" data-i18n="footer.about.story">Notre histoire</a></li>
+                    <li><a href="about.html" data-i18n="footer.about.team">Équipe</a></li>
+                    <li><a href="investors.html" data-i18n="footer.about.investors">Investisseurs</a></li>
+                    <li><a href="contact.html" data-i18n="footer.about.careers">Carrières</a></li>
+                    <li><a href="contact.html" data-i18n="footer.about.press">Presse</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-i18n="footer.legal.title">Légal</h3>
+                <ul>
+                    <li><a href="#" data-i18n="footer.legal.terms">Conditions d'utilisation</a></li>
+                    <li><a href="#" data-i18n="footer.legal.privacy">Politique de confidentialité</a></li>
+                    <li><a href="#" data-i18n="footer.legal.security">Sécurité</a></li>
+                    <li><a href="#" data-i18n="footer.legal.compliance">Conformité AML/CFT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-i18n="footer.copyright">&copy; 2025 TogoMoney - Tous droits réservés | Agréé BCEAO | Certifié ISO 27001</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;" data-i18n="footer.pride">
+                🇹🇬 Fièrement togolais • Pour les Togolais • Par des Togolais
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="openUSSD()">💬</div>
+
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>

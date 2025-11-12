@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investisseurs - TogoMoney 🇹🇬</title>
+    <meta name="description" content="Opportunité d'investissement unique dans le mobile money au Togo. Marché de 8M d'habitants, ROI 3x en 5 ans.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .metric-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .metric-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--vert-togo);
+            margin: 1rem 0;
+        }
+        .metric-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 300px;
+            margin-top: 2rem;
+        }
+        .bar {
+            flex: 1;
+            margin: 0 0.5rem;
+            background: linear-gradient(to top, var(--vert-togo), var(--vert-clair));
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .bar:hover {
+            transform: translateY(-10px);
+        }
+        .bar-label {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-weight: 600;
+        }
+        .bar-value {
+            position: absolute;
+            top: -30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-weight: 700;
+            color: var(--vert-togo);
+        }
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 40px 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .timeline-item:nth-child(even) .timeline-content:first-child {
+            order: 3;
+        }
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            background: var(--vert-togo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            z-index: 2;
+        }
+        .timeline-content {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        .ask-box {
+            background: linear-gradient(135deg, var(--jaune-togo), var(--orange-vif));
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            color: #333;
+            margin: 3rem 0;
+        }
+        .ask-amount {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .team-member {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--vert-togo), var(--bleu-ciel));
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 auto 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="changeLanguage('fr')" class="lang-btn" data-lang="fr">🇫🇷 FR</button>
+        <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        <button onclick="changeLanguage('ee')" class="lang-btn" data-lang="ee">🇹🇬 ÉWÉ</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">💰 TogoMoney</div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="features.html" data-i18n="nav.features">Fonctionnalités</a></li>
+                <li><a href="pricing.html" data-i18n="nav.pricing">Tarifs</a></li>
+                <li><a href="investors.html" class="active" data-i18n="nav.investors">Investisseurs</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+            </ul>
+            <a href="contact.html?type=investor" class="cta-button" data-i18n="investorspage.nav.cta">Demander le Pitch Deck</a>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-i18n="investorspage.hero.title">💼 Investissez dans l'Avenir du Paiement Mobile au Togo</h1>
+            <p data-i18n="investorspage.hero.subtitle">Opportunité unique dans un marché de 8 millions d'habitants avec 60% de taux de pénétration mobile</p>
+            <div style="margin-top: 2rem;">
+                <a href="contact.html?type=investor" class="cta-button" style="font-size: 1.2rem; padding: 1rem 3rem;">
+                    <span data-i18n="investorspage.hero.cta">Recevoir le Pitch Deck Complet 📊</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Metrics -->
+    <section class="features-preview">
+        <div class="container">
+            <h2 class="section-title" data-i18n="investorspage.metrics.title">📊 Métriques Clés</h2>
+
+            <div class="features-grid">
+                <div class="metric-card">
+                    <div class="metric-number">3,679 Md</div>
+                    <div class="metric-label" data-i18n="investorspage.metrics.investment">Investissement Total</div>
+                    <p style="margin-top: 1rem; color: #666;">FCFA (~6.1M USD)</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">32 mois</div>
+                    <div class="metric-label" data-i18n="investorspage.metrics.breakeven">Break-Even</div>
+                    <p style="margin-top: 1rem; color: #666;" data-i18n="investorspage.metrics.breakeven.desc">Rentabilité à partir du T4 Année 3</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">3.2x</div>
+                    <div class="metric-label" data-i18n="investorspage.metrics.roi">ROI sur 5 ans</div>
+                    <p style="margin-top: 1rem; color: #666;" data-i18n="investorspage.metrics.roi.desc">Retour sur investissement attractif</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">8M</div>
+                    <div class="metric-label" data-i18n="investorspage.metrics.market">Taille du Marché</div>
+                    <p style="margin-top: 1rem; color: #666;" data-i18n="investorspage.metrics.market.desc">Population totale du Togo</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">60%</div>
+                    <div class="metric-label" data-i18n="investorspage.metrics.mobile">Pénétration Mobile</div>
+                    <p style="margin-top: 1rem; color: #666;" data-i18n="investorspage.metrics.mobile.desc">4.8M utilisateurs de téléphones</p>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-number">12%</div>
+                    <div class="metric-label" data-i18n="investorspage.metrics.banking">Taux de Bancarisation</div>
+                    <p style="margin-top: 1rem; color: #666;" data-i18n="investorspage.metrics.banking.desc">Énorme potentiel d'inclusion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-i18n="investorspage.opportunity.title">🎯 L'Opportunité</h2>
+            <p class="section-subtitle" data-i18n="investorspage.opportunity.subtitle">Pourquoi investir maintenant dans TogoMoney?</p>
+
+            <div class="features-grid" style="margin-top: 3rem;">
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 data-i18n="investorspage.opportunity.growth.title">Marché en Forte Croissance</h3>
+                    <p data-i18n="investorspage.opportunity.growth.desc">Le mobile money au Togo croît de <strong>35% par an</strong> depuis 2020. 2.5 milliards de transactions annuelles prévues pour 2025.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3 data-i18n="investorspage.opportunity.unbanked.title">88% de Non-Bancarisés</h3>
+                    <p data-i18n="investorspage.opportunity.unbanked.desc">7 millions de Togolais n'ont pas accès aux services bancaires traditionnels. Opportunité d'inclusion financière massive.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3 data-i18n="investorspage.opportunity.competition.title">Marché Duopolistique</h3>
+                    <p data-i18n="investorspage.opportunity.competition.desc">T-Money (60%) et Flooz (40%) dominent. Clients insatisfaits des <strong>frais élevés</strong> et manque d'innovation.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 data-i18n="investorspage.opportunity.innovation.title">Innovation Technologique</h3>
+                    <p data-i18n="investorspage.opportunity.innovation.desc">Première plateforme avec IA anti-fraude, crédit express, assurance micro-santé, et tontines digitales au Togo.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 data-i18n="investorspage.opportunity.regulation.title">Environnement Réglementaire Favorable</h3>
+                    <p data-i18n="investorspage.opportunity.regulation.desc">BCEAO encourage la concurrence et l'innovation. Processus de licence clair et stable dans l'UEMOA.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 data-i18n="investorspage.opportunity.revenue.title">Multiples Flux de Revenus</h3>
+                    <p data-i18n="investorspage.opportunity.revenue.desc">Transactions (70%), services premium (20%), B2B/API (10%). Diversification du risque et croissance durable.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Projections Chart -->
+    <section class="features-preview">
+        <div class="container">
+            <h2 class="section-title" data-i18n="investorspage.projections.title">📊 Projections de Revenus (5 ans)</h2>
+
+            <div class="chart-container">
+                <div class="bar-chart">
+                    <div class="bar" style="height: 15%;">
+                        <div class="bar-value">425M</div>
+                        <div class="bar-label" data-i18n="investorspage.projections.year1">Année 1</div>
+                    </div>
+                    <div class="bar" style="height: 35%;">
+                        <div class="bar-value">1.2Md</div>
+                        <div class="bar-label" data-i18n="investorspage.projections.year2">Année 2</div>
+                    </div>
+                    <div class="bar" style="height: 60%;">
+                        <div class="bar-value">2.5Md</div>
+                        <div class="bar-label" data-i18n="investorspage.projections.year3">Année 3</div>
+                    </div>
+                    <div class="bar" style="height: 80%;">
+                        <div class="bar-value">4.1Md</div>
+                        <div class="bar-label" data-i18n="investorspage.projections.year4">Année 4</div>
+                    </div>
+                    <div class="bar" style="height: 100%;">
+                        <div class="bar-value">6.2Md</div>
+                        <div class="bar-label" data-i18n="investorspage.projections.year5">Année 5</div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 4rem; text-align: center;">
+                    <p style="font-size: 1.3rem; color: var(--vert-togo); font-weight: 700;" data-i18n="investorspage.projections.total">
+                        Revenus cumulés sur 5 ans: <strong>14.4 Milliards FCFA</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Ask -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="ask-box">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;" data-i18n="investorspage.ask.title">💰 Levée de Fonds</h2>
+                <p style="font-size: 1.3rem; margin-bottom: 2rem;" data-i18n="investorspage.ask.subtitle">Nous recherchons:</p>
+                <div class="ask-amount">3,5 Milliards FCFA</div>
+                <p style="font-size: 1.1rem; margin-top: 1rem;">(~5.8M USD)</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; text-align: left;">
+                    <div>
+                        <h3 data-i18n="investorspage.ask.use.title">💼 Utilisation des Fonds</h3>
+                        <ul style="margin-top: 1rem; line-height: 2;">
+                            <li data-i18n="investorspage.ask.use.tech">30% Technologie & Infrastructure</li>
+                            <li data-i18n="investorspage.ask.use.licenses">6% Licences & Conformité</li>
+                            <li data-i18n="investorspage.ask.use.agents">20% Réseau d'Agents</li>
+                            <li data-i18n="investorspage.ask.use.marketing">15% Marketing & Acquisition</li>
+                            <li data-i18n="investorspage.ask.use.ops">20% Opérations (15 mois)</li>
+                            <li data-i18n="investorspage.ask.use.reserve">9% Réserve & Imprévus</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 data-i18n="investorspage.ask.equity.title">📈 Ce que vous obtenez</h3>
+                        <ul style="margin-top: 1rem; line-height: 2;">
+                            <li data-i18n="investorspage.ask.equity.stake">25-30% de capital</li>
+                            <li data-i18n="investorspage.ask.equity.board">Siège au Conseil d'Administration</li>
+                            <li data-i18n="investorspage.ask.equity.reporting">Reporting mensuel financier</li>
+                            <li data-i18n="investorspage.ask.equity.exit">Options de sortie à 5 ans</li>
+                            <li data-i18n="investorspage.ask.equity.dividends">Dividendes à partir de l'Année 4</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <a href="contact.html?type=investor" class="btn-primary" style="background: #333; font-size: 1.2rem; padding: 1rem 3rem;">
+                        <span data-i18n="investorspage.ask.cta">Planifier une Rencontre 📅</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap/Timeline -->
+    <section class="features-preview">
+        <div class="container">
+            <h2 class="section-title" data-i18n="investorspage.roadmap.title">🗺️ Roadmap de Lancement</h2>
+            <p class="section-subtitle" data-i18n="investorspage.roadmap.subtitle">De l'investissement au lancement commercial en 15 mois</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 data-i18n="investorspage.roadmap.m0.title">Mois 0-3: Structuration</h3>
+                        <p data-i18n="investorspage.roadmap.m0.desc">Création de la société, dépôt du dossier BCEAO pour licence EME, recrutement équipe fondatrice (CEO, CTO, CFO).</p>
+                    </div>
+                    <div class="timeline-dot">1</div>
+                    <div></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div></div>
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="investorspage.roadmap.m3.title">Mois 3-9: Développement</h3>
+                        <p data-i18n="investorspage.roadmap.m3.desc">Développement plateforme technologique, obtention licence BCEAO, partenariats opérateurs télécom (USSD *777#), certification ISO 27001.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 data-i18n="investorspage.roadmap.m9.title">Mois 9-12: Pilote</h3>
+                        <p data-i18n="investorspage.roadmap.m9.desc">Pilote fermé avec 100 agents et 5000 utilisateurs à Lomé. Tests intensifs des systèmes, ajustements produit selon feedback.</p>
+                    </div>
+                    <div class="timeline-dot">3</div>
+                    <div></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div></div>
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="investorspage.roadmap.m12.title">Mois 12-15: Pré-lancement</h3>
+                        <p data-i18n="investorspage.roadmap.m12.desc">Campagne marketing massive, recrutement 500 agents nationaux, formation, pré-inscriptions. Objectif: 50K utilisateurs Day 1.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3 data-i18n="investorspage.roadmap.m15.title">Mois 15: Lancement Commercial 🚀</h3>
+                        <p data-i18n="investorspage.roadmap.m15.desc">Lancement national officiel avec tous services: transferts, dépôts/retraits, paiement factures, crédit, épargne, assurance, tontines.</p>
+                    </div>
+                    <div class="timeline-dot">🚀</div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-i18n="investorspage.team.title">👥 L'Équipe Fondatrice</h2>
+            <p class="section-subtitle" data-i18n="investorspage.team.subtitle">Une équipe expérimentée avec track record prouvé</p>
+
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">AK</div>
+                    <h3 data-i18n="investorspage.team.ceo.name">Akossiwa KOFFI</h3>
+                    <p style="color: var(--vert-togo); font-weight: 700; margin: 0.5rem 0;" data-i18n="investorspage.team.ceo.title">CEO & Co-Fondatrice</p>
+                    <p style="font-size: 0.9rem; line-height: 1.6;" data-i18n="investorspage.team.ceo.bio">15 ans en FinTech. Ex-Directrice Régionale Orange Money Afrique de l'Ouest. MBA HEC Paris.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-avatar">KA</div>
+                    <h3 data-i18n="investorspage.team.cto.name">Kofi AMOUZOU</h3>
+                    <p style="color: var(--vert-togo); font-weight: 700; margin: 0.5rem 0;" data-i18n="investorspage.team.cto.title">CTO & Co-Fondateur</p>
+                    <p style="font-size: 0.9rem; line-height: 1.6;" data-i18n="investorspage.team.cto.bio">Architecte systèmes paiement. Ex-Lead Engineer M-PESA Kenya. MSc Computer Science MIT.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-avatar">ET</div>
+                    <h3 data-i18n="investorspage.team.cfo.name">Élise TOGO</h3>
+                    <p style="color: var(--vert-togo); font-weight: 700; margin: 0.5rem 0;" data-i18n="investorspage.team.cfo.title">CFO & Co-Fondatrice</p>
+                    <p style="font-size: 0.9rem; line-height: 1.6;" data-i18n="investorspage.team.cfo.bio">10 ans finance corporate. Ex-Ecobank Togo. Expert conformité BCEAO. CFA Charterholder.</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-avatar">SA</div>
+                    <h3 data-i18n="investorspage.team.coo.name">Sébastien AHLI</h3>
+                    <p style="color: var(--vert-togo); font-weight: 700; margin: 0.5rem 0;" data-i18n="investorspage.team.coo.title">COO</p>
+                    <p style="font-size: 0.9rem; line-height: 1.6;" data-i18n="investorspage.team.coo.bio">Opérations & déploiement réseau agents. Ex-Moov Money Togo. 8 ans gestion réseaux distribution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitive Advantages -->
+    <section class="features-preview">
+        <div class="container">
+            <h2 class="section-title" data-i18n="investorspage.advantages.title">🏆 Avantages Compétitifs</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💸</div>
+                    <h3 data-i18n="investorspage.advantages.pricing.title">Pricing Agressif</h3>
+                    <p data-i18n="investorspage.advantages.pricing.desc">20% moins cher que T-Money et Flooz. Stratégie de pénétration de marché pour acquérir 15% parts en 2 ans.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 data-i18n="investorspage.advantages.tech.title">Technologie Supérieure</h3>
+                    <p data-i18n="investorspage.advantages.tech.desc">Architecture cloud native (AWS), IA anti-fraude, API-first pour intégrations B2B rapides.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3 data-i18n="investorspage.advantages.services.title">Services Premium Uniques</h3>
+                    <p data-i18n="investorspage.advantages.services.desc">Premiers au Togo avec crédit express en 2 min, assurance micro-santé 500 FCFA/mois, tontines digitales gratuites.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3 data-i18n="investorspage.advantages.team.title">Équipe Expérimentée</h3>
+                    <p data-i18n="investorspage.advantages.team.desc">Fondateurs avec expérience directe M-PESA, Orange Money, opérateurs locaux. Connaissance marché togolais.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 data-i18n="investorspage.advantages.expansion.title">Potentiel d'Expansion Régionale</h3>
+                    <p data-i18n="investorspage.advantages.expansion.desc">Plateforme conçue pour scale dans toute l'UEMOA (Bénin, Burkina, Côte d'Ivoire, etc.). 130M habitants.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 data-i18n="investorspage.advantages.security.title">Sécurité & Conformité</h3>
+                    <p data-i18n="investorspage.advantages.security.desc">ISO 27001, conformité BCEAO/ARCEP, AML/CFT dès le jour 1. Garantie remboursement 100% en cas de fraude.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Mitigation -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title" data-i18n="investorspage.risks.title">⚠️ Risques & Mitigation</h2>
+
+            <div class="pricing-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-i18n="investorspage.risks.risk">Risque</th>
+                            <th data-i18n="investorspage.risks.mitigation">Stratégie de Mitigation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-i18n="investorspage.risks.regulatory.risk">Réglementaire: Retard obtention licence BCEAO</td>
+                            <td data-i18n="investorspage.risks.regulatory.mitigation">CFO experte conformité BCEAO. Dossier préparé avec cabinet juridique spécialisé. Timeline 12 mois conservatrice.</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="investorspage.risks.competition.risk">Concurrence: Réaction agressive de T-Money/Flooz</td>
+                            <td data-i18n="investorspage.risks.competition.mitigation">Différenciation par services premium uniques. Lock-in via épargne et crédit. Programme fidélité généreux.</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="investorspage.risks.tech.risk">Technologie: Défaillances systèmes</td>
+                            <td data-i18n="investorspage.risks.tech.mitigation">Architecture redondante multi-cloud. SLA 99.95%. Tests intensifs 6 mois avant lancement. CTO avec track record M-PESA.</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="investorspage.risks.fraud.risk">Fraude: Pertes liées à la fraude</td>
+                            <td data-i18n="investorspage.risks.fraud.mitigation">IA anti-fraude temps réel. Limites transactionnelles. KYC strict. Assurance fraude. Budget 1% revenus pour pertes.</td>
+                        </tr>
+                        <tr>
+                            <td data-i18n="investorspage.risks.adoption.risk">Adoption: Acquisition clients plus lente</td>
+                            <td data-i18n="investorspage.risks.adoption.mitigation">Budget marketing 15% investissement. Bonus 1000 FCFA acquisition. Tarifs 20% inférieurs. 500 agents nationaux Day 1.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 data-i18n="investorspage.cta.title">💼 Prêt à Investir dans l'Avenir du Paiement Mobile au Togo?</h2>
+            <p data-i18n="investorspage.cta.subtitle">Rejoignez-nous dans cette aventure qui va transformer la vie de millions de Togolais!</p>
+            <div class="cta-buttons">
+                <a href="contact.html?type=investor" class="btn-primary">
+                    <span data-i18n="investorspage.cta.deck">Recevoir le Pitch Deck Complet 📊</span>
+                </a>
+                <a href="contact.html?type=investor" class="btn-secondary">
+                    <span data-i18n="investorspage.cta.meeting">Planifier une Rencontre 📅</span>
+                </a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 1rem; opacity: 0.9;" data-i18n="investorspage.cta.confidential">
+                📧 Toutes les discussions sont strictement confidentielles. NDA disponible sur demande.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TogoMoney</h3>
+                <p data-i18n="footer.tagline">L'argent mobile simple et accessible pour tous les Togolais.</p>
+                <p style="margin-top: 1rem;">
+                    📍 Lomé, Togo<br>
+                    📧 contact@togomoney.tg<br>
+                    📞 +228 XX XX XX XX<br>
+                    💼 investors@togomoney.tg
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-i18n="footer.services.title">Services</h3>
+                <ul>
+                    <li><a href="features.html" data-i18n="footer.services.transfers">Transferts d'argent</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.bills">Paiement de factures</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.savings">Épargne</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.credit">Crédit express</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.insurance">Assurance</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.tontines">Tontines digitales</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-i18n="footer.business.title">Entreprises</h3>
+                <ul>
+                    <li><a href="contact.html" data-i18n="footer.business.agent">Devenir agent</a></li>
+                    <li><a href="contact.html" data-i18n="footer.business.b2b">Solutions B2B</a></li>
+                    <li><a href="contact.html" data-i18n="footer.business.api">APIs pour développeurs</a></li>
+                    <li><a href="contact.html" data-i18n="footer.business.payroll">Paiement salaires</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-i18n="footer.about.title">À Propos</h3>
+                <ul>
+                    <li><a href="about.html" data-i18n="footer.about.story">Notre histoire</a></li>
+                    <li><a href="about.html" data-i18n="footer.about.team">Équipe</a></li>
+                    <li><a href="investors.html" data-i18n="footer.about.investors">Investisseurs</a></li>
+                    <li><a href="contact.html" data-i18n="footer.about.careers">Carrières</a></li>
+                    <li><a href="contact.html" data-i18n="footer.about.press">Presse</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3 data-i18n="footer.legal.title">Légal</h3>
+                <ul>
+                    <li><a href="#" data-i18n="footer.legal.terms">Conditions d'utilisation</a></li>
+                    <li><a href="#" data-i18n="footer.legal.privacy">Politique de confidentialité</a></li>
+                    <li><a href="#" data-i18n="footer.legal.security">Sécurité</a></li>
+                    <li><a href="#" data-i18n="footer.legal.compliance">Conformité AML/CFT</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p data-i18n="footer.copyright">&copy; 2025 TogoMoney - Tous droits réservés | Agréé BCEAO | Certifié ISO 27001</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;" data-i18n="footer.pride">
+                🇹🇬 Fièrement togolais • Pour les Togolais • Par des Togolais
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="window.location.href='contact.html?type=investor'">💼</div>
+
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - TogoMoney</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button onclick="changeLanguage('fr')" class="lang-btn" data-lang="fr">🇫🇷 FR</button>
+        <button onclick="changeLanguage('en')" class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        <button onclick="changeLanguage('ee')" class="lang-btn" data-lang="ee">🇹🇬 ÉWÉ</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">💰 TogoMoney</div>
+            <ul class="nav-links">
+                <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+                <li><a href="features.html" data-i18n="nav.features">Fonctionnalités</a></li>
+                <li><a href="pricing.html" data-i18n="nav.pricing">Tarifs</a></li>
+                <li><a href="investors.html" data-i18n="nav.investors">Investisseurs</a></li>
+                <li><a href="contact.html" data-i18n="nav.contact" class="active">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-i18n="contact.hero.title">📞 Contactez-Nous</h1>
+            <p data-i18n="contact.hero.subtitle">Nous sommes là pour vous! Posez vos questions, inscrivez-vous, ou investissez.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2 data-i18n="contact.form.title">✉️ Envoyez-nous un Message</h2>
+                    <form id="contactForm" class="contact-form" onsubmit="return handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="formType" data-i18n="contact.form.type.label">Je suis:</label>
+                            <select id="formType" name="formType" required onchange="updateFormFields()">
+                                <option value="" data-i18n="contact.form.type.select">-- Sélectionnez --</option>
+                                <option value="user" data-i18n="contact.form.type.user">👤 Futur Utilisateur (Inscription)</option>
+                                <option value="agent" data-i18n="contact.form.type.agent">🤝 Futur Agent (Devenir Partenaire)</option>
+                                <option value="business" data-i18n="contact.form.type.business">🏢 Entreprise (Solution B2B)</option>
+                                <option value="investor" data-i18n="contact.form.type.investor">💼 Investisseur (Opportunité)</option>
+                                <option value="press" data-i18n="contact.form.type.press">📰 Presse / Média</option>
+                                <option value="other" data-i18n="contact.form.type.other">❓ Autre Demande</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" data-i18n="contact.form.firstname">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" data-i18n="contact.form.lastname">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email" data-i18n="contact.form.email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-i18n="contact.form.phone">Téléphone *</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+228 XX XX XX XX" required>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic fields based on form type -->
+                        <div id="dynamicFields"></div>
+
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <span data-i18n="contact.form.consent">J'accepte que mes données soient utilisées pour me recontacter. *</span>
+                            </label>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span data-i18n="contact.form.newsletter">Je souhaite recevoir les actualités TogoMoney (optionnel)</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-primary btn-submit">
+                            <span data-i18n="contact.form.submit">Envoyer le Message 📤</span>
+                        </button>
+
+                        <p class="form-note" data-i18n="contact.form.note">
+                            * Champs obligatoires. Nous vous répondrons sous 24h.
+                        </p>
+                    </form>
+
+                    <!-- Success/Error Messages -->
+                    <div id="formMessage" class="form-message" style="display: none;"></div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3 data-i18n="contact.info.address.title">Adresse</h3>
+                        <p data-i18n="contact.info.address.text">
+                            TogoMoney SARL<br>
+                            Boulevard du 13 Janvier<br>
+                            Lomé, Togo
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h3 data-i18n="contact.info.phone.title">Téléphone</h3>
+                        <p>
+                            <a href="tel:+22890000000">+228 90 00 00 00</a><br>
+                            <a href="tel:*777" data-i18n="contact.info.phone.ussd">USSD: *777#</a>
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h3 data-i18n="contact.info.email.title">Email</h3>
+                        <p>
+                            <a href="mailto:contact@togomoney.tg">contact@togomoney.tg</a><br>
+                            <a href="mailto:invest@togomoney.tg" data-i18n="contact.info.email.invest">invest@togomoney.tg (Investisseurs)</a>
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">⏰</div>
+                        <h3 data-i18n="contact.info.hours.title">Horaires</h3>
+                        <p data-i18n="contact.info.hours.text">
+                            Lundi - Vendredi: 8h - 18h<br>
+                            Samedi: 9h - 13h<br>
+                            Dimanche: Fermé<br>
+                            <strong>Service USSD: 24/7</strong>
+                        </p>
+                    </div>
+
+                    <div class="social-links">
+                        <h3 data-i18n="contact.social.title">Suivez-nous</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">📘 Facebook</a>
+                            <a href="#" class="social-icon">🐦 Twitter</a>
+                            <a href="#" class="social-icon">📸 Instagram</a>
+                            <a href="#" class="social-icon">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Placeholder) -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact.map.title">📍 Trouvez-nous</h2>
+            <div class="map-placeholder">
+                <div class="map-content">
+                    <h3 data-i18n="contact.map.placeholder">🗺️ Carte Interactive</h3>
+                    <p data-i18n="contact.map.text">Notre bureau principal se trouve au cœur de Lomé, facilement accessible en taxi ou en transport en commun.</p>
+                    <p data-i18n="contact.map.agents"><strong>500+ agents</strong> dans tout le Togo - Trouvez l'agent le plus proche de vous!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact.faq.title">❓ Questions Fréquentes</h2>
+            <p class="section-subtitle" data-i18n="contact.faq.subtitle">Trouvez rapidement vos réponses</p>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 data-i18n="contact.faq.q1.question">Comment m'inscrire?</h3>
+                    <p data-i18n="contact.faq.q1.answer">Rendez-vous chez un agent TogoMoney avec votre carte d'identité. L'inscription prend 10 minutes et vous recevez un bonus de 1000 FCFA!</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 data-i18n="contact.faq.q2.question">C'est vraiment moins cher?</h3>
+                    <p data-i18n="contact.faq.q2.answer">Oui! Nous sommes 20% moins chers que T-Money et Flooz. Utilisez notre calculateur pour voir vos économies.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 data-i18n="contact.faq.q3.question">C'est sécurisé?</h3>
+                    <p data-i18n="contact.faq.q3.answer">Absolument! Nous sommes certifiés ISO 27001, agréés par la BCEAO, et utilisons les mêmes technologies que les banques internationales.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 data-i18n="contact.faq.q4.question">Comment devenir agent?</h3>
+                    <p data-i18n="contact.faq.q4.answer">Remplissez le formulaire ci-dessus en sélectionnant "Futur Agent". Nous vous contacterons dans les 48h pour discuter des opportunités.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 data-i18n="contact.faq.q5.question">Puis-je investir?</h3>
+                    <p data-i18n="contact.faq.q5.answer">Oui! Nous levons actuellement 3,5 milliards FCFA. Contactez-nous à invest@togomoney.tg pour recevoir notre pitch deck.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 data-i18n="contact.faq.q6.question">Marche sur tous les téléphones?</h3>
+                    <p data-i18n="contact.faq.q6.answer">Oui! Composez *777# sur n'importe quel téléphone, ou téléchargez notre app sur smartphone Android/iOS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>TogoMoney</h3>
+                <p data-i18n="footer.tagline">L'argent mobile simple et accessible pour tous les Togolais.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.services.title">Services</h3>
+                <ul>
+                    <li><a href="features.html" data-i18n="footer.services.transfers">Transferts</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.savings">Épargne</a></li>
+                    <li><a href="features.html" data-i18n="footer.services.credit">Crédit</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-i18n="footer.about.title">À Propos</h3>
+                <ul>
+                    <li><a href="investors.html" data-i18n="footer.about.investors">Investisseurs</a></li>
+                    <li><a href="contact.html" data-i18n="footer.about.careers">Carrières</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-i18n="footer.copyright">&copy; 2025 TogoMoney - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <div class="fab" onclick="openUSSD()">💬</div>
+
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+        // Dynamic form fields based on type
+        function updateFormFields() {
+            const formType = document.getElementById('formType').value;
+            const dynamicFields = document.getElementById('dynamicFields');
+
+            let html = '';
+
+            switch(formType) {
+                case 'user':
+                    html = `
+                        <div class="form-group">
+                            <label for="city" data-i18n="contact.dynamic.user.city">Ville *</label>
+                            <select id="city" name="city" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="lome">Lomé</option>
+                                <option value="kara">Kara</option>
+                                <option value="sokode">Sokodé</option>
+                                <option value="atakpame">Atakpamé</option>
+                                <option value="kpalime">Kpalimé</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hasPhone" data-i18n="contact.dynamic.user.phone">Type de téléphone *</label>
+                            <select id="hasPhone" name="hasPhone" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="smartphone">📱 Smartphone (Android/iOS)</option>
+                                <option value="basic">📞 Téléphone simple</option>
+                            </select>
+                        </div>
+                    `;
+                    break;
+
+                case 'agent':
+                    html = `
+                        <div class="form-group">
+                            <label for="businessType" data-i18n="contact.dynamic.agent.type">Type de commerce *</label>
+                            <select id="businessType" name="businessType" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="boutique">🏪 Boutique</option>
+                                <option value="kiosk">🛖 Kiosque</option>
+                                <option value="pharmacy">💊 Pharmacie</option>
+                                <option value="station">⛽ Station-service</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location" data-i18n="contact.dynamic.agent.location">Localisation précise *</label>
+                            <input type="text" id="location" name="location" placeholder="Quartier, rue..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="liquidity" data-i18n="contact.dynamic.agent.liquidity">Liquidité disponible *</label>
+                            <select id="liquidity" name="liquidity" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="200-500k">200 000 - 500 000 FCFA</option>
+                                <option value="500k-1m">500 000 - 1 000 000 FCFA</option>
+                                <option value="1m+">Plus de 1 000 000 FCFA</option>
+                            </select>
+                        </div>
+                    `;
+                    break;
+
+                case 'business':
+                    html = `
+                        <div class="form-group">
+                            <label for="companyName" data-i18n="contact.dynamic.business.company">Nom de l'entreprise *</label>
+                            <input type="text" id="companyName" name="companyName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="employees" data-i18n="contact.dynamic.business.employees">Nombre d'employés *</label>
+                            <select id="employees" name="employees" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="1-10">1 - 10</option>
+                                <option value="11-50">11 - 50</option>
+                                <option value="51-200">51 - 200</option>
+                                <option value="200+">Plus de 200</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="need" data-i18n="contact.dynamic.business.need">Besoin principal *</label>
+                            <select id="need" name="need" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="payroll">💰 Paiement salaires</option>
+                                <option value="collection">📊 Collecte paiements clients</option>
+                                <option value="api">🔌 Intégration API</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                    `;
+                    break;
+
+                case 'investor':
+                    html = `
+                        <div class="form-group">
+                            <label for="investorType" data-i18n="contact.dynamic.investor.type">Type d'investisseur *</label>
+                            <select id="investorType" name="investorType" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="vc">💼 VC / Private Equity</option>
+                                <option value="angel">👼 Business Angel</option>
+                                <option value="family">👨‍👩‍👧 Family Office</option>
+                                <option value="institution">🏛️ Institution (IFC, Proparco, etc.)</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ticketSize" data-i18n="contact.dynamic.investor.ticket">Ticket d'investissement envisagé *</label>
+                            <select id="ticketSize" name="ticketSize" required>
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="50-200m">50 - 200M FCFA</option>
+                                <option value="200-500m">200 - 500M FCFA</option>
+                                <option value="500m-1b">500M - 1Md FCFA</option>
+                                <option value="1b+">Plus de 1Md FCFA</option>
+                            </select>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label>
+                                <input type="checkbox" id="wantPitchDeck" name="wantPitchDeck">
+                                <span data-i18n="contact.dynamic.investor.pitchdeck">Je souhaite recevoir le pitch deck immédiatement</span>
+                            </label>
+                        </div>
+                    `;
+                    break;
+            }
+
+            dynamicFields.innerHTML = html;
+        }
+
+        // Form submission handler (frontend only - no backend)
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('contactForm');
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            // Show loading state
+            const submitBtn = form.querySelector('.btn-submit');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<div class="loading"></div> Envoi en cours...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission (since no backend)
+            setTimeout(() => {
+                // Log to console (for demo purposes)
+                console.log('Form Data:', data);
+
+                // Show success message
+                const messageDiv = document.getElementById('formMessage');
+                messageDiv.className = 'form-message success';
+                messageDiv.innerHTML = `
+                    <h3>✅ Message Envoyé avec Succès!</h3>
+                    <p>Merci ${data.firstName}! Nous avons bien reçu votre message.</p>
+                    <p>Notre équipe vous contactera dans les <strong>24 heures</strong> à l'adresse: <strong>${data.email}</strong></p>
+                    <p>📱 En attendant, composez <strong>*777#</strong> pour découvrir TogoMoney!</p>
+                `;
+                messageDiv.style.display = 'block';
+
+                // Reset form
+                form.reset();
+                document.getElementById('dynamicFields').innerHTML = '';
+
+                // Scroll to message
+                messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Download data as JSON (simulate backend)
+                const dataStr = JSON.stringify(data, null, 2);
+                const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                const url = URL.createObjectURL(dataBlob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = `togomoney-contact-${Date.now()}.json`;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+
+            }, 2000); // Simulate 2 second delay
+
+            return false;
+        }
+    </script>
+</body>
+</html>
