@@ -101,11 +101,11 @@ Liste des outils envisagés (de ce que vous avez vu J1-J2):
 
 **Évaluation comparative:**
 
-| Outil | Coût | Facilité d'usage | Adéquation besoin | Score total (/15) |
+| Outil | Coût | Facilité d'usage | Adéquation besoin | Score total       |
 |-------|------|------------------|-------------------|-------------------|
-|       | /5   | /5               | /5                |                   |
-|       | /5   | /5               | /5                |                   |
-|       | /5   | /5               | /5                |                   |
+|       |      |                  |                   |                   |
+|       |      |                  |                   |                   |
+|       |      |                  |                   |                   |
 
 **Outil(s) sélectionné(s):** _______________________________________________
 
